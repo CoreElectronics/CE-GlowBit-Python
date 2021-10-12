@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['wheel',['wheel',['../classglowbit_1_1colourFunctions.html#afb989958ec7aa4dfb7a04f359da5969a',1,'glowbit::colourFunctions']]]
+  ['updateratelimitcharacterspersecond',['updateRateLimitCharactersPerSecond',['../classglowbit_1_1matrix8x8.html#a5dfbe10ccf2acca4d6d4012e29e7b439',1,'glowbit::matrix8x8']]],
+  ['updateratelimitfps',['updateRateLimitFPS',['../classglowbit_1_1glowbit.html#a7f72cb0878a688aa6181d4632428da09',1,'glowbit::glowbit']]]
 ];

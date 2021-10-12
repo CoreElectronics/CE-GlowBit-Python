@@ -20,7 +20,9 @@ Inheritance diagram for glowbit.\+colour\+Functions\+:\nopagebreak
 def \hyperlink{classglowbit_1_1colourFunctions_afb989958ec7aa4dfb7a04f359da5969a}{wheel} (self, pos)
 \begin{DoxyCompactList}\small\item\em Converts an integer \char`\"{}colour wheel position\char`\"{} to a packed 32-\/bit R\+GB Glow\+Bit colour value. \end{DoxyCompactList}\item 
 def \hyperlink{classglowbit_1_1colourFunctions_a1c24f694a16f3c721a0e7771740ebc56}{rgb2\+G\+B\+Colour} (self, r, g, b)
-\begin{DoxyCompactList}\small\item\em Converts the r, g, and b integer arguments to a packed 32-\/bit R\+GB Glow\+Bit colour value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Converts the r, g, and b integer arguments to a packed 32-\/bit R\+GB Glow\+Bit colour value. \end{DoxyCompactList}\item 
+def \hyperlink{classglowbit_1_1colourFunctions_a6f887561ea3261440350ac3b1df4a259}{glowbit\+Colour2\+R\+GB} (self, colour)
+\begin{DoxyCompactList}\small\item\em Converts a 32-\/bit Glow\+Bit colour value to an (R,G,B) tuple. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -33,6 +35,24 @@ A packed 32-\/bit Glow\+Bit colour is an integer with 8-\/bits per colour channe
 where RR, GG, and BB are hexadecimal values (decimal \mbox{[}0,255\mbox{]}) and the most significant 8 bits are reserved and left as zero. 
 
 \subsection{Member Function Documentation}
+\mbox{\Hypertarget{classglowbit_1_1colourFunctions_a6f887561ea3261440350ac3b1df4a259}\label{classglowbit_1_1colourFunctions_a6f887561ea3261440350ac3b1df4a259}} 
+\index{glowbit\+::colour\+Functions@{glowbit\+::colour\+Functions}!glowbit\+Colour2\+R\+GB@{glowbit\+Colour2\+R\+GB}}
+\index{glowbit\+Colour2\+R\+GB@{glowbit\+Colour2\+R\+GB}!glowbit\+::colour\+Functions@{glowbit\+::colour\+Functions}}
+\subsubsection{\texorpdfstring{glowbit\+Colour2\+R\+G\+B()}{glowbitColour2RGB()}}
+{\footnotesize\ttfamily def glowbit.\+colour\+Functions.\+glowbit\+Colour2\+R\+GB (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{colour }\end{DoxyParamCaption})}
+
+
+
+Converts a 32-\/bit Glow\+Bit colour value to an (R,G,B) tuple. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em colour} & A 32-\/bit Glow\+Bit colour value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A tuple in the format (R,G,B) containing the R\+GB components of the colour parameter 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classglowbit_1_1colourFunctions_a1c24f694a16f3c721a0e7771740ebc56}\label{classglowbit_1_1colourFunctions_a1c24f694a16f3c721a0e7771740ebc56}} 
 \index{glowbit\+::colour\+Functions@{glowbit\+::colour\+Functions}!rgb2\+G\+B\+Colour@{rgb2\+G\+B\+Colour}}
 \index{rgb2\+G\+B\+Colour@{rgb2\+G\+B\+Colour}!glowbit\+::colour\+Functions@{glowbit\+::colour\+Functions}}

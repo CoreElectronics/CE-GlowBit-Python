@@ -81,6 +81,14 @@ class colourFunctions():
     def rgb2GBColour(self, r, g, b): # type-hints removed
         return ( (r<<16) | (g<<8) | b )
    
+    ## @brief Converts a 32-bit GlowBit colour value to an (R,G,B) tuple.
+    #
+    # \param colour A 32-bit GlowBit colour value
+    # \return A tuple in the format (R,G,B) containing the RGB components of the colour parameter
+
+    def glowbitColour2RGB(self, colour):
+        return ( (colour&0xFF0000) >> 16) , (colour&0xFF00)>> 8, (colour&0xFF) )
+
 ## @brief Methods which calculate colour gradients.
 #
 # Custom colour map methods can be written and passed to several GlowBit library methods (eg: glowbit.stick.graph1D) but must accept the same positional arguments as the methods in this class.
@@ -160,7 +168,7 @@ class glowbit(colourFunctions):
     # 
     # This function must be called before the connected GlowBit LEDs will change colour.
     # 
-    # Note that several GlowBit library methods call this method unconditionally (eg: blankDisplay ) or optionally (eg: by passing the update = True parameter to stick.graph1D() )
+    # Note that several GlowBit library methods call this method unconditionally (eg: glowbit.blankDisplay ) or optionally (eg: by passing the update = True parameter to stick.graph1D() )
     def pixelsShow(self):
         return
 
@@ -234,24 +242,25 @@ class glowbit(colourFunctions):
             ar[i] = 0
         self.pixelsShow()
   
-    ## @brief
+
+    ## @brief Returns the 32-bit GlowBit colour value of the i'th LED
     #
-    #
+    # \param i The index of the LED
+    # \return The 32-bit GlowBit colour value of the i'th LED
 
     def getPixel(self, N):
         return self.ar[N]
 
-    ## @brief
+    ## @brief Sets a new value for the GlowBit display's frames per second (FPS) limiter.
     #
-    #
+    # \param rateLimitFPS An integer in units of frames per second.
 
     def updateRateLimitFPS(self, rateLimitFPS):
         self.rateLimit = rateLimitFPS
-        
 
-    ## @brief
+    ## @brief Sets random colour values on every LED on the attached GlowBit display. This function is blocking, it does not return until the number of frames specified in the iters parameter have been drawn.
     #
-    #
+    # \param iters The number of frames to draw.
 
     def chaos(self, iters = 100):
         import random
@@ -263,14 +272,36 @@ class glowbit(colourFunctions):
             iters -= 1
         self.blankDisplay()
 
+## @brief Methods specific to 2D matrix displays and tiled arrangements thereof.
 
 class glowbitMatrix(glowbit):
+
+    ## @brief Sets the colour value of the GlowBit LED at a given x-y coordinate
+    #
+    # The coordinate assumes an origin in the upper left of the display with x increasing to the right and y increasing downwards.
+    #
+    # If the x-y coordinate falls outside the display's boundary this function will "wrap-around". For example, A dot placed just off the right edge will appear along the left edge.
+    #
+    # \param x The x coordinate of the GlowBit LED. x must be an integer.
+    # \param y The y coordinate of the GlowBit LED. y must be an integer.
+    # \param colour A packed 32-bit GlowBit colour value
+
     @micropython.viper
     def pixelSetXY(self, x, y, colour): # type-hints removed
         x = x % int(self.numLEDsX)
         y = y % int(self.numLEDsY)
         self.ar[int(self.remap(x,y))] = colour
-        
+   
+    ## @brief Sets the colour value of the GlowBit LED at a given x-y coordinate and immediately calls pixelsShow() to update the physical LEDs.
+    #
+    # The coordinate assumes an origin in the upper left of the display with x increasing to the right and y increasing downwards.
+    #
+    # If the x-y coordinate falls outside the display's boundary this function will "wrap-around". For example, A dot placed just off the right edge will appear along the left edge.
+    #
+    # \param x The x coordinate of the GlowBit LED. x must be an integer.
+    # \param y The y coordinate of the GlowBit LED. y must be an integer.
+    # \param colour A packed 32-bit GlowBit colour value
+
     @micropython.viper
     def pixelSetXYNow(self, x, y, colour): # type-hints removed
         x = x % int(self.numLEDsX)
@@ -279,23 +310,64 @@ class glowbitMatrix(glowbit):
         self.ar[i % int(self.numLEDs)] = colour
         self.pixelsShow()
     
+    ## @brief Sets the colour value of the GlowBit LED at a given x-y coordinate
+    #
+    # The coordinate assumes an origin in the upper left of the display with x increasing to the right and y increasing downwards.
+    #
+    # If the x-y coordinate falls outside the display's boundary the display's internal buffer will not be modified. 
+    #
+    # \param x The x coordinate of the GlowBit LED. x must be an integer.
+    # \param y The y coordinate of the GlowBit LED. y must be an integer.
+    # \param colour A packed 32-bit GlowBit colour value
+ 
     @micropython.viper
     def pixelSetXYClip(self, x, y, colour): # type-hints removed
         if x >= 0 and y >= 0 and x < int(self.numLEDsX) and y < int(self.numLEDsY):
             self.ar[int(self.remap(x,y))] = colour
-    
+
+    ## @brief Adds the colour value to the GlowBit LED at a given x-y coordinate
+    #
+    # The coordinate assumes an origin in the upper left of the display with x increasing to the right and y increasing downwards.
+    #
+    # If the x-y coordinate falls outside the display's boundary this function will "wrap-around". For example, A dot placed just off the right edge will appear along the left edge.
+    #
+     # Data colour corruption will occur if the sum result of any RGB value exceeds 255. Care must be taken to avoid this manually. eg: if the blue channel's resulting intensity value is 256 it will be set to zero and the red channel incremented by 1. See the colourFunctions class documentation for the 32-bit GlowBit colour specification.
+    #
+    # \param x The x coordinate of the GlowBit LED. x must be an integer.
+    # \param y The y coordinate of the GlowBit LED. y must be an integer.
+    # \param colour A packed 32-bit GlowBit colour value
+
     @micropython.viper
     def pixelAddXY(self, x, y, colour): # type-hints removed
         x = x % int(self.numLEDsX)
         y = y % int(self.numLEDsY)
         i = int(self.remap(x,y))
         self.ar[i] = int(self.ar[i]) + colour
-    
+
+    ## @brief Adds the colour value to the GlowBit LED at a given x-y coordinate
+    #
+    # The coordinate assumes an origin in the upper left of the display with x increasing to the right and y increasing downwards.
+    #
+    # If the x-y coordinate falls outside the display's boundary the display's internal buffer will not be modified. 
+    #
+     # Data colour corruption will occur if the sum result of any RGB value exceeds 255. Care must be taken to avoid this manually. eg: if the blue channel's resulting intensity value is 256 it will be set to zero and the red channel incremented by 1. See the colourFunctions class documentation for the 32-bit GlowBit colour specification.
+    #
+    # \param x The x coordinate of the GlowBit LED. x must be an integer.
+    # \param y The y coordinate of the GlowBit LED. y must be an integer.
+    # \param colour A packed 32-bit GlowBit colour value
+
     @micropython.viper
     def pixelAddXYClip(self, x, y, colour): # type-hints removed
         if x >= 0 and y >= 0 and x < int(self.numLEDsX) and y < int(self.numLEDsY):
             self.ar[int(self.remap(x,y))] = colour + int(self.ar[int(self.remap(x,y))])
    
+    ## @brief Returns the 32-bit GlowBit colour value of the LED at a given x-y coordinate
+    #
+    # If the x-y coordinate falls outside of the display's boundary an IndexError exception may be thrown or the GlowBit colour value of an undefined pixel may be returned.
+    #
+    # \param i The index of the LED
+    # \return The 32-bit GlowBit colour value of the i'th LED
+
     def getPixelXY(self, x, y):
         return self.ar[remap(x,y)]
 

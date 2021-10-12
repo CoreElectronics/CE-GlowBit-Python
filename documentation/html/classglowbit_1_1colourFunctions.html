@@ -82,7 +82,7 @@ Inheritance diagram for glowbit.colourFunctions:</div>
 <area shape="rect" id="node10" href="classglowbit_1_1glowbitMatrix_1_1graph2D.html" title="glowbit.glowbitMatrix.graph2D" alt="" coords="212,208,409,235"/>
 <area shape="rect" id="node11" href="classglowbit_1_1stick_1_1graph1D.html" title="glowbit.stick.graph1D" alt="" coords="237,259,385,285"/>
 <area shape="rect" id="node12" href="classglowbit_1_1stick_1_1pulse.html" title="glowbit.stick.pulse" alt="" coords="245,309,376,336"/>
-<area shape="rect" id="node3" href="classglowbit_1_1glowbitMatrix.html" title="glowbit.glowbitMatrix" alt="" coords="457,56,601,83"/>
+<area shape="rect" id="node3" href="classglowbit_1_1glowbitMatrix.html" title="Methods specific to 2D matrix displays and tiled arrangements thereof. " alt="" coords="457,56,601,83"/>
 <area shape="rect" id="node6" href="classglowbit_1_1stick.html" title="glowbit.stick" alt="" coords="482,107,577,133"/>
 <area shape="rect" id="node8" href="classglowbit_1_1triangle.html" title="glowbit.triangle" alt="" coords="475,157,584,184"/>
 <area shape="rect" id="node4" href="classglowbit_1_1matrix4x4.html" title="glowbit.matrix4x4" alt="" coords="649,5,773,32"/>
@@ -99,6 +99,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a1c24f694a16f3c721a0e7771740ebc56"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classglowbit_1_1colourFunctions.html#a1c24f694a16f3c721a0e7771740ebc56">rgb2GBColour</a> (self, r, g, b)</td></tr>
 <tr class="memdesc:a1c24f694a16f3c721a0e7771740ebc56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the r, g, and b integer arguments to a packed 32-bit RGB GlowBit colour value.  <a href="#a1c24f694a16f3c721a0e7771740ebc56">More...</a><br /></td></tr>
 <tr class="separator:a1c24f694a16f3c721a0e7771740ebc56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f887561ea3261440350ac3b1df4a259"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classglowbit_1_1colourFunctions.html#a6f887561ea3261440350ac3b1df4a259">glowbitColour2RGB</a> (self, colour)</td></tr>
+<tr class="memdesc:a6f887561ea3261440350ac3b1df4a259"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a 32-bit GlowBit colour value to an (R,G,B) tuple.  <a href="#a6f887561ea3261440350ac3b1df4a259">More...</a><br /></td></tr>
+<tr class="separator:a6f887561ea3261440350ac3b1df4a259"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Methods for transforming colours to 32-bit packed GlowBit colour values. </p>
@@ -106,6 +109,43 @@ Public Member Functions</h2></td></tr>
 <p>0x00RRGGBB</p>
 <p>where RR, GG, and BB are hexadecimal values (decimal [0,255]) and the most significant 8 bits are reserved and left as zero. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a6f887561ea3261440350ac3b1df4a259"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f887561ea3261440350ac3b1df4a259">&#9670;&nbsp;</a></span>glowbitColour2RGB()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def glowbit.colourFunctions.glowbitColour2RGB </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>colour</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Converts a 32-bit GlowBit colour value to an (R,G,B) tuple. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">colour</td><td>A 32-bit GlowBit colour value </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A tuple in the format (R,G,B) containing the RGB components of the colour parameter </dd></dl>
+
+</div>
+</div>
 <a id="a1c24f694a16f3c721a0e7771740ebc56"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1c24f694a16f3c721a0e7771740ebc56">&#9670;&nbsp;</a></span>rgb2GBColour()</h2>
 

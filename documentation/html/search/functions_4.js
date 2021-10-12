@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['updateratelimitcharacterspersecond',['updateRateLimitCharactersPerSecond',['../classglowbit_1_1matrix8x8.html#a5dfbe10ccf2acca4d6d4012e29e7b439',1,'glowbit::matrix8x8']]]
+  ['rgb2gbcolour',['rgb2GBColour',['../classglowbit_1_1colourFunctions.html#a1c24f694a16f3c721a0e7771740ebc56',1,'glowbit::colourFunctions']]]
 ];

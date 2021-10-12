@@ -2,6 +2,11 @@
 \label{classglowbit_1_1glowbitMatrix}\index{glowbit.\+glowbit\+Matrix@{glowbit.\+glowbit\+Matrix}}
 
 
+Methods specific to 2D matrix displays and tiled arrangements thereof.  
+
+
+
+
 Inheritance diagram for glowbit.\+glowbit\+Matrix\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -30,24 +35,18 @@ class \hyperlink{classglowbit_1_1glowbitMatrix_1_1raindrop}{raindrop}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classglowbit_1_1glowbitMatrix_a5f20884e1b08bc66e54860d0bbf0d22e}\label{classglowbit_1_1glowbitMatrix_a5f20884e1b08bc66e54860d0bbf0d22e}} 
-def {\bfseries pixel\+Set\+XY} (self, x, y, colour)
-\item 
-\mbox{\Hypertarget{classglowbit_1_1glowbitMatrix_ab100bb891bab3d6479b066049ce9a367}\label{classglowbit_1_1glowbitMatrix_ab100bb891bab3d6479b066049ce9a367}} 
-def {\bfseries pixel\+Set\+X\+Y\+Now} (self, x, y, colour)
-\item 
-\mbox{\Hypertarget{classglowbit_1_1glowbitMatrix_af33f1952a94e2f0933386ae2e7c5bca4}\label{classglowbit_1_1glowbitMatrix_af33f1952a94e2f0933386ae2e7c5bca4}} 
-def {\bfseries pixel\+Set\+X\+Y\+Clip} (self, x, y, colour)
-\item 
-\mbox{\Hypertarget{classglowbit_1_1glowbitMatrix_ae05d008c207c5f5219e737d29185501e}\label{classglowbit_1_1glowbitMatrix_ae05d008c207c5f5219e737d29185501e}} 
-def {\bfseries pixel\+Add\+XY} (self, x, y, colour)
-\item 
-\mbox{\Hypertarget{classglowbit_1_1glowbitMatrix_a4f2deb5f58f45e285e84c9cac1644618}\label{classglowbit_1_1glowbitMatrix_a4f2deb5f58f45e285e84c9cac1644618}} 
-def {\bfseries pixel\+Add\+X\+Y\+Clip} (self, x, y, colour)
-\item 
-\mbox{\Hypertarget{classglowbit_1_1glowbitMatrix_ab67885d63f392afa061c8455de3e31ba}\label{classglowbit_1_1glowbitMatrix_ab67885d63f392afa061c8455de3e31ba}} 
-def {\bfseries get\+Pixel\+XY} (self, x, y)
-\item 
+def \hyperlink{classglowbit_1_1glowbitMatrix_a5f20884e1b08bc66e54860d0bbf0d22e}{pixel\+Set\+XY} (self, x, y, colour)
+\begin{DoxyCompactList}\small\item\em Sets the colour value of the Glow\+Bit L\+ED at a given x-\/y coordinate. \end{DoxyCompactList}\item 
+def \hyperlink{classglowbit_1_1glowbitMatrix_ab100bb891bab3d6479b066049ce9a367}{pixel\+Set\+X\+Y\+Now} (self, x, y, colour)
+\begin{DoxyCompactList}\small\item\em Sets the colour value of the Glow\+Bit L\+ED at a given x-\/y coordinate and immediately calls \hyperlink{classglowbit_1_1glowbit_a051aed2a4969fdcb0466e4e840209279}{pixels\+Show()} to update the physical L\+E\+Ds. \end{DoxyCompactList}\item 
+def \hyperlink{classglowbit_1_1glowbitMatrix_af33f1952a94e2f0933386ae2e7c5bca4}{pixel\+Set\+X\+Y\+Clip} (self, x, y, colour)
+\begin{DoxyCompactList}\small\item\em Sets the colour value of the Glow\+Bit L\+ED at a given x-\/y coordinate. \end{DoxyCompactList}\item 
+def \hyperlink{classglowbit_1_1glowbitMatrix_ae05d008c207c5f5219e737d29185501e}{pixel\+Add\+XY} (self, x, y, colour)
+\begin{DoxyCompactList}\small\item\em Adds the colour value to the Glow\+Bit L\+ED at a given x-\/y coordinate. \end{DoxyCompactList}\item 
+def \hyperlink{classglowbit_1_1glowbitMatrix_a4f2deb5f58f45e285e84c9cac1644618}{pixel\+Add\+X\+Y\+Clip} (self, x, y, colour)
+\begin{DoxyCompactList}\small\item\em Adds the colour value to the Glow\+Bit L\+ED at a given x-\/y coordinate. \end{DoxyCompactList}\item 
+def \hyperlink{classglowbit_1_1glowbitMatrix_ab67885d63f392afa061c8455de3e31ba}{get\+Pixel\+XY} (self, x, y)
+\begin{DoxyCompactList}\small\item\em Returns the 32-\/bit Glow\+Bit colour value of the L\+ED at a given x-\/y coordinate. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classglowbit_1_1glowbitMatrix_a373a7739051a7399a94636375ac0b4ec}\label{classglowbit_1_1glowbitMatrix_a373a7739051a7399a94636375ac0b4ec}} 
 def {\bfseries draw\+Line} (self, x0, y0, x1, y1, colour)
 \item 
@@ -88,6 +87,153 @@ def {\bfseries text\+Demo} (self, text=\char`\"{}Scrolling Text Demo\char`\"{})
 def {\bfseries bounce} (self, iters=1000)
 \end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Methods specific to 2D matrix displays and tiled arrangements thereof. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classglowbit_1_1glowbitMatrix_ab67885d63f392afa061c8455de3e31ba}\label{classglowbit_1_1glowbitMatrix_ab67885d63f392afa061c8455de3e31ba}} 
+\index{glowbit\+::glowbit\+Matrix@{glowbit\+::glowbit\+Matrix}!get\+Pixel\+XY@{get\+Pixel\+XY}}
+\index{get\+Pixel\+XY@{get\+Pixel\+XY}!glowbit\+::glowbit\+Matrix@{glowbit\+::glowbit\+Matrix}}
+\subsubsection{\texorpdfstring{get\+Pixel\+X\+Y()}{getPixelXY()}}
+{\footnotesize\ttfamily def glowbit.\+glowbit\+Matrix.\+get\+Pixel\+XY (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{x,  }\item[{}]{y }\end{DoxyParamCaption})}
+
+
+
+Returns the 32-\/bit Glow\+Bit colour value of the L\+ED at a given x-\/y coordinate. 
+
+If the x-\/y coordinate falls outside of the display\textquotesingle{}s boundary an Index\+Error exception may be thrown or the Glow\+Bit colour value of an undefined pixel may be returned.
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & The index of the L\+ED \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The 32-\/bit Glow\+Bit colour value of the i\textquotesingle{}th L\+ED 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classglowbit_1_1glowbitMatrix_ae05d008c207c5f5219e737d29185501e}\label{classglowbit_1_1glowbitMatrix_ae05d008c207c5f5219e737d29185501e}} 
+\index{glowbit\+::glowbit\+Matrix@{glowbit\+::glowbit\+Matrix}!pixel\+Add\+XY@{pixel\+Add\+XY}}
+\index{pixel\+Add\+XY@{pixel\+Add\+XY}!glowbit\+::glowbit\+Matrix@{glowbit\+::glowbit\+Matrix}}
+\subsubsection{\texorpdfstring{pixel\+Add\+X\+Y()}{pixelAddXY()}}
+{\footnotesize\ttfamily def glowbit.\+glowbit\+Matrix.\+pixel\+Add\+XY (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{x,  }\item[{}]{y,  }\item[{}]{colour }\end{DoxyParamCaption})}
+
+
+
+Adds the colour value to the Glow\+Bit L\+ED at a given x-\/y coordinate. 
+
+The coordinate assumes an origin in the upper left of the display with x increasing to the right and y increasing downwards.
+
+If the x-\/y coordinate falls outside the display\textquotesingle{}s boundary this function will \char`\"{}wrap-\/around\char`\"{}. For example, A dot placed just off the right edge will appear along the left edge.
+
+Data colour corruption will occur if the sum result of any R\+GB value exceeds 255. Care must be taken to avoid this manually. eg\+: if the blue channel\textquotesingle{}s resulting intensity value is 256 it will be set to zero and the red channel incremented by 1. See the \hyperlink{classglowbit_1_1colourFunctions}{colour\+Functions} class documentation for the 32-\/bit Glow\+Bit colour specification.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The x coordinate of the Glow\+Bit L\+ED. x must be an integer. \\
+\hline
+{\em y} & The y coordinate of the Glow\+Bit L\+ED. y must be an integer. \\
+\hline
+{\em colour} & A packed 32-\/bit Glow\+Bit colour value \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classglowbit_1_1glowbitMatrix_a4f2deb5f58f45e285e84c9cac1644618}\label{classglowbit_1_1glowbitMatrix_a4f2deb5f58f45e285e84c9cac1644618}} 
+\index{glowbit\+::glowbit\+Matrix@{glowbit\+::glowbit\+Matrix}!pixel\+Add\+X\+Y\+Clip@{pixel\+Add\+X\+Y\+Clip}}
+\index{pixel\+Add\+X\+Y\+Clip@{pixel\+Add\+X\+Y\+Clip}!glowbit\+::glowbit\+Matrix@{glowbit\+::glowbit\+Matrix}}
+\subsubsection{\texorpdfstring{pixel\+Add\+X\+Y\+Clip()}{pixelAddXYClip()}}
+{\footnotesize\ttfamily def glowbit.\+glowbit\+Matrix.\+pixel\+Add\+X\+Y\+Clip (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{x,  }\item[{}]{y,  }\item[{}]{colour }\end{DoxyParamCaption})}
+
+
+
+Adds the colour value to the Glow\+Bit L\+ED at a given x-\/y coordinate. 
+
+The coordinate assumes an origin in the upper left of the display with x increasing to the right and y increasing downwards.
+
+If the x-\/y coordinate falls outside the display\textquotesingle{}s boundary the display\textquotesingle{}s internal buffer will not be modified.
+
+Data colour corruption will occur if the sum result of any R\+GB value exceeds 255. Care must be taken to avoid this manually. eg\+: if the blue channel\textquotesingle{}s resulting intensity value is 256 it will be set to zero and the red channel incremented by 1. See the \hyperlink{classglowbit_1_1colourFunctions}{colour\+Functions} class documentation for the 32-\/bit Glow\+Bit colour specification.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The x coordinate of the Glow\+Bit L\+ED. x must be an integer. \\
+\hline
+{\em y} & The y coordinate of the Glow\+Bit L\+ED. y must be an integer. \\
+\hline
+{\em colour} & A packed 32-\/bit Glow\+Bit colour value \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classglowbit_1_1glowbitMatrix_a5f20884e1b08bc66e54860d0bbf0d22e}\label{classglowbit_1_1glowbitMatrix_a5f20884e1b08bc66e54860d0bbf0d22e}} 
+\index{glowbit\+::glowbit\+Matrix@{glowbit\+::glowbit\+Matrix}!pixel\+Set\+XY@{pixel\+Set\+XY}}
+\index{pixel\+Set\+XY@{pixel\+Set\+XY}!glowbit\+::glowbit\+Matrix@{glowbit\+::glowbit\+Matrix}}
+\subsubsection{\texorpdfstring{pixel\+Set\+X\+Y()}{pixelSetXY()}}
+{\footnotesize\ttfamily def glowbit.\+glowbit\+Matrix.\+pixel\+Set\+XY (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{x,  }\item[{}]{y,  }\item[{}]{colour }\end{DoxyParamCaption})}
+
+
+
+Sets the colour value of the Glow\+Bit L\+ED at a given x-\/y coordinate. 
+
+The coordinate assumes an origin in the upper left of the display with x increasing to the right and y increasing downwards.
+
+If the x-\/y coordinate falls outside the display\textquotesingle{}s boundary this function will \char`\"{}wrap-\/around\char`\"{}. For example, A dot placed just off the right edge will appear along the left edge.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The x coordinate of the Glow\+Bit L\+ED. x must be an integer. \\
+\hline
+{\em y} & The y coordinate of the Glow\+Bit L\+ED. y must be an integer. \\
+\hline
+{\em colour} & A packed 32-\/bit Glow\+Bit colour value \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classglowbit_1_1glowbitMatrix_af33f1952a94e2f0933386ae2e7c5bca4}\label{classglowbit_1_1glowbitMatrix_af33f1952a94e2f0933386ae2e7c5bca4}} 
+\index{glowbit\+::glowbit\+Matrix@{glowbit\+::glowbit\+Matrix}!pixel\+Set\+X\+Y\+Clip@{pixel\+Set\+X\+Y\+Clip}}
+\index{pixel\+Set\+X\+Y\+Clip@{pixel\+Set\+X\+Y\+Clip}!glowbit\+::glowbit\+Matrix@{glowbit\+::glowbit\+Matrix}}
+\subsubsection{\texorpdfstring{pixel\+Set\+X\+Y\+Clip()}{pixelSetXYClip()}}
+{\footnotesize\ttfamily def glowbit.\+glowbit\+Matrix.\+pixel\+Set\+X\+Y\+Clip (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{x,  }\item[{}]{y,  }\item[{}]{colour }\end{DoxyParamCaption})}
+
+
+
+Sets the colour value of the Glow\+Bit L\+ED at a given x-\/y coordinate. 
+
+The coordinate assumes an origin in the upper left of the display with x increasing to the right and y increasing downwards.
+
+If the x-\/y coordinate falls outside the display\textquotesingle{}s boundary the display\textquotesingle{}s internal buffer will not be modified.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The x coordinate of the Glow\+Bit L\+ED. x must be an integer. \\
+\hline
+{\em y} & The y coordinate of the Glow\+Bit L\+ED. y must be an integer. \\
+\hline
+{\em colour} & A packed 32-\/bit Glow\+Bit colour value \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classglowbit_1_1glowbitMatrix_ab100bb891bab3d6479b066049ce9a367}\label{classglowbit_1_1glowbitMatrix_ab100bb891bab3d6479b066049ce9a367}} 
+\index{glowbit\+::glowbit\+Matrix@{glowbit\+::glowbit\+Matrix}!pixel\+Set\+X\+Y\+Now@{pixel\+Set\+X\+Y\+Now}}
+\index{pixel\+Set\+X\+Y\+Now@{pixel\+Set\+X\+Y\+Now}!glowbit\+::glowbit\+Matrix@{glowbit\+::glowbit\+Matrix}}
+\subsubsection{\texorpdfstring{pixel\+Set\+X\+Y\+Now()}{pixelSetXYNow()}}
+{\footnotesize\ttfamily def glowbit.\+glowbit\+Matrix.\+pixel\+Set\+X\+Y\+Now (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{x,  }\item[{}]{y,  }\item[{}]{colour }\end{DoxyParamCaption})}
+
+
+
+Sets the colour value of the Glow\+Bit L\+ED at a given x-\/y coordinate and immediately calls \hyperlink{classglowbit_1_1glowbit_a051aed2a4969fdcb0466e4e840209279}{pixels\+Show()} to update the physical L\+E\+Ds. 
+
+The coordinate assumes an origin in the upper left of the display with x increasing to the right and y increasing downwards.
+
+If the x-\/y coordinate falls outside the display\textquotesingle{}s boundary this function will \char`\"{}wrap-\/around\char`\"{}. For example, A dot placed just off the right edge will appear along the left edge.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The x coordinate of the Glow\+Bit L\+ED. x must be an integer. \\
+\hline
+{\em y} & The y coordinate of the Glow\+Bit L\+ED. y must be an integer. \\
+\hline
+{\em colour} & A packed 32-\/bit Glow\+Bit colour value \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

@@ -40,15 +40,12 @@ def \hyperlink{classglowbit_1_1glowbit_a2aae728fcc6e8cdfe5c745ac0a7d308d}{pixels
 \begin{DoxyCompactList}\small\item\em Fills all pixels with a solid colour value and updates the physical L\+E\+Ds. \end{DoxyCompactList}\item 
 def \hyperlink{classglowbit_1_1glowbit_ad3ace3e4d58bc9dadf62c1306aff2464}{blank\+Display} (self)
 \begin{DoxyCompactList}\small\item\em Blanks the entire Glow\+Bit display. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classglowbit_1_1glowbit_a0f15a8907f807ed1af905854fedbbc60}\label{classglowbit_1_1glowbit_a0f15a8907f807ed1af905854fedbbc60}} 
-def {\bfseries get\+Pixel} (self, N)
-\item 
-\mbox{\Hypertarget{classglowbit_1_1glowbit_a7f72cb0878a688aa6181d4632428da09}\label{classglowbit_1_1glowbit_a7f72cb0878a688aa6181d4632428da09}} 
-def {\bfseries update\+Rate\+Limit\+F\+PS} (self, rate\+Limit\+F\+PS)
-\item 
-\mbox{\Hypertarget{classglowbit_1_1glowbit_ae95bb7e0ee556e02d918f376cffcb9ce}\label{classglowbit_1_1glowbit_ae95bb7e0ee556e02d918f376cffcb9ce}} 
-def {\bfseries chaos} (self, iters=100)
-\end{DoxyCompactItemize}
+def \hyperlink{classglowbit_1_1glowbit_a0f15a8907f807ed1af905854fedbbc60}{get\+Pixel} (self, N)
+\begin{DoxyCompactList}\small\item\em Returns the 32-\/bit Glow\+Bit colour value of the i\textquotesingle{}th L\+ED. \end{DoxyCompactList}\item 
+def \hyperlink{classglowbit_1_1glowbit_a7f72cb0878a688aa6181d4632428da09}{update\+Rate\+Limit\+F\+PS} (self, rate\+Limit\+F\+PS)
+\begin{DoxyCompactList}\small\item\em Sets a new value for the Glow\+Bit display\textquotesingle{}s frames per second (F\+PS) limiter. \end{DoxyCompactList}\item 
+def \hyperlink{classglowbit_1_1glowbit_ae95bb7e0ee556e02d918f376cffcb9ce}{chaos} (self, iters=100)
+\begin{DoxyCompactList}\small\item\em Sets random colour values on every L\+ED on the attached Glow\+Bit display. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -98,7 +95,42 @@ Low-\/level methods common to all Glow\+Bit classes.
 
 Blanks the entire Glow\+Bit display. 
 
-ie\+: sets the colour value of all Glow\+Bit L\+E\+Ds to zero in the internal buffer and updates the physical L\+E\+Ds. \mbox{\Hypertarget{classglowbit_1_1glowbit_a8bb7ba36b4b7746f215ebad1acc0f5e2}\label{classglowbit_1_1glowbit_a8bb7ba36b4b7746f215ebad1acc0f5e2}} 
+ie\+: sets the colour value of all Glow\+Bit L\+E\+Ds to zero in the internal buffer and updates the physical L\+E\+Ds. \mbox{\Hypertarget{classglowbit_1_1glowbit_ae95bb7e0ee556e02d918f376cffcb9ce}\label{classglowbit_1_1glowbit_ae95bb7e0ee556e02d918f376cffcb9ce}} 
+\index{glowbit\+::glowbit@{glowbit\+::glowbit}!chaos@{chaos}}
+\index{chaos@{chaos}!glowbit\+::glowbit@{glowbit\+::glowbit}}
+\subsubsection{\texorpdfstring{chaos()}{chaos()}}
+{\footnotesize\ttfamily def glowbit.\+glowbit.\+chaos (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{iters = {\ttfamily 100} }\end{DoxyParamCaption})}
+
+
+
+Sets random colour values on every L\+ED on the attached Glow\+Bit display. 
+
+This function is blocking, it does not return until the number of frames specified in the iters parameter have been drawn.
+
+
+\begin{DoxyParams}{Parameters}
+{\em iters} & The number of frames to draw. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classglowbit_1_1glowbit_a0f15a8907f807ed1af905854fedbbc60}\label{classglowbit_1_1glowbit_a0f15a8907f807ed1af905854fedbbc60}} 
+\index{glowbit\+::glowbit@{glowbit\+::glowbit}!get\+Pixel@{get\+Pixel}}
+\index{get\+Pixel@{get\+Pixel}!glowbit\+::glowbit@{glowbit\+::glowbit}}
+\subsubsection{\texorpdfstring{get\+Pixel()}{getPixel()}}
+{\footnotesize\ttfamily def glowbit.\+glowbit.\+get\+Pixel (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{N }\end{DoxyParamCaption})}
+
+
+
+Returns the 32-\/bit Glow\+Bit colour value of the i\textquotesingle{}th L\+ED. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & The index of the L\+ED \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The 32-\/bit Glow\+Bit colour value of the i\textquotesingle{}th L\+ED 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classglowbit_1_1glowbit_a8bb7ba36b4b7746f215ebad1acc0f5e2}\label{classglowbit_1_1glowbit_a8bb7ba36b4b7746f215ebad1acc0f5e2}} 
 \index{glowbit\+::glowbit@{glowbit\+::glowbit}!pixel\+Add@{pixel\+Add}}
 \index{pixel\+Add@{pixel\+Add}!glowbit\+::glowbit@{glowbit\+::glowbit}}
 \subsubsection{\texorpdfstring{pixel\+Add()}{pixelAdd()}}
@@ -199,7 +231,22 @@ Pushes the internal pixel data buffer to the physical Glow\+Bit L\+E\+Ds.
 
 This function must be called before the connected Glow\+Bit L\+E\+Ds will change colour.
 
-Note that several Glow\+Bit library methods call this method unconditionally (eg\+: blank\+Display ) or optionally (eg\+: by passing the update = True parameter to stick.\+graph1\+D() ) 
+Note that several Glow\+Bit library methods call this method unconditionally (eg\+: glowbit.\+blank\+Display ) or optionally (eg\+: by passing the update = True parameter to stick.\+graph1\+D() ) \mbox{\Hypertarget{classglowbit_1_1glowbit_a7f72cb0878a688aa6181d4632428da09}\label{classglowbit_1_1glowbit_a7f72cb0878a688aa6181d4632428da09}} 
+\index{glowbit\+::glowbit@{glowbit\+::glowbit}!update\+Rate\+Limit\+F\+PS@{update\+Rate\+Limit\+F\+PS}}
+\index{update\+Rate\+Limit\+F\+PS@{update\+Rate\+Limit\+F\+PS}!glowbit\+::glowbit@{glowbit\+::glowbit}}
+\subsubsection{\texorpdfstring{update\+Rate\+Limit\+F\+P\+S()}{updateRateLimitFPS()}}
+{\footnotesize\ttfamily def glowbit.\+glowbit.\+update\+Rate\+Limit\+F\+PS (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{rate\+Limit\+F\+PS }\end{DoxyParamCaption})}
+
+
+
+Sets a new value for the Glow\+Bit display\textquotesingle{}s frames per second (F\+PS) limiter. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rate\+Limit\+F\+PS} & An integer in units of frames per second. \\
+\hline
+\end{DoxyParams}
+
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
