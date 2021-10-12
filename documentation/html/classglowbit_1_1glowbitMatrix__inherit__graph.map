@@ -1,0 +1,6 @@
+<map id="glowbit.glowbitMatrix" name="glowbit.glowbitMatrix">
+<area shape="rect" id="node4" href="$classglowbit_1_1matrix4x4.html" title="glowbit.matrix4x4" alt="" coords="5,229,129,256"/>
+<area shape="rect" id="node5" href="$classglowbit_1_1matrix8x8.html" title="glowbit.matrix8x8" alt="" coords="153,229,277,256"/>
+<area shape="rect" id="node2" href="$classglowbit_1_1glowbit.html" title="Low&#45;level methods common to all GlowBit classes. " alt="" coords="87,80,195,107"/>
+<area shape="rect" id="node3" href="$classglowbit_1_1colourFunctions.html" title="Methods for transforming colours to 32&#45;bit packed GlowBit colour values. " alt="" coords="61,5,220,32"/>
+</map>

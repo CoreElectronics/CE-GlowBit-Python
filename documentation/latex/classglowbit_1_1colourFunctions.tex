@@ -1,0 +1,84 @@
+\hypertarget{classglowbit_1_1colourFunctions}{}\section{glowbit.\+colour\+Functions Class Reference}
+\label{classglowbit_1_1colourFunctions}\index{glowbit.\+colour\+Functions@{glowbit.\+colour\+Functions}}
+
+
+Methods for transforming colours to 32-\/bit packed Glow\+Bit colour values.  
+
+
+
+
+Inheritance diagram for glowbit.\+colour\+Functions\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classglowbit_1_1colourFunctions__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classglowbit_1_1colourFunctions_afb989958ec7aa4dfb7a04f359da5969a}{wheel} (self, pos)
+\begin{DoxyCompactList}\small\item\em Converts an integer \char`\"{}colour wheel position\char`\"{} to a packed 32-\/bit R\+GB Glow\+Bit colour value. \end{DoxyCompactList}\item 
+def \hyperlink{classglowbit_1_1colourFunctions_a1c24f694a16f3c721a0e7771740ebc56}{rgb2\+G\+B\+Colour} (self, r, g, b)
+\begin{DoxyCompactList}\small\item\em Converts the r, g, and b integer arguments to a packed 32-\/bit R\+GB Glow\+Bit colour value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Methods for transforming colours to 32-\/bit packed Glow\+Bit colour values. 
+
+A packed 32-\/bit Glow\+Bit colour is an integer with 8-\/bits per colour channel data encoded in hexadecimal as follows\+:
+
+0x00\+R\+R\+G\+G\+BB
+
+where RR, GG, and BB are hexadecimal values (decimal \mbox{[}0,255\mbox{]}) and the most significant 8 bits are reserved and left as zero. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classglowbit_1_1colourFunctions_a1c24f694a16f3c721a0e7771740ebc56}\label{classglowbit_1_1colourFunctions_a1c24f694a16f3c721a0e7771740ebc56}} 
+\index{glowbit\+::colour\+Functions@{glowbit\+::colour\+Functions}!rgb2\+G\+B\+Colour@{rgb2\+G\+B\+Colour}}
+\index{rgb2\+G\+B\+Colour@{rgb2\+G\+B\+Colour}!glowbit\+::colour\+Functions@{glowbit\+::colour\+Functions}}
+\subsubsection{\texorpdfstring{rgb2\+G\+B\+Colour()}{rgb2GBColour()}}
+{\footnotesize\ttfamily def glowbit.\+colour\+Functions.\+rgb2\+G\+B\+Colour (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{r,  }\item[{}]{g,  }\item[{}]{b }\end{DoxyParamCaption})}
+
+
+
+Converts the r, g, and b integer arguments to a packed 32-\/bit R\+GB Glow\+Bit colour value. 
+
+All arguments are required as this is a micropython viper function.
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & The red intensity, \mbox{[}0,255\mbox{]} \\
+\hline
+{\em g} & The green intensity, \mbox{[}0,255\mbox{]} \\
+\hline
+{\em b} & The blue intensity, \mbox{[}0,255\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Packed 32-\/bit Glow\+Bit colour value 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classglowbit_1_1colourFunctions_afb989958ec7aa4dfb7a04f359da5969a}\label{classglowbit_1_1colourFunctions_afb989958ec7aa4dfb7a04f359da5969a}} 
+\index{glowbit\+::colour\+Functions@{glowbit\+::colour\+Functions}!wheel@{wheel}}
+\index{wheel@{wheel}!glowbit\+::colour\+Functions@{glowbit\+::colour\+Functions}}
+\subsubsection{\texorpdfstring{wheel()}{wheel()}}
+{\footnotesize\ttfamily def glowbit.\+colour\+Functions.\+wheel (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{pos }\end{DoxyParamCaption})}
+
+
+
+Converts an integer \char`\"{}colour wheel position\char`\"{} to a packed 32-\/bit R\+GB Glow\+Bit colour value. 
+
+The \char`\"{}pos\char`\"{} argument is required as this is a micropython viper function.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & Colour wheel position \mbox{[}0,255\mbox{]} is mapped to a pure hue in the R\+GB colourspace. A value of 0 or 255 is mapped to pure red with a smooth red-\/yellow-\/green-\/blue-\/purple-\/magenta-\/red transion for other values. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+32-\/bit integer Glow\+Bit colour value 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+glowbit.\+py\end{DoxyCompactItemize}

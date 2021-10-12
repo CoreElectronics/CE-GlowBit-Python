@@ -1,0 +1,206 @@
+\hypertarget{classglowbit_1_1glowbit}{}\section{glowbit.\+glowbit Class Reference}
+\label{classglowbit_1_1glowbit}\index{glowbit.\+glowbit@{glowbit.\+glowbit}}
+
+
+Low-\/level methods common to all Glow\+Bit classes.  
+
+
+
+
+Inheritance diagram for glowbit.\+glowbit\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classglowbit_1_1glowbit__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for glowbit.\+glowbit\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=199pt]{classglowbit_1_1glowbit__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classglowbit_1_1glowbit_a051aed2a4969fdcb0466e4e840209279}{pixels\+Show} (self)
+\begin{DoxyCompactList}\small\item\em Pushes the internal pixel data buffer to the physical Glow\+Bit L\+E\+Ds. \end{DoxyCompactList}\item 
+def \hyperlink{classglowbit_1_1glowbit_a6184de87721652f9f55f9301f6a3a9ce}{pixel\+Set} (self, i, colour)
+\begin{DoxyCompactList}\small\item\em Sets the i\textquotesingle{}th Glow\+Bit L\+ED to a 32-\/bit Glow\+Bit colour value. \end{DoxyCompactList}\item 
+def \hyperlink{classglowbit_1_1glowbit_a6f4167e566106d5eb104933b256f2e14}{pixel\+Set\+Now} (self, i, colour)
+\begin{DoxyCompactList}\small\item\em Sets the i\textquotesingle{}th Glow\+Bit L\+ED to a 32-\/bit Glow\+Bit colour value and updates the physical L\+E\+Ds. \end{DoxyCompactList}\item 
+def \hyperlink{classglowbit_1_1glowbit_a8bb7ba36b4b7746f215ebad1acc0f5e2}{pixel\+Add} (self, i, colour)
+\begin{DoxyCompactList}\small\item\em Adds a 32-\/bit Glow\+Bit colour value to the i\textquotesingle{}th L\+ED in the internal buffer only. \end{DoxyCompactList}\item 
+def \hyperlink{classglowbit_1_1glowbit_aca86823fecc4949692ac18f8c21e34ac}{pixels\+Fill} (self, colour)
+\begin{DoxyCompactList}\small\item\em Fills all pixels with a solid colour value. \end{DoxyCompactList}\item 
+def \hyperlink{classglowbit_1_1glowbit_a2aae728fcc6e8cdfe5c745ac0a7d308d}{pixels\+Fill\+Now} (self, colour)
+\begin{DoxyCompactList}\small\item\em Fills all pixels with a solid colour value and updates the physical L\+E\+Ds. \end{DoxyCompactList}\item 
+def \hyperlink{classglowbit_1_1glowbit_ad3ace3e4d58bc9dadf62c1306aff2464}{blank\+Display} (self)
+\begin{DoxyCompactList}\small\item\em Blanks the entire Glow\+Bit display. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classglowbit_1_1glowbit_a0f15a8907f807ed1af905854fedbbc60}\label{classglowbit_1_1glowbit_a0f15a8907f807ed1af905854fedbbc60}} 
+def {\bfseries get\+Pixel} (self, N)
+\item 
+\mbox{\Hypertarget{classglowbit_1_1glowbit_a7f72cb0878a688aa6181d4632428da09}\label{classglowbit_1_1glowbit_a7f72cb0878a688aa6181d4632428da09}} 
+def {\bfseries update\+Rate\+Limit\+F\+PS} (self, rate\+Limit\+F\+PS)
+\item 
+\mbox{\Hypertarget{classglowbit_1_1glowbit_ae95bb7e0ee556e02d918f376cffcb9ce}\label{classglowbit_1_1glowbit_ae95bb7e0ee556e02d918f376cffcb9ce}} 
+def {\bfseries chaos} (self, iters=100)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classglowbit_1_1glowbit_a5f14ddb9b3ec9a848c050b28d27ced9e}\label{classglowbit_1_1glowbit_a5f14ddb9b3ec9a848c050b28d27ced9e}} 
+{\bfseries last\+Frame\+\_\+ms}
+\item 
+\mbox{\Hypertarget{classglowbit_1_1glowbit_a69bf20e5a054c0cf8656986b07048851}\label{classglowbit_1_1glowbit_a69bf20e5a054c0cf8656986b07048851}} 
+{\bfseries rate\+Limit}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classglowbit_1_1glowbit_a73c5457f4f8442a9ba5fdaa0cd7ea4b5}\label{classglowbit_1_1glowbit_a73c5457f4f8442a9ba5fdaa0cd7ea4b5}} 
+{\bfseries sideset\+\_\+init}
+\item 
+\mbox{\Hypertarget{classglowbit_1_1glowbit_a1ed8a1be31b4b872d9ccb7ac5e30892d}\label{classglowbit_1_1glowbit_a1ed8a1be31b4b872d9ccb7ac5e30892d}} 
+{\bfseries O\+U\+T\+\_\+\+L\+OW}
+\item 
+\mbox{\Hypertarget{classglowbit_1_1glowbit_a15cd9fc87ac01180b047877394d0c002}\label{classglowbit_1_1glowbit_a15cd9fc87ac01180b047877394d0c002}} 
+{\bfseries out\+\_\+shiftdir}
+\item 
+\mbox{\Hypertarget{classglowbit_1_1glowbit_a60284b74a652f430dbdde8e16a6c05a1}\label{classglowbit_1_1glowbit_a60284b74a652f430dbdde8e16a6c05a1}} 
+{\bfseries S\+H\+I\+F\+T\+\_\+\+L\+E\+FT}
+\item 
+\mbox{\Hypertarget{classglowbit_1_1glowbit_ae34f402180e4f4ec9a050b737504f078}\label{classglowbit_1_1glowbit_ae34f402180e4f4ec9a050b737504f078}} 
+{\bfseries autopull}
+\item 
+\mbox{\Hypertarget{classglowbit_1_1glowbit_a09fe7452d85b7fed1f154c22f125b6c7}\label{classglowbit_1_1glowbit_a09fe7452d85b7fed1f154c22f125b6c7}} 
+{\bfseries True}
+\item 
+\mbox{\Hypertarget{classglowbit_1_1glowbit_ae08d4038b7463323e58b07c4020d484d}\label{classglowbit_1_1glowbit_ae08d4038b7463323e58b07c4020d484d}} 
+{\bfseries pull\+\_\+thresh}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Low-\/level methods common to all Glow\+Bit classes. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classglowbit_1_1glowbit_ad3ace3e4d58bc9dadf62c1306aff2464}\label{classglowbit_1_1glowbit_ad3ace3e4d58bc9dadf62c1306aff2464}} 
+\index{glowbit\+::glowbit@{glowbit\+::glowbit}!blank\+Display@{blank\+Display}}
+\index{blank\+Display@{blank\+Display}!glowbit\+::glowbit@{glowbit\+::glowbit}}
+\subsubsection{\texorpdfstring{blank\+Display()}{blankDisplay()}}
+{\footnotesize\ttfamily def glowbit.\+glowbit.\+blank\+Display (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Blanks the entire Glow\+Bit display. 
+
+ie\+: sets the colour value of all Glow\+Bit L\+E\+Ds to zero in the internal buffer and updates the physical L\+E\+Ds. \mbox{\Hypertarget{classglowbit_1_1glowbit_a8bb7ba36b4b7746f215ebad1acc0f5e2}\label{classglowbit_1_1glowbit_a8bb7ba36b4b7746f215ebad1acc0f5e2}} 
+\index{glowbit\+::glowbit@{glowbit\+::glowbit}!pixel\+Add@{pixel\+Add}}
+\index{pixel\+Add@{pixel\+Add}!glowbit\+::glowbit@{glowbit\+::glowbit}}
+\subsubsection{\texorpdfstring{pixel\+Add()}{pixelAdd()}}
+{\footnotesize\ttfamily def glowbit.\+glowbit.\+pixel\+Add (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{i,  }\item[{}]{colour }\end{DoxyParamCaption})}
+
+
+
+Adds a 32-\/bit Glow\+Bit colour value to the i\textquotesingle{}th L\+ED in the internal buffer only. 
+
+Data colour corruption will occur if the sum result of any R\+GB value exceeds 255. Care must be taken to avoid this manually. eg\+: if the blue channel\textquotesingle{}s resulting intensity value is 256 it will be set to zero and the red channel incremented by 1. See the \hyperlink{classglowbit_1_1colourFunctions}{colour\+Functions} class documentation for the 32-\/bit Glow\+Bit colour specification.
+
+NB\+: For efficiency, this method does not do any index bounds checking. If the value of the parameter i is larger than the number of L\+E\+Ds it will cause an Index\+Error exception.
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & An L\+ED\textquotesingle{}s index \\
+\hline
+{\em colour} & The 32-\/bit Glow\+Bit colour value \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classglowbit_1_1glowbit_a6184de87721652f9f55f9301f6a3a9ce}\label{classglowbit_1_1glowbit_a6184de87721652f9f55f9301f6a3a9ce}} 
+\index{glowbit\+::glowbit@{glowbit\+::glowbit}!pixel\+Set@{pixel\+Set}}
+\index{pixel\+Set@{pixel\+Set}!glowbit\+::glowbit@{glowbit\+::glowbit}}
+\subsubsection{\texorpdfstring{pixel\+Set()}{pixelSet()}}
+{\footnotesize\ttfamily def glowbit.\+glowbit.\+pixel\+Set (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{i,  }\item[{}]{colour }\end{DoxyParamCaption})}
+
+
+
+Sets the i\textquotesingle{}th Glow\+Bit L\+ED to a 32-\/bit Glow\+Bit colour value. 
+
+NB\+: For efficiency, this method does not do any bounds checking. If the value of the parameter i is larger than the number of L\+E\+Ds it will cause an Index\+Error exception.
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & An L\+ED\textquotesingle{}s index \\
+\hline
+{\em colour} & The 32-\/bit Glow\+Bit colour value \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classglowbit_1_1glowbit_a6f4167e566106d5eb104933b256f2e14}\label{classglowbit_1_1glowbit_a6f4167e566106d5eb104933b256f2e14}} 
+\index{glowbit\+::glowbit@{glowbit\+::glowbit}!pixel\+Set\+Now@{pixel\+Set\+Now}}
+\index{pixel\+Set\+Now@{pixel\+Set\+Now}!glowbit\+::glowbit@{glowbit\+::glowbit}}
+\subsubsection{\texorpdfstring{pixel\+Set\+Now()}{pixelSetNow()}}
+{\footnotesize\ttfamily def glowbit.\+glowbit.\+pixel\+Set\+Now (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{i,  }\item[{}]{colour }\end{DoxyParamCaption})}
+
+
+
+Sets the i\textquotesingle{}th Glow\+Bit L\+ED to a 32-\/bit Glow\+Bit colour value and updates the physical L\+E\+Ds. 
+
+NB\+: For efficiency, this method does not do any index bounds checking. If the value of the parameter i is larger than the number of L\+E\+Ds it will cause an Index\+Error exception.
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & An L\+ED\textquotesingle{}s index \\
+\hline
+{\em colour} & The 32-\/bit Glow\+Bit colour value \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classglowbit_1_1glowbit_aca86823fecc4949692ac18f8c21e34ac}\label{classglowbit_1_1glowbit_aca86823fecc4949692ac18f8c21e34ac}} 
+\index{glowbit\+::glowbit@{glowbit\+::glowbit}!pixels\+Fill@{pixels\+Fill}}
+\index{pixels\+Fill@{pixels\+Fill}!glowbit\+::glowbit@{glowbit\+::glowbit}}
+\subsubsection{\texorpdfstring{pixels\+Fill()}{pixelsFill()}}
+{\footnotesize\ttfamily def glowbit.\+glowbit.\+pixels\+Fill (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{colour }\end{DoxyParamCaption})}
+
+
+
+Fills all pixels with a solid colour value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em colour} & The 32-\/bit Glow\+Bit colour value \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classglowbit_1_1glowbit_a2aae728fcc6e8cdfe5c745ac0a7d308d}\label{classglowbit_1_1glowbit_a2aae728fcc6e8cdfe5c745ac0a7d308d}} 
+\index{glowbit\+::glowbit@{glowbit\+::glowbit}!pixels\+Fill\+Now@{pixels\+Fill\+Now}}
+\index{pixels\+Fill\+Now@{pixels\+Fill\+Now}!glowbit\+::glowbit@{glowbit\+::glowbit}}
+\subsubsection{\texorpdfstring{pixels\+Fill\+Now()}{pixelsFillNow()}}
+{\footnotesize\ttfamily def glowbit.\+glowbit.\+pixels\+Fill\+Now (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{colour }\end{DoxyParamCaption})}
+
+
+
+Fills all pixels with a solid colour value and updates the physical L\+E\+Ds. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em colour} & The 32-\/bit Glow\+Bit colour value \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classglowbit_1_1glowbit_a051aed2a4969fdcb0466e4e840209279}\label{classglowbit_1_1glowbit_a051aed2a4969fdcb0466e4e840209279}} 
+\index{glowbit\+::glowbit@{glowbit\+::glowbit}!pixels\+Show@{pixels\+Show}}
+\index{pixels\+Show@{pixels\+Show}!glowbit\+::glowbit@{glowbit\+::glowbit}}
+\subsubsection{\texorpdfstring{pixels\+Show()}{pixelsShow()}}
+{\footnotesize\ttfamily def glowbit.\+glowbit.\+pixels\+Show (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Pushes the internal pixel data buffer to the physical Glow\+Bit L\+E\+Ds. 
+
+This function must be called before the connected Glow\+Bit L\+E\+Ds will change colour.
+
+Note that several Glow\+Bit library methods call this method unconditionally (eg\+: blank\+Display ) or optionally (eg\+: by passing the update = True parameter to stick.\+graph1\+D() ) 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+glowbit.\+py\end{DoxyCompactItemize}
