@@ -1060,6 +1060,10 @@ class stick(glowbit):
             self.pixelsShow()
             iters -= 1
 
+    ## @brief A demonstration of the use of "graph1D" objects
+    #
+    # This demonstration alternates between drawing two graphs with different colour maps; one with the "Rainbow" map, covering the full colour wheel, and another of solid white.
+    # \param iters The number of times both graphs are drawn.
     def graphDemo(self, iters = 3):
         g1 = stick.graph1D(minIndex = 0, maxIndex = 7, minValue=1, maxValue=8, update=True, colourMap = "Rainbow")
         g2 = stick.graph1D(minIndex = 0, maxIndex = 7, minValue=1, maxValue=8, update=True, colourMap = "Solid")
@@ -1075,6 +1079,11 @@ class stick(glowbit):
 
             iters -= 1
 
+    ## @brief A Demonstration of the use of the "fillSlice" method.
+    #
+    # Animates a red, green, and blue slice "moving" down the GlowBit Stick display.
+    #
+    # The number of iterations is fixed due to the bit shift operation being used to change colour.
     def sliceDemo(self):
         iters = 3
         colour = 0xFF0000
