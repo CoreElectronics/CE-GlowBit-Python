@@ -6,14 +6,14 @@ Delete the instructions as you go, to keep for a cleaner final file.
 <!-- TODO update title to be descriptive. Eg.
 PiicoDev® [Description] [Part#]
 PiicoDev® Precision Temperature Sensor TMP117 -->
-# PiicoDev® Template
+# GlowBit® Python Module
 
 <!-- TODO update link URL with CE SKU -->
 <!-- TODO update link title -->
 <!-- TODO put image in Documents directory. Piicodev image 1500x1000 resize to 30% -> 450x300 -->
 ![](Documents/showcase-render.png)
 
-This is the repo for the Core Electronics [PiicoDev XXXXXX](https://core-electronics.com.au/catalog/product/view/sku/XXXXXX).
+This is the repo for the Core Electronics [GlowBit](https://glowbit.io) Python module.
 
 <!-- TODO populate below here from the tutorial -->
 
@@ -26,4 +26,4 @@ If you have any technical questions, or concerns about licensing, please contact
 <!-- TODO Confirm attribution eg
 The hardware design of this module is influenced by the design from [Sparkfun](https://github.com/sparkfun/Qwiic_Capacitive_Touch_Slider_CAP1203).  -->
 
-*\"PiicoDev\" and the PiicoDev logo are trademarks of Core Electronics Pty Ltd.*
+*\"GlowBit\" and the GlowBit logo are trademarks of Core Electronics Pty Ltd.*
