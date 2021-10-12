@@ -2,6 +2,11 @@
 \label{classglowbit_1_1glowbitMatrix_1_1graph1D}\index{glowbit.\+glowbit\+Matrix.\+graph1D@{glowbit.\+glowbit\+Matrix.\+graph1D}}
 
 
+One dimensional graph object for graph bars on Glow\+Bit Matrix displays.  
+
+
+
+
 Inheritance diagram for glowbit.\+glowbit\+Matrix.\+graph1D\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -21,9 +26,8 @@ Collaboration diagram for glowbit.\+glowbit\+Matrix.\+graph1D\+:\nopagebreak
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classglowbit_1_1glowbitMatrix_1_1graph1D_aafb789a57fe97ce1625bfb486400b2a1}\label{classglowbit_1_1glowbitMatrix_1_1graph1D_aafb789a57fe97ce1625bfb486400b2a1}} 
-def {\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+} (self, originX=0, originY=7, length=8, direction=\char`\"{}Up\char`\"{}, min\+Value=0, max\+Value=255, colour=0x\+F\+F\+F\+F\+F\+F, colour\+Map=\char`\"{}\+Solid\char`\"{}, update=\+False)
-\end{DoxyCompactItemize}
+def \hyperlink{classglowbit_1_1glowbitMatrix_1_1graph1D_aafb789a57fe97ce1625bfb486400b2a1}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, originX=0, originY=7, length=8, direction=\char`\"{}Up\char`\"{}, min\+Value=0, max\+Value=255, colour=0x\+F\+F\+F\+F\+F\+F, colour\+Map=\char`\"{}\+Solid\char`\"{}, update=\+False)
+\begin{DoxyCompactList}\small\item\em Initialisation routine for the glowbit.\+matrix.\+graph1D object. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -60,6 +64,47 @@ def {\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+} (self, originX=0, originY=7, length
 \mbox{\Hypertarget{classglowbit_1_1glowbitMatrix_1_1graph1D_aabbb79560f8c4907bfd1669274c7b2eb}\label{classglowbit_1_1glowbitMatrix_1_1graph1D_aabbb79560f8c4907bfd1669274c7b2eb}} 
 {\bfseries colour\+Map}
 \end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+One dimensional graph object for graph bars on Glow\+Bit Matrix displays. 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classglowbit_1_1glowbitMatrix_1_1graph1D_aafb789a57fe97ce1625bfb486400b2a1}\label{classglowbit_1_1glowbitMatrix_1_1graph1D_aafb789a57fe97ce1625bfb486400b2a1}} 
+\index{glowbit\+::glowbit\+Matrix\+::graph1D@{glowbit\+::glowbit\+Matrix\+::graph1D}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!glowbit\+::glowbit\+Matrix\+::graph1D@{glowbit\+::glowbit\+Matrix\+::graph1D}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def glowbit.\+glowbit\+Matrix.\+graph1\+D.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{originX = {\ttfamily 0},  }\item[{}]{originY = {\ttfamily 7},  }\item[{}]{length = {\ttfamily 8},  }\item[{}]{direction = {\ttfamily \char`\"{}Up\char`\"{}},  }\item[{}]{min\+Value = {\ttfamily 0},  }\item[{}]{max\+Value = {\ttfamily 255},  }\item[{}]{colour = {\ttfamily 0xFFFFFF},  }\item[{}]{colour\+Map = {\ttfamily \char`\"{}Solid\char`\"{}},  }\item[{}]{update = {\ttfamily False} }\end{DoxyParamCaption})}
+
+
+
+Initialisation routine for the glowbit.\+matrix.\+graph1D object. 
+
+A \hyperlink{classglowbit_1_1glowbitMatrix_1_1graph1D}{graph1D} object will be drawn with a fixed width of 1 pixel and arbitrary length.
+
+
+\begin{DoxyParams}{Parameters}
+{\em originX} & The x coordinate of the graph\textquotesingle{}s origin. The \char`\"{}min\+Value\char`\"{} argument will be mapped to this pixel. \\
+\hline
+{\em originY} & The y coordinate of the graph\textquotesingle{}s origin. The \char`\"{}min\+Value\char`\"{} argument will be mapped to this pixel. \\
+\hline
+{\em length} & The length, in pixels, of the graph\textquotesingle{}s drawing area. \\
+\hline
+{\em direction} & One of \char`\"{}\+Up\char`\"{}, \char`\"{}\+Down\char`\"{}, \char`\"{}\+Left\char`\"{}, or \char`\"{}\+Right\char`\"{}. Specifies the direction in which the graph will be drawn. \\
+\hline
+{\em min\+Value} & The value which will be mapped to the origin. \\
+\hline
+{\em max\+Value} & The value which will be mapped to the \textquotesingle{}end\textquotesingle{} of the graph. The (x,y) coordinate will be \textquotesingle{}length\textquotesingle{} pixels away from the origin in the direction specified by \textquotesingle{}direction\textquotesingle{}. \\
+\hline
+{\em colour} & A packed 32-\/bit Glow\+Bit colour value. Used by the \char`\"{}\+Solid\char`\"{} colourmap, ignored by the \char`\"{}\+Rainbow\char`\"{} colourmap. Can also be accessed when writing custom colour map functions. \\
+\hline
+{\em colour\+Map} & Either the string \char`\"{}\+Solid\char`\"{} or \char`\"{}\+Rainbow\char`\"{} or a pointer to a custom colour map function. Custom colour maps must take the parameters colour\+Map(self, index, min\+Index, max\+Index). \\
+\hline
+{\em update} & If update=True then a call to \hyperlink{classglowbit_1_1glowbitMatrix_a0d44976cdc12728d9ae80c2d901029c0}{update\+Graph1\+D()} will, in turn, call \hyperlink{classglowbit_1_1glowbit_a051aed2a4969fdcb0466e4e840209279}{glowbit.\+pixels\+Show()} to update the physical L\+E\+Ds. \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

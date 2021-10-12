@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['rgb2gbcolour',['rgb2GBColour',['../classglowbit_1_1colourFunctions.html#a1c24f694a16f3c721a0e7771740ebc56',1,'glowbit::colourFunctions']]]
+  ['fireworks',['fireworks',['../classglowbit_1_1glowbitMatrix.html#a69370ec1479b4887fca517fbefd92e4c',1,'glowbit::glowbitMatrix']]]
 ];

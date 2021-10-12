@@ -96,12 +96,13 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classglowbit_1_1stick_1_1graph1D.html">graph1D</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classglowbit_1_1stick_1_1pulse.html">pulse</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A class for animating "pulses" which move down a GlowBit stick.  <a href="classglowbit_1_1stick_1_1pulse.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ac51b02c334481110558ac2f8c54938b8"><td class="memItemLeft" align="right" valign="top"><a id="ac51b02c334481110558ac2f8c54938b8"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>__init__</b> (self, numLEDs=8, pin=18, brightness=20, rateLimitFPS=30, sm=0)</td></tr>
+<tr class="memitem:ac51b02c334481110558ac2f8c54938b8"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classglowbit_1_1stick.html#ac51b02c334481110558ac2f8c54938b8">__init__</a> (self, numLEDs=8, pin=18, brightness=20, rateLimitFPS=30, sm=0)</td></tr>
+<tr class="memdesc:ac51b02c334481110558ac2f8c54938b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialisation routine for GlowBit stick modules and tiled arrays thereof.  <a href="#ac51b02c334481110558ac2f8c54938b8">More...</a><br /></td></tr>
 <tr class="separator:ac51b02c334481110558ac2f8c54938b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a14fb6c41aebc0b87595dde1ee4dd35a3"><td class="memItemLeft" align="right" valign="top"><a id="a14fb6c41aebc0b87595dde1ee4dd35a3"></a>
 def&#160;</td><td class="memItemRight" valign="bottom"><b>addPulse</b> (self, speed=100, colour=[0xFFFFFF], index=0, colourMap=None)</td></tr>
@@ -137,6 +138,9 @@ def&#160;</td><td class="memItemRight" valign="bottom"><b>sliceDemo</b> (self)</
 <tr class="memitem:a8bb7ba36b4b7746f215ebad1acc0f5e2 inherit pub_methods_classglowbit_1_1glowbit"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classglowbit_1_1glowbit.html#a8bb7ba36b4b7746f215ebad1acc0f5e2">pixelAdd</a> (self, i, colour)</td></tr>
 <tr class="memdesc:a8bb7ba36b4b7746f215ebad1acc0f5e2 inherit pub_methods_classglowbit_1_1glowbit"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a 32-bit GlowBit colour value to the i'th LED in the internal buffer only.  <a href="classglowbit_1_1glowbit.html#a8bb7ba36b4b7746f215ebad1acc0f5e2">More...</a><br /></td></tr>
 <tr class="separator:a8bb7ba36b4b7746f215ebad1acc0f5e2 inherit pub_methods_classglowbit_1_1glowbit"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0db675789faef3399ffb2c1213c12048 inherit pub_methods_classglowbit_1_1glowbit"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classglowbit_1_1glowbit.html#a0db675789faef3399ffb2c1213c12048">pixelSaturatingAdd</a> (self, i, colour)</td></tr>
+<tr class="memdesc:a0db675789faef3399ffb2c1213c12048 inherit pub_methods_classglowbit_1_1glowbit"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a 32-bit GlowBit colour value to the i'th LED in the internal buffer.  <a href="classglowbit_1_1glowbit.html#a0db675789faef3399ffb2c1213c12048">More...</a><br /></td></tr>
+<tr class="separator:a0db675789faef3399ffb2c1213c12048 inherit pub_methods_classglowbit_1_1glowbit"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aca86823fecc4949692ac18f8c21e34ac inherit pub_methods_classglowbit_1_1glowbit"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classglowbit_1_1glowbit.html#aca86823fecc4949692ac18f8c21e34ac">pixelsFill</a> (self, colour)</td></tr>
 <tr class="memdesc:aca86823fecc4949692ac18f8c21e34ac inherit pub_methods_classglowbit_1_1glowbit"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fills all pixels with a solid colour value.  <a href="classglowbit_1_1glowbit.html#aca86823fecc4949692ac18f8c21e34ac">More...</a><br /></td></tr>
 <tr class="separator:aca86823fecc4949692ac18f8c21e34ac inherit pub_methods_classglowbit_1_1glowbit"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -234,6 +238,71 @@ Additional Inherited Members</h2></td></tr>
 &#160;</td><td class="memItemRight" valign="bottom"><b>pull_thresh</b></td></tr>
 <tr class="separator:ae08d4038b7463323e58b07c4020d484d inherit pub_static_attribs_classglowbit_1_1glowbit"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="ac51b02c334481110558ac2f8c54938b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac51b02c334481110558ac2f8c54938b8">&#9670;&nbsp;</a></span>__init__()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def glowbit.stick.__init__ </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>numLEDs</em> = <code>8</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>pin</em> = <code>18</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>brightness</em> = <code>20</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>rateLimitFPS</em> = <code>30</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>sm</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initialisation routine for GlowBit stick modules and tiled arrays thereof. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">numLEDs</td><td>The total number of LEDs. Should be set to 8 * (the number of tiled modules). </td></tr>
+    <tr><td class="paramname">pin</td><td>The GPIO pin connected to the GlowBit stick module(s). Defaults to 18 as that pin is compatible with the Raspberry Pi and Raspberry Pi Pico. </td></tr>
+    <tr><td class="paramname">brightness</td><td>The relative brightness of the LEDs. Colours drawn to the internal buffer should be in the range [0,255] and the brightness parameter scales this value before drawing to the physical display. If brightness is an integer it should be in the range [0,255]. If brightness is floating point it is assumed to be in the range [0,1.0]. </td></tr>
+    <tr><td class="paramname">rateLimitFPS</td><td>The maximum frame rate of the display in frames per second. The pixelsShow() function blocks to enforce this limit. </td></tr>
+    <tr><td class="paramname">sm</td><td>(Raspberry Pi Pico only) The PIO state machine to generate the GlowBit data stream. Each connected GlowBit display chain requires a unique state machine. Valid values are in the range [0,7]. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>glowbit.py</li>
 </ul>

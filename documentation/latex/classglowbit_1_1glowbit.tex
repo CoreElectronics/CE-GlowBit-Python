@@ -34,6 +34,8 @@ def \hyperlink{classglowbit_1_1glowbit_a6f4167e566106d5eb104933b256f2e14}{pixel\
 \begin{DoxyCompactList}\small\item\em Sets the i\textquotesingle{}th Glow\+Bit L\+ED to a 32-\/bit Glow\+Bit colour value and updates the physical L\+E\+Ds. \end{DoxyCompactList}\item 
 def \hyperlink{classglowbit_1_1glowbit_a8bb7ba36b4b7746f215ebad1acc0f5e2}{pixel\+Add} (self, i, colour)
 \begin{DoxyCompactList}\small\item\em Adds a 32-\/bit Glow\+Bit colour value to the i\textquotesingle{}th L\+ED in the internal buffer only. \end{DoxyCompactList}\item 
+def \hyperlink{classglowbit_1_1glowbit_a0db675789faef3399ffb2c1213c12048}{pixel\+Saturating\+Add} (self, i, colour)
+\begin{DoxyCompactList}\small\item\em Adds a 32-\/bit Glow\+Bit colour value to the i\textquotesingle{}th L\+ED in the internal buffer. \end{DoxyCompactList}\item 
 def \hyperlink{classglowbit_1_1glowbit_aca86823fecc4949692ac18f8c21e34ac}{pixels\+Fill} (self, colour)
 \begin{DoxyCompactList}\small\item\em Fills all pixels with a solid colour value. \end{DoxyCompactList}\item 
 def \hyperlink{classglowbit_1_1glowbit_a2aae728fcc6e8cdfe5c745ac0a7d308d}{pixels\+Fill\+Now} (self, colour)
@@ -141,6 +143,27 @@ The 32-\/bit Glow\+Bit colour value of the i\textquotesingle{}th L\+ED
 Adds a 32-\/bit Glow\+Bit colour value to the i\textquotesingle{}th L\+ED in the internal buffer only. 
 
 Data colour corruption will occur if the sum result of any R\+GB value exceeds 255. Care must be taken to avoid this manually. eg\+: if the blue channel\textquotesingle{}s resulting intensity value is 256 it will be set to zero and the red channel incremented by 1. See the \hyperlink{classglowbit_1_1colourFunctions}{colour\+Functions} class documentation for the 32-\/bit Glow\+Bit colour specification.
+
+NB\+: For efficiency, this method does not do any index bounds checking. If the value of the parameter i is larger than the number of L\+E\+Ds it will cause an Index\+Error exception.
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & An L\+ED\textquotesingle{}s index \\
+\hline
+{\em colour} & The 32-\/bit Glow\+Bit colour value \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classglowbit_1_1glowbit_a0db675789faef3399ffb2c1213c12048}\label{classglowbit_1_1glowbit_a0db675789faef3399ffb2c1213c12048}} 
+\index{glowbit\+::glowbit@{glowbit\+::glowbit}!pixel\+Saturating\+Add@{pixel\+Saturating\+Add}}
+\index{pixel\+Saturating\+Add@{pixel\+Saturating\+Add}!glowbit\+::glowbit@{glowbit\+::glowbit}}
+\subsubsection{\texorpdfstring{pixel\+Saturating\+Add()}{pixelSaturatingAdd()}}
+{\footnotesize\ttfamily def glowbit.\+glowbit.\+pixel\+Saturating\+Add (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{i,  }\item[{}]{colour }\end{DoxyParamCaption})}
+
+
+
+Adds a 32-\/bit Glow\+Bit colour value to the i\textquotesingle{}th L\+ED in the internal buffer. 
+
+This function performs \char`\"{}saturating\char`\"{} arithmetic. It is much slower than pixel\+Add but will saturate at 255 to avoid data corruption.
 
 NB\+: For efficiency, this method does not do any index bounds checking. If the value of the parameter i is larger than the number of L\+E\+Ds it will cause an Index\+Error exception.
 

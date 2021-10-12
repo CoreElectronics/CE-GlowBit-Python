@@ -77,10 +77,10 @@ Inheritance diagram for glowbit.colourMaps:</div>
 <div class="dyncontent">
 <div class="center"><img src="classglowbit_1_1colourMaps__inherit__graph.png" border="0" usemap="#glowbit_8colourMaps_inherit__map" alt="Inheritance graph"/></div>
 <map name="glowbit_8colourMaps_inherit__map" id="glowbit_8colourMaps_inherit__map">
-<area shape="rect" id="node2" href="classglowbit_1_1glowbitMatrix_1_1graph1D.html" title="glowbit.glowbitMatrix.graph1D" alt="" coords="188,5,385,32"/>
-<area shape="rect" id="node3" href="classglowbit_1_1glowbitMatrix_1_1graph2D.html" title="glowbit.glowbitMatrix.graph2D" alt="" coords="188,56,385,83"/>
+<area shape="rect" id="node2" href="classglowbit_1_1glowbitMatrix_1_1graph1D.html" title="One dimensional graph object for graph bars on GlowBit Matrix displays. " alt="" coords="188,5,385,32"/>
+<area shape="rect" id="node3" href="classglowbit_1_1glowbitMatrix_1_1graph2D.html" title="Object for drawing 2 dimensional time series graphs on GlowBit Matrix displays. " alt="" coords="188,56,385,83"/>
 <area shape="rect" id="node4" href="classglowbit_1_1stick_1_1graph1D.html" title="glowbit.stick.graph1D" alt="" coords="213,107,361,133"/>
-<area shape="rect" id="node5" href="classglowbit_1_1stick_1_1pulse.html" title="glowbit.stick.pulse" alt="" coords="221,157,352,184"/>
+<area shape="rect" id="node5" href="classglowbit_1_1stick_1_1pulse.html" title="A class for animating &quot;pulses&quot; which move down a GlowBit stick. " alt="" coords="221,157,352,184"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -95,7 +95,8 @@ Public Member Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Methods which calculate colour gradients. </p>
-<p>Custom colour map methods can be written and passed to several GlowBit library methods (eg: <a class="el" href="classglowbit_1_1stick_1_1graph1D.html">glowbit.stick.graph1D</a>) but must accept the same positional arguments as the methods in this class. </p>
+<p>Custom colour map methods can be written and passed to several GlowBit library methods (eg: <a class="el" href="classglowbit_1_1stick_1_1graph1D.html">glowbit.stick.graph1D</a>) but must accept the same positional arguments as the methods in this class:</p>
+<p>def colourMapFunction(self, index, minIndex, maxIndex): </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a41e8852322605003cf7f9f75ff508a8e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a41e8852322605003cf7f9f75ff508a8e">&#9670;&nbsp;</a></span>colourMapRainbow()</h2>

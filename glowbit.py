@@ -86,11 +86,13 @@ class colourFunctions():
     # \return A tuple in the format (R,G,B) containing the RGB components of the colour parameter
 
     def glowbitColour2RGB(self, colour):
-        return ( (colour&0xFF0000) >> 16) , (colour&0xFF00)>> 8, (colour&0xFF) )
+        return ( (colour&0xFF0000) >> 16 , (colour&0xFF00)>> 8, (colour&0xFF) )
 
 ## @brief Methods which calculate colour gradients.
 #
-# Custom colour map methods can be written and passed to several GlowBit library methods (eg: glowbit.stick.graph1D) but must accept the same positional arguments as the methods in this class.
+# Custom colour map methods can be written and passed to several GlowBit library methods (eg: glowbit.stick.graph1D) but must accept the same positional arguments as the methods in this class:
+#
+# def colourMapFunction(self, index, minIndex, maxIndex):
 
 class colourMaps():
 
@@ -118,7 +120,7 @@ class colourMaps():
 
 class glowbit(colourFunctions):
     @rp2.asm_pio(sideset_init=rp2.PIO.OUT_LOW, out_shiftdir=rp2.PIO.SHIFT_LEFT, autopull=True, pull_thresh=24)
-    def __ws2812():
+    def _ws2812():
         T1 = 2
         T2 = 5
         T3 = 3
@@ -132,7 +134,7 @@ class glowbit(colourFunctions):
         wrap()
 
     @micropython.viper
-    def __pixelsShowPico(self):
+    def _pixelsShowPico(self):
         self.__syncWait()
         gc.collect()
         ar = self.dimmer_ar
@@ -144,7 +146,7 @@ class glowbit(colourFunctions):
             ar[i] = (g<<16) | (r<<8) | b    
             self.sm.put(ar[i], 8)
 
-    def __pixelsShowRPi(self):
+    def _pixelsShowRPi(self):
         self.__syncWait()
         br = self.brightness
         for i,c in enumerate(self.ar):
@@ -159,7 +161,7 @@ class glowbit(colourFunctions):
             continue
         self.lastFrame_ms = self.ticks_ms()
     
-    def __ticks_ms_Linux(self):
+    def _ticks_ms_Linux(self):
         return time.time()*1000
           
 
@@ -208,7 +210,39 @@ class glowbit(colourFunctions):
     def pixelAdd(self, i: int, colour: int):
         tmp = int(self.ar[i]) + colour
         self.ar[i] = tmp
-            
+ 
+    ## @brief Adds a 32-bit GlowBit colour value to the i'th LED in the internal buffer. This function performs "saturating" arithmetic. It is much slower than pixelAdd but will saturate at 255 to avoid data corruption.
+    #
+    # NB: For efficiency, this method does not do any index bounds checking. If the value of the parameter i is larger than the number of LEDs it will cause an IndexError exception.
+    #
+    # \param i An LED's index
+    # \param colour The 32-bit GlowBit colour value
+    # 
+
+    @micropython.viper
+    def pixelSaturatingAdd(self, i: int, colour: int):
+        tmp = int(self.ar[i])
+        r = (colour & 0xFF0000) >> 16
+        g = (colour & 0x00FF00) >> 8
+        b = (colour & 0x0000FF)
+        
+        r2 = (tmp & 0xFF0000) >> 16
+        g2 = (tmp & 0x00FF00) >> 8
+        b2 = (tmp & 0x0000FF)
+
+        r3 = r + r2
+        g3 = g + g2
+        b3 = b + b2
+
+        if r3 > 255:
+            r3 = 255
+        if g3 > 255:
+            g3 = 255
+        if b3 > 255:
+            b3 = 255
+
+        self.ar[i] = (r3 << 16) + (g3 << 8) + b3
+           
     ## @brief Fills all pixels with a solid colour value
     #
     # \param colour The 32-bit GlowBit colour value
@@ -272,6 +306,8 @@ class glowbit(colourFunctions):
         self.blankDisplay()
 
 ## @brief Methods specific to 2D matrix displays and tiled arrangements thereof.
+#
+# This class should not be used directly; its methods are inherited by the glowbit.matrix8x8 and glowbit.matrix4x4 classes.
 
 class glowbitMatrix(glowbit):
 
@@ -372,8 +408,13 @@ class glowbitMatrix(glowbit):
 
     ## @brief Draws a straight line between (x0,y0) and (x1,y1) in the specified 32-bit GlowBit colour.
     #
-    # If the line is drawn off the screen the "clipping" effect will be inherited from the behaviour of pixelSetXYClip()
+    # If pixel is drawn off the screen a "clipping" effect will be inherited from the behaviour of pixelSetXYClip(). ie: Pixels landing off the screen will not be drawn.
     #
+    # \param x0 The line's starting x coordinate
+    # \param y0 The line's starting y coordinate
+    # \param x1 The line's ending x coordinate
+    # \param y1 The line's ending y coordinate
+    # \param colour A packed 32-bit GlowBit colour value
 
     @micropython.viper
     def drawLine(self, x0: int, y0: int, x1: int, y1: int, colour: int):
@@ -418,24 +459,64 @@ class glowbitMatrix(glowbit):
                 y0 += ystep
                 err += dx
             x0 += 1
-        
+       
+    ## @brief Draws a triangle with vertices (corners) at (x0,y0), (x1, y1), and (x2,y2). All lines are drawn with the specified colour.
+    #
+    # If pixel is drawn off the screen a "clipping" effect will be inherited from the behaviour of pixelSetXYClip(). ie: Pixels landing off the screen will not be drawn.
+    #
+    # \param x0 The x coordinate of the first vertex
+    # \param y0 The y coordinate of the first vertex
+    # \param x1 The x coordinate of the second vertex
+    # \param y1 The y coordinate of the second vertex
+    # \param x2 The x coordinate of the third vertex
+    # \param y2 The y coordinate of the third vertex
+    # \param colour A packed 32-bit GlowBit colour value
+
     def drawTriangle(self, x0,y0, x1, y1, x2, y2, colour):
         self.drawLine(x0, y0, x1, y1, colour)
         self.drawLine(x1, y1, x2, y2, colour)
         self.drawLine(x2, y2, x0, y0, colour)
-        
+     
+    ## @brief Draws a rectangle with upper-left corner (x0,y0) and lower right corner (x1, y1). All edge lines are drawn with the specified colour.
+    # 
+    # Pixels inside the rectangle are left unmodified.
+    #
+    # If pixel is drawn off the screen a "clipping" effect will be inherited from the behaviour of pixelSetXYClip(). ie: Pixels landing off the screen will not be drawn.
+    #
+    # \param x0 The x coordinate of the upper left corner
+    # \param y0 The y coordinate of the upper left corner
+    # \param x1 The x coordinate of the lower right corner
+    # \param y1 The y coordinate of the lower right corner
+    # \param colour A packed 32-bit GlowBit colour value
+
     def drawRectangle(self, x0, y0, x1, y1, colour):
         self.drawLine(x0, y0, x1, y0, colour)
         self.drawLine(x1, y0, x1, y1, colour)
         self.drawLine(x1, y1, x0, y1, colour)
         self.drawLine(x0, y1, x0, y0, colour)
-    
+   
+    ## @brief Draws a rectangle with upper-left corner (x0,y0) and lower right corner (x1, y1). The rectangle is then filled to form a solid block of the specified colour.
+    #
+    # If pixel is drawn off the screen a "clipping" effect will be inherited from the behaviour of pixelSetXYClip(). ie: Pixels landing off the screen will not be drawn.
+    #
+    # \param x0 The x coordinate of the upper left corner
+    # \param y0 The y coordinate of the upper left corner
+    # \param x1 The x coordinate of the lower right corner
+    # \param y1 The y coordinate of the lower right corner
+    # \param colour A packed 32-bit GlowBit colour value
+
     @micropython.viper
     def drawRectangleFill(self, x0: int, y0: int, x1: int, y1: int, colour):
         for x in range(x0, x1+1):
             for y in range(y0, y1+1):
                 self.pixelSetXY(x,y,colour)
-    
+   
+    ## @brief Draws a circle with center (x0,y0) and radius r. The circle's outline is drawn in the specified colour. Pixels inside the circle are not modified.
+    # 
+    # \param x0 The x coordinate of the circle's center
+    # \param y0 The y coordinate of the circle's center
+    # \param colour A packed 32-bit GlowBit colour value
+
     def drawCircle(self, x0, y0, r, colour):
         f = 1-r
         ddf_x = 1
@@ -463,8 +544,21 @@ class glowbitMatrix(glowbit):
             self.pixelSetXYClip(x0 - y, y0 + x, colour)
             self.pixelSetXYClip(x0 + y, y0 - x, colour)
             self.pixelSetXYClip(x0 - y, y0 - x, colour)
-    
+   
+    ## @brief One dimensional graph object for graph bars on GlowBit Matrix displays.
     class graph1D(colourFunctions, colourMaps):
+
+        ## @brief Initialisation routine for the glowbit.matrix.graph1D object. A graph1D object will be drawn with a fixed width of 1 pixel and arbitrary length.
+        #
+        # \param originX The x coordinate of the graph's origin. The "minValue" argument will be mapped to this pixel.
+        # \param originY The y coordinate of the graph's origin. The "minValue" argument will be mapped to this pixel.
+        # \param length The length, in pixels, of the graph's drawing area.
+        # \param direction One of "Up", "Down", "Left", or "Right". Specifies the direction in which the graph will be drawn.
+        # \param minValue The value which will be mapped to the origin.
+        # \param maxValue The value which will be mapped to the 'end' of the graph. The (x,y) coordinate will be 'length' pixels away from the origin in the direction specified by 'direction'.
+        # \param colour A packed 32-bit GlowBit colour value. Used by the "Solid" colourmap, ignored by the "Rainbow" colourmap. Can also be accessed when writing custom colour map functions.
+        # \param colourMap Either the string "Solid" or "Rainbow" or a pointer to a custom colour map function. Custom colour maps must take the parameters colourMap(self, index, minIndex, maxIndex).
+        # \param update If update=True then a call to updateGraph1D() will, in turn, call glowbit.pixelsShow() to update the physical LEDs.
         def __init__(self, originX = 0, originY = 7, length = 8, direction = "Up", minValue=0, maxValue=255, colour = 0xFFFFFF, colourMap = "Solid", update = False):
             self.minValue = minValue
             self.maxValue = maxValue
@@ -504,7 +598,14 @@ class glowbitMatrix(glowbit):
                 self.colourMap = self.colourMapSolid
             elif colourMap == "Rainbow":
                 self.colourMap = self.colourMapRainbow
-                
+    
+    ## @brief Updates a graph1D object, draws it to the display buffer.
+    #
+    # If the graph1D object was created with "update = True" this function will call pixelsShow() to update the physical display before returning.
+    #
+    # \param graph A graph1D object as returned by glowbitMatrix.graph1D()
+    # \param value The value to draw to the graph. It will be mapped to the graph bet
+
     def updateGraph1D(self, graph, value):
         N = int(graph.m*(value - graph.minValue))
 
@@ -512,7 +613,6 @@ class glowbitMatrix(glowbit):
         if graph.orientation == 1:
             n = 0
             for idxY in range(graph.originY, graph.originY+graph.inc*(graph.length), graph.inc):
-                #print(N, n, idxY, graph.originY, graph.originY+graph.inc*(graph.length))
                 if n < N:
                     self.pixelSetXY(graph.originX, idxY, m(idxY, graph.originY, graph.originY+(graph.inc*graph.length-1)))
                 else:
@@ -531,8 +631,28 @@ class glowbitMatrix(glowbit):
         if graph.update == True:
             self.pixelsShow()
 
+    ## @brief Object for drawing 2 dimensional time series graphs on GlowBit Matrix displays.
+
     class graph2D(colourFunctions, colourMaps):
-        def __init__(self, minValue=0, maxValue=255, originX = 0, originY = 7, width = 8, height = 8, colour = 0xFFFFFF, bgColour = 0x000000, colourMap = "Solid", update = False, filled = False, bars = False):
+
+        ## @brief Initialisation routine for the glowbit.matrix.graph2D object.
+        #
+        # A graph2D object will be drawn to a rectangular region specified by the origin, width, and height.
+        #
+        # This graph type is explicitly designed to draw time series data.
+        #
+        # \param originX The x coordinate of the graph's origin (lower left corner).
+        # \param originY The y coordinate of the graph's origin (lower left corner).
+        # \param width The width, in pixels, of the graph's drawing area.
+        # \param height The height, in pixels, of the graph's drawing area
+        # \param minValue The value which will be mapped to the bottom edge.
+        # \param maxValue The value which will be mapped to the upper edge.
+        # \param colour A packed 32-bit GlowBit colour value. Used by the "Solid" colourmap, ignored by the "Rainbow" colourmap. Can also be accessed when writing custom colour map functions.
+        # \param bgColour A packed 32-bit GlowBit colour value which is drawn to the entire graph area prior to drawing the data.
+        # \param colourMap Either the string "Solid" or "Rainbow" or a pointer to a custom colour map function. Custom colour maps must take the parameters colourMap(self, index, minIndex, maxIndex).
+        # \param update If update=True then a call to updateGraph1D() will, in turn, call glowbit.pixelsShow() to update the physical LEDs.
+
+        def __init__(self, originX = 0, originY = 7, width = 8, height = 8, minValue=0, maxValue=255, colour = 0xFFFFFF, bgColour = 0x000000, colourMap = "Solid", update = False, filled = False, bars = False):
             self.minValue = minValue
             self.maxValue = maxValue
             self.originX = originX
@@ -554,13 +674,16 @@ class glowbitMatrix(glowbit):
                 self.colourMap = self.colourMapSolid
             elif colourMap == "Rainbow":
                 self.colourMap = self.colourMapRainbow
-            
-        def addData(self, value):
-            self.data.insert(0,value)
-            if len(self.data) > self.width:
-                self.data.pop()
     
-    def updateGraph2D(self, graph):
+    ## @brief Updates a 2D graph with a new value.
+    # 
+    # \param graph A graph2D object created graph2D
+    # \param value A new value to draw to the graph. This value will be drawn on the right edge and the oldest value will be deleted.
+
+    def updateGraph2D(self, graph, value):
+        graph.data.insert(0,value)
+        if len(graph.data) > graph.width:
+            graph.data.pop()
         x = graph.originX+graph.width-1
         m = graph.colourMap
         self.drawRectangleFill(graph.originX, graph.originY-graph.height+1, graph.originX+graph.width-1, graph.originY, graph.bgColour)
@@ -571,13 +694,15 @@ class glowbitMatrix(glowbit):
                     if x >= graph.originX and x < graph.originX+graph.width and idx <= graph.originY and idx > graph.originY-graph.height:
                         self.pixelSet(self.remap(x,idx), m(idx, graph.originY, graph.originY+graph.height-1))
             else:
-                if x >= graph.originX and x < graph.originX+graph.width and y <= graph.originY and y > graph.originY+graph.height:
+                if x >= graph.originX and x < graph.originX+graph.width and y <= graph.originY and y > graph.originY-graph.height:
                     self.pixelSet(self.remap(x,y), m(y - graph.originY, graph.originY, graph.originY+graph.height-1))
             x -= 1
         if graph.update == True:
+            print("Calling pixelsShow()")
             self.pixelsShow()
 
-                      
+    ## @brief Demonstrate drawing an animated line
+
     def lineDemo(self, iters = 10):
         self.blankDisplay()
         while iters > 0:
@@ -591,7 +716,11 @@ class glowbitMatrix(glowbit):
                 self.pixelsShow()
             iters -= 1
         self.blankDisplay()
-            
+    
+    ## @brief Demonstrate drawing randomly placed, randomly coloured, expanding circles.
+    #
+    # Note that pixelsFill(0) is only called after drawing an expanding circle, simulating a mostly filled circle. Gaps are an artefact of the circle drawing algorithm, not a bug.
+
     def fireworks(self, iters = 10):
         self.blankDisplay()
         import random
@@ -608,6 +737,12 @@ class glowbitMatrix(glowbit):
                 self.pixelsShow()
             iters -= 1
     
+    ## @brief Demonstration of a rainbow effect is pseudo-polar coordinates.
+    #
+    # This function intentionally uses integer arithmetic for performance reasons. As such, it is drawn half a pixel off center.
+    # 
+    # The function animates 255 frames then returns.
+
     @micropython.viper
     def circularRainbow(self):
         self.blankDisplay()
@@ -631,6 +766,8 @@ class glowbitMatrix(glowbit):
                     pixelSetXY(x,y,wheel((r*300)//maxX - colourOffset*10))
             show()
 
+    ## @brief A class used by the rain() demonstration
+
     class raindrop():
         def __init__(self, x, speed):
             self.x = x
@@ -643,6 +780,11 @@ class glowbitMatrix(glowbit):
         
         def getY(self):
             return (self.y//10)
+
+    ## @brief A "digital rain" demonstration.
+    #
+    # \param iters The number of frames on which raindrops can be drawn
+    # \param density The density of raindrops in units of "drops per 4x4 square". The number of drops on the screen will be kept at (number of pixels)*(density)/16
 
     def rain(self, iters = 1000, density=1):
         import random
@@ -683,12 +825,18 @@ class glowbitMatrix(glowbit):
             iters -= 1
             self.pixelsShow();
 
+    ## @brief Demonstrates creation of non-blocking scrolling text. Only compatible with the GlowBit Matrix 8x8 and tiled arrangements thereof.
+    #
+    # \param text A string of text which is scrolled across the top row of the display.
+
     def textDemo(self, text = "Scrolling Text Demo"):
         self.blankDisplay()
         self.addTextScroll(text)
         while self.scrollingText:
             self.updateTextScroll()
             self.pixelsShow()
+
+    ## @brief Draws a single pixel at a random coordinate and "bounces" it around the display
 
     def bounce(self, iters = 1000):
         import random
@@ -709,12 +857,23 @@ class glowbitMatrix(glowbit):
             iters -= 1
             self.pixelsShow()
 
+# @brief Class for driving GlowBit Stick modules
+
 class stick(glowbit):
+
+    ## @brief Initialisation routine for GlowBit stick modules and tiled arrays thereof.
+    # 
+    # \param numLEDs The total number of LEDs. Should be set to 8 * (the number of tiled modules).
+    # \param pin The GPIO pin connected to the GlowBit stick module. Defaults to 18 as that pin is compatible with the Raspberry Pi and Raspberry Pi Pico.
+    # \param brightness The relative brightness of the LEDs. Colours drawn to the internal buffer should be in the range [0,255] and the brightness parameter scales this value before drawing to the physical display. If brightness is an integer it should be in the range [0,255]. If brightness is floating point it is assumed to be in the range [0,1.0].
+    # \param rateLimitFPS The maximum frame rate of the display in frames per second. The pixelsShow() function blocks to enforce this limit.
+    # \param sm (Raspberry Pi Pico only) The PIO state machine to generate the GlowBit data stream. Each connected GlowBit display chain requires a unique state machine. Valid values are in the range [0,7].
+
     def __init__(self, numLEDs = 8, pin = 18, brightness = 20, rateLimitFPS = 30, sm = 0):
         if _SYSNAME == 'rp2':
-            self.sm = rp2.StateMachine(sm, self.__ws2812, freq=8_000_000, sideset_base=Pin(pin))
+            self.sm = rp2.StateMachine(sm, self._ws2812, freq=8_000_000, sideset_base=Pin(pin))
             self.sm.active(1)
-            self.pixelsShow = self.__pixelsShowPico
+            self.pixelsShow = self._pixelsShowPico
             self.ticks_ms = time.ticks_ms
 
         self.numLEDs = numLEDs
@@ -722,8 +881,8 @@ class stick(glowbit):
         if _SYSNAME == 'Linux':
             self.strip = ws.PixelStrip(numLEDs, pin)
             self.strip.begin()
-            self.pixelsShow = self.__pixelsShowRPi
-            self.ticks_ms = self.ticks_ms_Linux
+            self.pixelsShow = self._pixelsShowRPi
+            self.ticks_ms = self._ticks_ms_Linux
 
         self.lastFrame_ms = self.ticks_ms()
 
@@ -742,20 +901,37 @@ class stick(glowbit):
         self.pixelsFill(0)
         self.pixelsShow()
         
+        # The list of pulses which are drawn upon a call 
         self.pulses = []
 
+    ## @brief A class for animating "pulses" which move down a GlowBit stick.
+
     class pulse(colourFunctions, colourMaps):
-        def __init__(self, speed = 100, colour = 0xFFFFFF, index = 0, colourMap = None):
-            self.speed = speed
+
+        ## @brief Initialisation routine for the GlowBit Stick pulse object.
+        #
+        # This function uses the pixelSaturatingAdd() method so multiple pulses can be drawn without colour values corrupting due to addition overflow. 
+        #
+        # \param speed The speed of the pulse in units of (pixels moved per frame) * 100. A value of 100 means the pulse will move 1 pixels per frame. A speed of 1 will move a pulse 1 pixel every 100 frames. Speed can be positive or negative to allow pulses to move in either direction.
+        # \param colour A list of 32-bit GlowBit colours for the pulse. The pulse will have a width equal to the number of elements in this list. A list entry of -1 will have the colour set by a colour map function.
+        # \param index The initial index of the pulse. Generally recommended to set to 0 if speed > 0 and numLEDs if speed < 0.
+        # \param colourMap Either the string "Solid" or "Rainbow" or a custom function pointer. Custom functions must take the positional arguments: colourMapFunction(self, index, minIndex, maxIndex). When calling colour map functions updatePulses() sets minIndex to 0 and maxIndex to numLEDs.
+
+        def __init__(self, speed = 100, colour = [0xFFFFFF], index = 0, colourMap = None):
+            ## Speed of the pulse
+            self.speed = speed 
+            ## Initial index of the pulse
             self.index = index
-            self.position = self.index*100 # index * 100
+            self._position = self.index*100 # index * 100
            
             if type(colour) is list:
+                ## A list of 32-bit GlowBit colour values. Each one is drawn to a pixel; a -1 indicates the use of the colourMap function
                 self.colour = colour
             else:
                 self.colour = [colour]
 
             if callable(colourMap) == True:
+                ## Either the string "Solid" or "Rainbow" or a function pointer to a custom colourmap. Only sets pixel colour for pixels with a colour of -1.
                 self.colourMap = colourMap
             elif colourMap == "Solid":
                 self.colourMap = self.colourMapSolid
@@ -764,18 +940,28 @@ class stick(glowbit):
             else:
                 self.colourMap = None
             
-        def update(self):
-            self.position += self.speed
-            self.index = self.position//100
- 
+        def _update(self):
+            self._position += self.speed
+            self.index = self._position//100
+
+    ## @brief Add a pulse to the list of pulses    
+    #
+    # \param speed The speed of the pulse in units of (pixels moved per frame) * 100. A value of 100 means the pulse will move 1 pixels per frame. A speed of 1 will move a pulse 1 pixel every 100 frames. Speed can be positive or negative to allow pulses to move in either direction.
+    # \param colour A list of 32-bit GlowBit colours for the pulse. The pulse will have a width equal to the number of elements in this list. A list entry of -1 will have the colour set by a colour map function.
+    # \param index The initial index of the pulse. Generally recommended to set to 0 if speed > 0 and numLEDs if speed < 0.
+    # \param colourMap Either the string "Solid" or "Rainbow" or a custom function pointer. Custom functions must take the positional arguments: colourMapFunction(self, index, minIndex, maxIndex). When calling colour map functions updatePulses() sets minIndex to 0 and maxIndex to numLEDs.
+
     def addPulse(self, speed = 100, colour = [0xFFFFFF], index = 0, colourMap = None):
         self.pulses.append(self.pulse(speed, colour, index, colourMap))
-        
+    
+
+    ## @brief Update the position of all pulses in self.pulses[] and draw them to the internal buffer.
+    #
+    # A call to pixelsShow() must be done manually to update the physical LEDs.
+
     def updatePulses(self):
-        self.pixelsFill(0)
         for p in self.pulses:
             i = p.index
-            
             for c in p.colour:
                 if c == -1:
                     if callable(p.colourMap):
@@ -783,18 +969,31 @@ class stick(glowbit):
                     else:
                         c = 0
                 if i >=0 and i < self.numLEDs:
-                    self.pixelAdd(i, c)
+                    self.pixelSaturatingAdd(i, c)
                 i -= 1
-            p.update()
+            p._update()
             
         for p in reversed(self.pulses):
             if p.index - len(p.colour) >= self.numLEDs:
                 self.pulses.remove(p)
             if p.index + len(p.colour) < 0:
                 self.pulses.remove(p)
-        
+       
+
+    ## @brief One dimensional graph ofject for drawing a graph bar on a GlowBit Stick display
     class graph1D(colourFunctions, colourMaps):
-        def __init__(self, minValue=0, maxValue=255, minIndex = 0, maxIndex = 7, colour = 0xFFFFFF, colourMap = "Solid", update = False):
+
+        ## @brief Initialisation routine for the glowbit.stick.graph1D object. This object is drawn to the display with glowbit.stick.updateGraph1D.
+        # 
+        # \param minIndex The pixel index for the start of the graph
+        # \param maxIndex The pixel index for the end of the graph
+        # \param minValue The numerical value of the start of the graph
+        # \param maxValue The numerical value of the end of the graph
+        # \param colour The graph's colour if using the Solid colourmap
+        # \param colourMap Either the string "Solid" or "Rainbow" or a function pointer to a custom colour map. Custom colour maps must take the parameters colourMap(Self, index, minIndex, maxIndex).
+        # \param update If this is set to True then a call to updateGraph1D() will automatically call pixelsShow() to update the physical display.
+
+        def __init__(self, minIndex = 0, maxIndex = 7, minValue=0, maxValue=255, colour = 0xFFFFFF, colourMap = "Solid", update = False):
             self.minValue = minValue
             self.maxValue = maxValue
             self.minIndex = minIndex
@@ -810,7 +1009,14 @@ class stick(glowbit):
                 self.colourMap = self.colourMapSolid
             elif colourMap == "Rainbow":
                 self.colourMap = self.colourMapRainbow
-    
+   
+    ## @brief Updates a graph1D object, drawing it to the display.
+    # 
+    # If the graph1D object was created with "update = True" this function will call pixelsShow() to update the physical display before returning.
+    #
+    # \param graph A graph1D object as returned by stick.graph1D
+    # \param value The numerical value to plot on the graph
+
     def updateGraph1D(self, graph, value):
         i = int(graph.m*value + graph.offset)
         m = graph.colourMap
@@ -821,14 +1027,28 @@ class stick(glowbit):
         if graph.update == True:
             self.pixelsShow()
         
-               
+    ## @brief Fill a "slice" of the GlowBit stick's pixels with a solid colour.
+    # 
+    # By default it will fill the entire display with a solid colour.
+    # 
+    # \param i The minimum index to fill
+    # \param j The maximum index to fill
+    # \param colour A 32-bit GlowBit colour value
+
     def fillSlice(self, i=0, j=-1, colour = 0xFFFFFF):
         if j == -1:
             j = self.numLEDs
         for k in range(i, j+1):
             self.pixelSet(k, colour)
 
-    def pulseDemo(self, iters = 480):
+    ## @brief A demonstration of the use of "pulse" objects
+    # 
+    # The pulse traveling "up" the stick is drawn with default arguments: a single white pixel
+    # 
+    # The pulse returning "down" the stick is drawn with a 3-pixel list of colours. The first and last are coloured with the "Rainbow" colour map, changing colour with pixel index, while the middle is white.
+    # 
+    # \param iters The number of frames which are drawn before returning.
+    def pulseDemo(self, iters = 100):
         while iters > 0:
             if iters % (self.numLEDs+4) == 0:
                 if iters % (2*(self.numLEDs+4)) == 0:
@@ -897,9 +1117,9 @@ class rainbow(stick):
 class triangle(glowbit):
     def __init__(self, numTris = 1, pin = 18, brightness = 20, rateLimitFPS = -1, sm = 0, LEDsPerTri = 6):
         if _SYSNAME == 'rp2':
-            self.sm = rp2.StateMachine(sm, self.__ws2812, freq=8_000_000, sideset_base=Pin(pin))
+            self.sm = rp2.StateMachine(sm, self._ws2812, freq=8_000_000, sideset_base=Pin(pin))
             self.sm.active(1)
-            self.pixelsShow = self.__pixelsShowPico
+            self.pixelsShow = self._pixelsShowPico
             self.ticks_ms = time.ticks_ms
 
         self.LEDsPerTri = LEDsPerTri
@@ -909,8 +1129,8 @@ class triangle(glowbit):
         if _SYSNAME == 'Linux':
             self.strip = ws.PixelStrip(self.numLEDs, pin)
             self.strip.begin()
-            self.pixelsShow = self.__pixelsShowRPi
-            self.ticks_ms = self.ticks_ms_Linux
+            self.pixelsShow = self._pixelsShowRPi
+            self.ticks_ms = self._ticks_ms_Linux
 
         self.ar = array.array("I", [0 for _ in range(self.numLEDs)])
         self.dimmer_ar = array.array("I", [0 for _ in range(self.numLEDs)])
@@ -938,9 +1158,9 @@ class triangle(glowbit):
 class matrix4x4(glowbitMatrix):
     def __init__(self, tiles = 1, pin = 18, brightness = 20, mapFunction = None, rateLimitFPS = 30, sm = 0):
         if _SYSNAME == 'rp2':
-            self.sm = rp2.StateMachine(sm, self.__ws2812, freq=8_000_000, sideset_base=Pin(pin))
+            self.sm = rp2.StateMachine(sm, self._ws2812, freq=8_000_000, sideset_base=Pin(pin))
             self.sm.active(1)
-            self.pixelsShow = self.__pixelsShowPico
+            self.pixelsShow = self._pixelsShowPico
             self.ticks_ms = time.ticks_ms
 
         self.tiles = tiles
@@ -951,8 +1171,8 @@ class matrix4x4(glowbitMatrix):
         if _SYSNAME == 'Linux':
             self.strip = ws.PixelStrip(self.numLEDs, pin)
             self.strip.begin()
-            self.pixelsShow = self.__pixelsShowRPi
-            self.ticks_ms = self.ticks_ms_Linux
+            self.pixelsShow = self._pixelsShowRPi
+            self.ticks_ms = self._ticks_ms_Linux
 
         self.ar = array.array("I", [0 for _ in range(self.numLEDs)])
         self.dimmer_ar = array.array("I", [0 for _ in range(self.numLEDs)])
@@ -998,20 +1218,19 @@ class matrix8x8(glowbitMatrix):
         self.numLEDsY = tileRows*8
         
         if _SYSNAME == 'rp2':
-            self.sm = rp2.StateMachine(sm, self.__ws2812, freq=8_000_000, sideset_base=Pin(pin))
+            self.sm = rp2.StateMachine(sm, self._ws2812, freq=8_000_000, sideset_base=Pin(pin))
             self.sm.active(1)
-            self.pixelsShow = self.__pixelsShowPico
+            self.pixelsShow = self._pixelsShowPico
             self.ticks_ms = time.ticks_ms
 
         if _SYSNAME == 'Linux':
             self.strip = ws.PixelStrip(self.numLEDs, pin)
             self.strip.begin()
-            self.pixelsShow = self.__pixelsShowRPi
-            self.ticks_ms = self.ticks_ms_Linux
+            self.pixelsShow = self._pixelsShowRPi
+            self.ticks_ms = self._ticks_ms_Linux
 
         self.ar = array.array("I", [0 for _ in range(self.numLEDs)])
         self.dimmer_ar = array.array("I", [0 for _ in range(self.numLEDs)])
-#        self.text_ar = array.array("I", [0 for _ in range(self.numLEDs)])
         
         if brightness <= 1.0 and isinstance(brightness, float):
             self.brightness = int(brightness*255)
@@ -1038,6 +1257,7 @@ class matrix8x8(glowbitMatrix):
             self.remap = self.remap8x8
             
         # Blank display
+        self.blankDisplay()
         self.blankDisplay()
 
     def printTextWrap(self, string, x = 0, y = 0, colour = 0xFFFFFF):

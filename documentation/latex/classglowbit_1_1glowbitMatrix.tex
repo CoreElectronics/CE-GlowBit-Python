@@ -27,11 +27,11 @@ Collaboration diagram for glowbit.\+glowbit\+Matrix\+:\nopagebreak
 \begin{DoxyCompactItemize}
 \item 
 class \hyperlink{classglowbit_1_1glowbitMatrix_1_1graph1D}{graph1D}
-\item 
+\begin{DoxyCompactList}\small\item\em One dimensional graph object for graph bars on Glow\+Bit Matrix displays. \end{DoxyCompactList}\item 
 class \hyperlink{classglowbit_1_1glowbitMatrix_1_1graph2D}{graph2D}
-\item 
+\begin{DoxyCompactList}\small\item\em Object for drawing 2 dimensional time series graphs on Glow\+Bit Matrix displays. \end{DoxyCompactList}\item 
 class \hyperlink{classglowbit_1_1glowbitMatrix_1_1raindrop}{raindrop}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em A class used by the \hyperlink{classglowbit_1_1glowbitMatrix_a690a172f923caeb55e3adf012ec0600c}{rain()} demonstration. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -42,60 +42,204 @@ def \hyperlink{classglowbit_1_1glowbitMatrix_ab100bb891bab3d6479b066049ce9a367}{
 def \hyperlink{classglowbit_1_1glowbitMatrix_af33f1952a94e2f0933386ae2e7c5bca4}{pixel\+Set\+X\+Y\+Clip} (self, x, y, colour)
 \begin{DoxyCompactList}\small\item\em Sets the colour value of the Glow\+Bit L\+ED at a given x-\/y coordinate. \end{DoxyCompactList}\item 
 def \hyperlink{classglowbit_1_1glowbitMatrix_ae05d008c207c5f5219e737d29185501e}{pixel\+Add\+XY} (self, x, y, colour)
-\begin{DoxyCompactList}\small\item\em Adds the colour value to the Glow\+Bit L\+ED at a given x-\/y coordinate. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Adds the colour value to the Glow\+Bit L\+ED at a given (x,y) coordinate. \end{DoxyCompactList}\item 
 def \hyperlink{classglowbit_1_1glowbitMatrix_a4f2deb5f58f45e285e84c9cac1644618}{pixel\+Add\+X\+Y\+Clip} (self, x, y, colour)
-\begin{DoxyCompactList}\small\item\em Adds the colour value to the Glow\+Bit L\+ED at a given x-\/y coordinate. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Adds the colour value to the Glow\+Bit L\+ED at a given (x,y) coordinate. \end{DoxyCompactList}\item 
 def \hyperlink{classglowbit_1_1glowbitMatrix_ab67885d63f392afa061c8455de3e31ba}{get\+Pixel\+XY} (self, x, y)
-\begin{DoxyCompactList}\small\item\em Returns the 32-\/bit Glow\+Bit colour value of the L\+ED at a given x-\/y coordinate. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classglowbit_1_1glowbitMatrix_a373a7739051a7399a94636375ac0b4ec}\label{classglowbit_1_1glowbitMatrix_a373a7739051a7399a94636375ac0b4ec}} 
-def {\bfseries draw\+Line} (self, x0, y0, x1, y1, colour)
-\item 
-\mbox{\Hypertarget{classglowbit_1_1glowbitMatrix_ac0b08486a62b6bd9c8633287d2725f43}\label{classglowbit_1_1glowbitMatrix_ac0b08486a62b6bd9c8633287d2725f43}} 
-def {\bfseries draw\+Triangle} (self, x0, y0, x1, y1, x2, y2, colour)
-\item 
-\mbox{\Hypertarget{classglowbit_1_1glowbitMatrix_ad70235a976475054af4ccb534a32b5e7}\label{classglowbit_1_1glowbitMatrix_ad70235a976475054af4ccb534a32b5e7}} 
-def {\bfseries draw\+Rectangle} (self, x0, y0, x1, y1, colour)
-\item 
-\mbox{\Hypertarget{classglowbit_1_1glowbitMatrix_ad91952585c61527ae5c0ac4a170435bf}\label{classglowbit_1_1glowbitMatrix_ad91952585c61527ae5c0ac4a170435bf}} 
-def {\bfseries draw\+Rectangle\+Fill} (self, x0, y0, x1, y1, colour)
-\item 
-\mbox{\Hypertarget{classglowbit_1_1glowbitMatrix_a4efec5ce17c30403505b1f2775022e90}\label{classglowbit_1_1glowbitMatrix_a4efec5ce17c30403505b1f2775022e90}} 
-def {\bfseries draw\+Circle} (self, x0, y0, r, colour)
-\item 
-\mbox{\Hypertarget{classglowbit_1_1glowbitMatrix_a0d44976cdc12728d9ae80c2d901029c0}\label{classglowbit_1_1glowbitMatrix_a0d44976cdc12728d9ae80c2d901029c0}} 
-def {\bfseries update\+Graph1D} (self, graph, value)
-\item 
-\mbox{\Hypertarget{classglowbit_1_1glowbitMatrix_aaf5d23a0ed51901ffd78dfae985fbc7f}\label{classglowbit_1_1glowbitMatrix_aaf5d23a0ed51901ffd78dfae985fbc7f}} 
-def {\bfseries update\+Graph2D} (self, graph)
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the 32-\/bit Glow\+Bit colour value of the L\+ED at a given (x,y) coordinate. \end{DoxyCompactList}\item 
+def \hyperlink{classglowbit_1_1glowbitMatrix_a373a7739051a7399a94636375ac0b4ec}{draw\+Line} (self, x0, y0, x1, y1, colour)
+\begin{DoxyCompactList}\small\item\em Draws a straight line between (x0,y0) and (x1,y1) in the specified 32-\/bit Glow\+Bit colour. \end{DoxyCompactList}\item 
+def \hyperlink{classglowbit_1_1glowbitMatrix_ac0b08486a62b6bd9c8633287d2725f43}{draw\+Triangle} (self, x0, y0, x1, y1, x2, y2, colour)
+\begin{DoxyCompactList}\small\item\em Draws a triangle with vertices (corners) at (x0,y0), (x1, y1), and (x2,y2). \end{DoxyCompactList}\item 
+def \hyperlink{classglowbit_1_1glowbitMatrix_ad70235a976475054af4ccb534a32b5e7}{draw\+Rectangle} (self, x0, y0, x1, y1, colour)
+\begin{DoxyCompactList}\small\item\em Draws a rectangle with upper-\/left corner (x0,y0) and lower right corner (x1, y1). \end{DoxyCompactList}\item 
+def \hyperlink{classglowbit_1_1glowbitMatrix_ad91952585c61527ae5c0ac4a170435bf}{draw\+Rectangle\+Fill} (self, x0, y0, x1, y1, colour)
+\begin{DoxyCompactList}\small\item\em Draws a rectangle with upper-\/left corner (x0,y0) and lower right corner (x1, y1). \end{DoxyCompactList}\item 
+def \hyperlink{classglowbit_1_1glowbitMatrix_a4efec5ce17c30403505b1f2775022e90}{draw\+Circle} (self, x0, y0, r, colour)
+\begin{DoxyCompactList}\small\item\em Draws a circle with center (x0,y0) and radius r. \end{DoxyCompactList}\item 
+def \hyperlink{classglowbit_1_1glowbitMatrix_a0d44976cdc12728d9ae80c2d901029c0}{update\+Graph1D} (self, graph, value)
+\begin{DoxyCompactList}\small\item\em Updates a \hyperlink{classglowbit_1_1glowbitMatrix_1_1graph1D}{graph1D} object and draws it to the display. \end{DoxyCompactList}\item 
+def \hyperlink{classglowbit_1_1glowbitMatrix_ae9083babec0d5004363782540b60baed}{update\+Graph2D} (self, graph, value)
+\begin{DoxyCompactList}\small\item\em Updates a 2D graph with a new value. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classglowbit_1_1glowbitMatrix_a0071fd8471e5f519586f6fdd86f8d7f3}\label{classglowbit_1_1glowbitMatrix_a0071fd8471e5f519586f6fdd86f8d7f3}} 
-def {\bfseries line\+Demo} (self, iters=10)
-\item 
-\mbox{\Hypertarget{classglowbit_1_1glowbitMatrix_a69370ec1479b4887fca517fbefd92e4c}\label{classglowbit_1_1glowbitMatrix_a69370ec1479b4887fca517fbefd92e4c}} 
-def {\bfseries fireworks} (self, iters=10)
-\item 
-\mbox{\Hypertarget{classglowbit_1_1glowbitMatrix_adf29bdb4294bcf27ae560130b0fcae35}\label{classglowbit_1_1glowbitMatrix_adf29bdb4294bcf27ae560130b0fcae35}} 
-def {\bfseries circular\+Rainbow} (self)
-\item 
-\mbox{\Hypertarget{classglowbit_1_1glowbitMatrix_a690a172f923caeb55e3adf012ec0600c}\label{classglowbit_1_1glowbitMatrix_a690a172f923caeb55e3adf012ec0600c}} 
-def {\bfseries rain} (self, iters=1000, density=1)
-\item 
-\mbox{\Hypertarget{classglowbit_1_1glowbitMatrix_a6232220b12c86c7ec361cde374419ac4}\label{classglowbit_1_1glowbitMatrix_a6232220b12c86c7ec361cde374419ac4}} 
-def {\bfseries text\+Demo} (self, text=\char`\"{}Scrolling Text Demo\char`\"{})
-\item 
+def \hyperlink{classglowbit_1_1glowbitMatrix_a0071fd8471e5f519586f6fdd86f8d7f3}{line\+Demo} (self, iters=10)
+\begin{DoxyCompactList}\small\item\em Demonstrate drawing an animated line. \end{DoxyCompactList}\item 
+def \hyperlink{classglowbit_1_1glowbitMatrix_a69370ec1479b4887fca517fbefd92e4c}{fireworks} (self, iters=10)
+\begin{DoxyCompactList}\small\item\em Demonstrate drawing randomly placed, randomly coloured, expanding circles. \end{DoxyCompactList}\item 
+def \hyperlink{classglowbit_1_1glowbitMatrix_adf29bdb4294bcf27ae560130b0fcae35}{circular\+Rainbow} (self)
+\begin{DoxyCompactList}\small\item\em Demonstration of a rainbow effect is pseudo-\/polar coordinates. \end{DoxyCompactList}\item 
+def \hyperlink{classglowbit_1_1glowbitMatrix_a690a172f923caeb55e3adf012ec0600c}{rain} (self, iters=1000, density=1)
+\begin{DoxyCompactList}\small\item\em A \char`\"{}digital rain\char`\"{} demonstration. \end{DoxyCompactList}\item 
+def \hyperlink{classglowbit_1_1glowbitMatrix_a6232220b12c86c7ec361cde374419ac4}{text\+Demo} (self, text=\char`\"{}Scrolling Text Demo\char`\"{})
+\begin{DoxyCompactList}\small\item\em Demonstrates creation of non-\/blocking scrolling text. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classglowbit_1_1glowbitMatrix_a969352871a02db3d55bcabe5b5107574}\label{classglowbit_1_1glowbitMatrix_a969352871a02db3d55bcabe5b5107574}} 
-def {\bfseries bounce} (self, iters=1000)
-\end{DoxyCompactItemize}
+def \hyperlink{classglowbit_1_1glowbitMatrix_a969352871a02db3d55bcabe5b5107574}{bounce} (self, iters=1000)
+\begin{DoxyCompactList}\small\item\em Draws a single pixel at a random coordinate and \char`\"{}bounces\char`\"{} it around the display. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
 
 \subsection{Detailed Description}
 Methods specific to 2D matrix displays and tiled arrangements thereof. 
 
-
+This class should not be used directly; its methods are inherited by the \hyperlink{classglowbit_1_1matrix8x8}{glowbit.\+matrix8x8} and \hyperlink{classglowbit_1_1matrix4x4}{glowbit.\+matrix4x4} classes. 
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{classglowbit_1_1glowbitMatrix_ab67885d63f392afa061c8455de3e31ba}\label{classglowbit_1_1glowbitMatrix_ab67885d63f392afa061c8455de3e31ba}} 
+\mbox{\Hypertarget{classglowbit_1_1glowbitMatrix_adf29bdb4294bcf27ae560130b0fcae35}\label{classglowbit_1_1glowbitMatrix_adf29bdb4294bcf27ae560130b0fcae35}} 
+\index{glowbit\+::glowbit\+Matrix@{glowbit\+::glowbit\+Matrix}!circular\+Rainbow@{circular\+Rainbow}}
+\index{circular\+Rainbow@{circular\+Rainbow}!glowbit\+::glowbit\+Matrix@{glowbit\+::glowbit\+Matrix}}
+\subsubsection{\texorpdfstring{circular\+Rainbow()}{circularRainbow()}}
+{\footnotesize\ttfamily def glowbit.\+glowbit\+Matrix.\+circular\+Rainbow (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Demonstration of a rainbow effect is pseudo-\/polar coordinates. 
+
+This function intentionally uses integer arithmetic for performance reasons. As such, it is drawn half a pixel off center.
+
+The function animates 255 frames then returns. \mbox{\Hypertarget{classglowbit_1_1glowbitMatrix_a4efec5ce17c30403505b1f2775022e90}\label{classglowbit_1_1glowbitMatrix_a4efec5ce17c30403505b1f2775022e90}} 
+\index{glowbit\+::glowbit\+Matrix@{glowbit\+::glowbit\+Matrix}!draw\+Circle@{draw\+Circle}}
+\index{draw\+Circle@{draw\+Circle}!glowbit\+::glowbit\+Matrix@{glowbit\+::glowbit\+Matrix}}
+\subsubsection{\texorpdfstring{draw\+Circle()}{drawCircle()}}
+{\footnotesize\ttfamily def glowbit.\+glowbit\+Matrix.\+draw\+Circle (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{x0,  }\item[{}]{y0,  }\item[{}]{r,  }\item[{}]{colour }\end{DoxyParamCaption})}
+
+
+
+Draws a circle with center (x0,y0) and radius r. 
+
+The circle\textquotesingle{}s outline is drawn in the specified colour. Pixels inside the circle are not modified.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x0} & The x coordinate of the circle\textquotesingle{}s center \\
+\hline
+{\em y0} & The y coordinate of the circle\textquotesingle{}s center \\
+\hline
+{\em colour} & A packed 32-\/bit Glow\+Bit colour value \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classglowbit_1_1glowbitMatrix_a373a7739051a7399a94636375ac0b4ec}\label{classglowbit_1_1glowbitMatrix_a373a7739051a7399a94636375ac0b4ec}} 
+\index{glowbit\+::glowbit\+Matrix@{glowbit\+::glowbit\+Matrix}!draw\+Line@{draw\+Line}}
+\index{draw\+Line@{draw\+Line}!glowbit\+::glowbit\+Matrix@{glowbit\+::glowbit\+Matrix}}
+\subsubsection{\texorpdfstring{draw\+Line()}{drawLine()}}
+{\footnotesize\ttfamily def glowbit.\+glowbit\+Matrix.\+draw\+Line (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{x0,  }\item[{}]{y0,  }\item[{}]{x1,  }\item[{}]{y1,  }\item[{}]{colour }\end{DoxyParamCaption})}
+
+
+
+Draws a straight line between (x0,y0) and (x1,y1) in the specified 32-\/bit Glow\+Bit colour. 
+
+If pixel is drawn off the screen a \char`\"{}clipping\char`\"{} effect will be inherited from the behaviour of \hyperlink{classglowbit_1_1glowbitMatrix_af33f1952a94e2f0933386ae2e7c5bca4}{pixel\+Set\+X\+Y\+Clip()}. ie\+: Pixels landing off the screen will not be drawn.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x0} & The line\textquotesingle{}s starting x coordinate \\
+\hline
+{\em y0} & The line\textquotesingle{}s starting y coordinate \\
+\hline
+{\em x1} & The line\textquotesingle{}s ending x coordinate \\
+\hline
+{\em y1} & The line\textquotesingle{}s ending y coordinate \\
+\hline
+{\em colour} & A packed 32-\/bit Glow\+Bit colour value \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classglowbit_1_1glowbitMatrix_ad70235a976475054af4ccb534a32b5e7}\label{classglowbit_1_1glowbitMatrix_ad70235a976475054af4ccb534a32b5e7}} 
+\index{glowbit\+::glowbit\+Matrix@{glowbit\+::glowbit\+Matrix}!draw\+Rectangle@{draw\+Rectangle}}
+\index{draw\+Rectangle@{draw\+Rectangle}!glowbit\+::glowbit\+Matrix@{glowbit\+::glowbit\+Matrix}}
+\subsubsection{\texorpdfstring{draw\+Rectangle()}{drawRectangle()}}
+{\footnotesize\ttfamily def glowbit.\+glowbit\+Matrix.\+draw\+Rectangle (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{x0,  }\item[{}]{y0,  }\item[{}]{x1,  }\item[{}]{y1,  }\item[{}]{colour }\end{DoxyParamCaption})}
+
+
+
+Draws a rectangle with upper-\/left corner (x0,y0) and lower right corner (x1, y1). 
+
+All edge lines are drawn with the specified colour.
+
+Pixels inside the rectangle are left unmodified.
+
+If pixel is drawn off the screen a \char`\"{}clipping\char`\"{} effect will be inherited from the behaviour of \hyperlink{classglowbit_1_1glowbitMatrix_af33f1952a94e2f0933386ae2e7c5bca4}{pixel\+Set\+X\+Y\+Clip()}. ie\+: Pixels landing off the screen will not be drawn.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x0} & The x coordinate of the upper left corner \\
+\hline
+{\em y0} & The y coordinate of the upper left corner \\
+\hline
+{\em x1} & The x coordinate of the lower right corner \\
+\hline
+{\em y1} & The y coordinate of the lower right corner \\
+\hline
+{\em colour} & A packed 32-\/bit Glow\+Bit colour value \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classglowbit_1_1glowbitMatrix_ad91952585c61527ae5c0ac4a170435bf}\label{classglowbit_1_1glowbitMatrix_ad91952585c61527ae5c0ac4a170435bf}} 
+\index{glowbit\+::glowbit\+Matrix@{glowbit\+::glowbit\+Matrix}!draw\+Rectangle\+Fill@{draw\+Rectangle\+Fill}}
+\index{draw\+Rectangle\+Fill@{draw\+Rectangle\+Fill}!glowbit\+::glowbit\+Matrix@{glowbit\+::glowbit\+Matrix}}
+\subsubsection{\texorpdfstring{draw\+Rectangle\+Fill()}{drawRectangleFill()}}
+{\footnotesize\ttfamily def glowbit.\+glowbit\+Matrix.\+draw\+Rectangle\+Fill (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{x0,  }\item[{}]{y0,  }\item[{}]{x1,  }\item[{}]{y1,  }\item[{}]{colour }\end{DoxyParamCaption})}
+
+
+
+Draws a rectangle with upper-\/left corner (x0,y0) and lower right corner (x1, y1). 
+
+The rectangle is then filled to form a solid block of the specified colour.
+
+If pixel is drawn off the screen a \char`\"{}clipping\char`\"{} effect will be inherited from the behaviour of \hyperlink{classglowbit_1_1glowbitMatrix_af33f1952a94e2f0933386ae2e7c5bca4}{pixel\+Set\+X\+Y\+Clip()}. ie\+: Pixels landing off the screen will not be drawn.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x0} & The x coordinate of the upper left corner \\
+\hline
+{\em y0} & The y coordinate of the upper left corner \\
+\hline
+{\em x1} & The x coordinate of the lower right corner \\
+\hline
+{\em y1} & The y coordinate of the lower right corner \\
+\hline
+{\em colour} & A packed 32-\/bit Glow\+Bit colour value \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classglowbit_1_1glowbitMatrix_ac0b08486a62b6bd9c8633287d2725f43}\label{classglowbit_1_1glowbitMatrix_ac0b08486a62b6bd9c8633287d2725f43}} 
+\index{glowbit\+::glowbit\+Matrix@{glowbit\+::glowbit\+Matrix}!draw\+Triangle@{draw\+Triangle}}
+\index{draw\+Triangle@{draw\+Triangle}!glowbit\+::glowbit\+Matrix@{glowbit\+::glowbit\+Matrix}}
+\subsubsection{\texorpdfstring{draw\+Triangle()}{drawTriangle()}}
+{\footnotesize\ttfamily def glowbit.\+glowbit\+Matrix.\+draw\+Triangle (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{x0,  }\item[{}]{y0,  }\item[{}]{x1,  }\item[{}]{y1,  }\item[{}]{x2,  }\item[{}]{y2,  }\item[{}]{colour }\end{DoxyParamCaption})}
+
+
+
+Draws a triangle with vertices (corners) at (x0,y0), (x1, y1), and (x2,y2). 
+
+All lines are drawn with the specified colour.
+
+If pixel is drawn off the screen a \char`\"{}clipping\char`\"{} effect will be inherited from the behaviour of \hyperlink{classglowbit_1_1glowbitMatrix_af33f1952a94e2f0933386ae2e7c5bca4}{pixel\+Set\+X\+Y\+Clip()}. ie\+: Pixels landing off the screen will not be drawn.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x0} & The x coordinate of the first vertex \\
+\hline
+{\em y0} & The y coordinate of the first vertex \\
+\hline
+{\em x1} & The x coordinate of the second vertex \\
+\hline
+{\em y1} & The y coordinate of the second vertex \\
+\hline
+{\em x2} & The x coordinate of the third vertex \\
+\hline
+{\em y2} & The y coordinate of the third vertex \\
+\hline
+{\em colour} & A packed 32-\/bit Glow\+Bit colour value \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classglowbit_1_1glowbitMatrix_a69370ec1479b4887fca517fbefd92e4c}\label{classglowbit_1_1glowbitMatrix_a69370ec1479b4887fca517fbefd92e4c}} 
+\index{glowbit\+::glowbit\+Matrix@{glowbit\+::glowbit\+Matrix}!fireworks@{fireworks}}
+\index{fireworks@{fireworks}!glowbit\+::glowbit\+Matrix@{glowbit\+::glowbit\+Matrix}}
+\subsubsection{\texorpdfstring{fireworks()}{fireworks()}}
+{\footnotesize\ttfamily def glowbit.\+glowbit\+Matrix.\+fireworks (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{iters = {\ttfamily 10} }\end{DoxyParamCaption})}
+
+
+
+Demonstrate drawing randomly placed, randomly coloured, expanding circles. 
+
+Note that pixels\+Fill(0) is only called after drawing an expanding circle, simulating a mostly filled circle. Gaps are an artefact of the circle drawing algorithm, not a bug. \mbox{\Hypertarget{classglowbit_1_1glowbitMatrix_ab67885d63f392afa061c8455de3e31ba}\label{classglowbit_1_1glowbitMatrix_ab67885d63f392afa061c8455de3e31ba}} 
 \index{glowbit\+::glowbit\+Matrix@{glowbit\+::glowbit\+Matrix}!get\+Pixel\+XY@{get\+Pixel\+XY}}
 \index{get\+Pixel\+XY@{get\+Pixel\+XY}!glowbit\+::glowbit\+Matrix@{glowbit\+::glowbit\+Matrix}}
 \subsubsection{\texorpdfstring{get\+Pixel\+X\+Y()}{getPixelXY()}}
@@ -103,9 +247,9 @@ Methods specific to 2D matrix displays and tiled arrangements thereof.
 
 
 
-Returns the 32-\/bit Glow\+Bit colour value of the L\+ED at a given x-\/y coordinate. 
+Returns the 32-\/bit Glow\+Bit colour value of the L\+ED at a given (x,y) coordinate. 
 
-If the x-\/y coordinate falls outside of the display\textquotesingle{}s boundary an Index\+Error exception may be thrown or the Glow\+Bit colour value of an undefined pixel may be returned.
+If the (x,y) coordinate falls outside of the display\textquotesingle{}s boundary an Index\+Error exception may be thrown or the Glow\+Bit colour value of an undefined pixel may be returned.
 
 
 \begin{DoxyParams}{Parameters}
@@ -123,7 +267,7 @@ The 32-\/bit Glow\+Bit colour value of the i\textquotesingle{}th L\+ED
 
 
 
-Adds the colour value to the Glow\+Bit L\+ED at a given x-\/y coordinate. 
+Adds the colour value to the Glow\+Bit L\+ED at a given (x,y) coordinate. 
 
 The coordinate assumes an origin in the upper left of the display with x increasing to the right and y increasing downwards.
 
@@ -148,7 +292,7 @@ Data colour corruption will occur if the sum result of any R\+GB value exceeds 2
 
 
 
-Adds the colour value to the Glow\+Bit L\+ED at a given x-\/y coordinate. 
+Adds the colour value to the Glow\+Bit L\+ED at a given (x,y) coordinate. 
 
 The coordinate assumes an origin in the upper left of the display with x increasing to the right and y increasing downwards.
 
@@ -232,6 +376,76 @@ If the x-\/y coordinate falls outside the display\textquotesingle{}s boundary th
 {\em y} & The y coordinate of the Glow\+Bit L\+ED. y must be an integer. \\
 \hline
 {\em colour} & A packed 32-\/bit Glow\+Bit colour value \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classglowbit_1_1glowbitMatrix_a690a172f923caeb55e3adf012ec0600c}\label{classglowbit_1_1glowbitMatrix_a690a172f923caeb55e3adf012ec0600c}} 
+\index{glowbit\+::glowbit\+Matrix@{glowbit\+::glowbit\+Matrix}!rain@{rain}}
+\index{rain@{rain}!glowbit\+::glowbit\+Matrix@{glowbit\+::glowbit\+Matrix}}
+\subsubsection{\texorpdfstring{rain()}{rain()}}
+{\footnotesize\ttfamily def glowbit.\+glowbit\+Matrix.\+rain (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{iters = {\ttfamily 1000},  }\item[{}]{density = {\ttfamily 1} }\end{DoxyParamCaption})}
+
+
+
+A \char`\"{}digital rain\char`\"{} demonstration. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em iters} & The number of frames on which raindrops can be drawn \\
+\hline
+{\em density} & The density of raindrops in units of \char`\"{}drops per 4x4 square\char`\"{}. The number of drops on the screen will be kept at (number of pixels)$\ast$(density)/16 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classglowbit_1_1glowbitMatrix_a6232220b12c86c7ec361cde374419ac4}\label{classglowbit_1_1glowbitMatrix_a6232220b12c86c7ec361cde374419ac4}} 
+\index{glowbit\+::glowbit\+Matrix@{glowbit\+::glowbit\+Matrix}!text\+Demo@{text\+Demo}}
+\index{text\+Demo@{text\+Demo}!glowbit\+::glowbit\+Matrix@{glowbit\+::glowbit\+Matrix}}
+\subsubsection{\texorpdfstring{text\+Demo()}{textDemo()}}
+{\footnotesize\ttfamily def glowbit.\+glowbit\+Matrix.\+text\+Demo (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{text = {\ttfamily \char`\"{}Scrolling~Text~Demo\char`\"{}} }\end{DoxyParamCaption})}
+
+
+
+Demonstrates creation of non-\/blocking scrolling text. 
+
+Only compatible with the Glow\+Bit Matrix 8x8 and tiled arrangements thereof.
+
+
+\begin{DoxyParams}{Parameters}
+{\em text} & A string of text which is scrolled across the top row of the display. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classglowbit_1_1glowbitMatrix_a0d44976cdc12728d9ae80c2d901029c0}\label{classglowbit_1_1glowbitMatrix_a0d44976cdc12728d9ae80c2d901029c0}} 
+\index{glowbit\+::glowbit\+Matrix@{glowbit\+::glowbit\+Matrix}!update\+Graph1D@{update\+Graph1D}}
+\index{update\+Graph1D@{update\+Graph1D}!glowbit\+::glowbit\+Matrix@{glowbit\+::glowbit\+Matrix}}
+\subsubsection{\texorpdfstring{update\+Graph1\+D()}{updateGraph1D()}}
+{\footnotesize\ttfamily def glowbit.\+glowbit\+Matrix.\+update\+Graph1D (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{graph,  }\item[{}]{value }\end{DoxyParamCaption})}
+
+
+
+Updates a \hyperlink{classglowbit_1_1glowbitMatrix_1_1graph1D}{graph1D} object and draws it to the display. 
+
+If the \hyperlink{classglowbit_1_1glowbitMatrix_1_1graph1D}{graph1D} was created with \char`\"{}update = True\char`\"{} this function will call \hyperlink{classglowbit_1_1glowbit_a051aed2a4969fdcb0466e4e840209279}{pixels\+Show()} to update the physical display before returning.
+
+
+\begin{DoxyParams}{Parameters}
+{\em graph} & A \hyperlink{classglowbit_1_1glowbitMatrix_1_1graph1D}{graph1D} object as returned by glowbit\+Matrix.\+graph1\+D() \\
+\hline
+{\em value} & The value to draw to the graph. It will be mapped to the graph bet \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classglowbit_1_1glowbitMatrix_ae9083babec0d5004363782540b60baed}\label{classglowbit_1_1glowbitMatrix_ae9083babec0d5004363782540b60baed}} 
+\index{glowbit\+::glowbit\+Matrix@{glowbit\+::glowbit\+Matrix}!update\+Graph2D@{update\+Graph2D}}
+\index{update\+Graph2D@{update\+Graph2D}!glowbit\+::glowbit\+Matrix@{glowbit\+::glowbit\+Matrix}}
+\subsubsection{\texorpdfstring{update\+Graph2\+D()}{updateGraph2D()}}
+{\footnotesize\ttfamily def glowbit.\+glowbit\+Matrix.\+update\+Graph2D (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{graph,  }\item[{}]{value }\end{DoxyParamCaption})}
+
+
+
+Updates a 2D graph with a new value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em graph} & A \hyperlink{classglowbit_1_1glowbitMatrix_1_1graph2D}{graph2D} object created \hyperlink{classglowbit_1_1glowbitMatrix_1_1graph2D}{graph2D} \\
+\hline
+{\em value} & A new value to draw to the graph. This value will be drawn on the right edge and the oldest value will be deleted. \\
 \hline
 \end{DoxyParams}
 

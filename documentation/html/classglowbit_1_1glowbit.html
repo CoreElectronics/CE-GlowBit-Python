@@ -111,6 +111,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a8bb7ba36b4b7746f215ebad1acc0f5e2"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classglowbit_1_1glowbit.html#a8bb7ba36b4b7746f215ebad1acc0f5e2">pixelAdd</a> (self, i, colour)</td></tr>
 <tr class="memdesc:a8bb7ba36b4b7746f215ebad1acc0f5e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a 32-bit GlowBit colour value to the i'th LED in the internal buffer only.  <a href="#a8bb7ba36b4b7746f215ebad1acc0f5e2">More...</a><br /></td></tr>
 <tr class="separator:a8bb7ba36b4b7746f215ebad1acc0f5e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0db675789faef3399ffb2c1213c12048"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classglowbit_1_1glowbit.html#a0db675789faef3399ffb2c1213c12048">pixelSaturatingAdd</a> (self, i, colour)</td></tr>
+<tr class="memdesc:a0db675789faef3399ffb2c1213c12048"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a 32-bit GlowBit colour value to the i'th LED in the internal buffer.  <a href="#a0db675789faef3399ffb2c1213c12048">More...</a><br /></td></tr>
+<tr class="separator:a0db675789faef3399ffb2c1213c12048"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aca86823fecc4949692ac18f8c21e34ac"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classglowbit_1_1glowbit.html#aca86823fecc4949692ac18f8c21e34ac">pixelsFill</a> (self, colour)</td></tr>
 <tr class="memdesc:aca86823fecc4949692ac18f8c21e34ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fills all pixels with a solid colour value.  <a href="#aca86823fecc4949692ac18f8c21e34ac">More...</a><br /></td></tr>
 <tr class="separator:aca86823fecc4949692ac18f8c21e34ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -305,6 +308,51 @@ Static Public Attributes</h2></td></tr>
 
 <p>Adds a 32-bit GlowBit colour value to the i'th LED in the internal buffer only. </p>
 <p>Data colour corruption will occur if the sum result of any RGB value exceeds 255. Care must be taken to avoid this manually. eg: if the blue channel's resulting intensity value is 256 it will be set to zero and the red channel incremented by 1. See the <a class="el" href="classglowbit_1_1colourFunctions.html" title="Methods for transforming colours to 32-bit packed GlowBit colour values. ">colourFunctions</a> class documentation for the 32-bit GlowBit colour specification.</p>
+<p>NB: For efficiency, this method does not do any index bounds checking. If the value of the parameter i is larger than the number of LEDs it will cause an IndexError exception.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">i</td><td>An LED's index </td></tr>
+    <tr><td class="paramname">colour</td><td>The 32-bit GlowBit colour value </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a0db675789faef3399ffb2c1213c12048"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0db675789faef3399ffb2c1213c12048">&#9670;&nbsp;</a></span>pixelSaturatingAdd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def glowbit.glowbit.pixelSaturatingAdd </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>i</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>colour</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Adds a 32-bit GlowBit colour value to the i'th LED in the internal buffer. </p>
+<p>This function performs "saturating" arithmetic. It is much slower than pixelAdd but will saturate at 255 to avoid data corruption.</p>
 <p>NB: For efficiency, this method does not do any index bounds checking. If the value of the parameter i is larger than the number of LEDs it will cause an IndexError exception.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">

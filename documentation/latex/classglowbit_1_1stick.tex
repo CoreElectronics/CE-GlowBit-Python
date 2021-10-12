@@ -24,13 +24,12 @@ Collaboration diagram for glowbit.\+stick\+:\nopagebreak
 class \hyperlink{classglowbit_1_1stick_1_1graph1D}{graph1D}
 \item 
 class \hyperlink{classglowbit_1_1stick_1_1pulse}{pulse}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em A class for animating \char`\"{}pulses\char`\"{} which move down a Glow\+Bit stick. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classglowbit_1_1stick_ac51b02c334481110558ac2f8c54938b8}\label{classglowbit_1_1stick_ac51b02c334481110558ac2f8c54938b8}} 
-def {\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+} (self, num\+L\+E\+Ds=8, pin=18, brightness=20, rate\+Limit\+F\+PS=30, sm=0)
-\item 
+def \hyperlink{classglowbit_1_1stick_ac51b02c334481110558ac2f8c54938b8}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, num\+L\+E\+Ds=8, pin=18, brightness=20, rate\+Limit\+F\+PS=30, sm=0)
+\begin{DoxyCompactList}\small\item\em Initialisation routine for Glow\+Bit stick modules and tiled arrays thereof. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classglowbit_1_1stick_a14fb6c41aebc0b87595dde1ee4dd35a3}\label{classglowbit_1_1stick_a14fb6c41aebc0b87595dde1ee4dd35a3}} 
 def {\bfseries add\+Pulse} (self, speed=100, colour=\mbox{[}0x\+F\+F\+F\+F\+F\+F\mbox{]}, index=0, colour\+Map=\+None)
 \item 
@@ -89,6 +88,32 @@ def {\bfseries slice\+Demo} (self)
 {\bfseries pulses}
 \end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classglowbit_1_1stick_ac51b02c334481110558ac2f8c54938b8}\label{classglowbit_1_1stick_ac51b02c334481110558ac2f8c54938b8}} 
+\index{glowbit\+::stick@{glowbit\+::stick}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!glowbit\+::stick@{glowbit\+::stick}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def glowbit.\+stick.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{num\+L\+E\+Ds = {\ttfamily 8},  }\item[{}]{pin = {\ttfamily 18},  }\item[{}]{brightness = {\ttfamily 20},  }\item[{}]{rate\+Limit\+F\+PS = {\ttfamily 30},  }\item[{}]{sm = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Initialisation routine for Glow\+Bit stick modules and tiled arrays thereof. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num\+L\+E\+Ds} & The total number of L\+E\+Ds. Should be set to 8 $\ast$ (the number of tiled modules). \\
+\hline
+{\em pin} & The G\+P\+IO pin connected to the Glow\+Bit stick module(s). Defaults to 18 as that pin is compatible with the Raspberry Pi and Raspberry Pi Pico. \\
+\hline
+{\em brightness} & The relative brightness of the L\+E\+Ds. Colours drawn to the internal buffer should be in the range \mbox{[}0,255\mbox{]} and the brightness parameter scales this value before drawing to the physical display. If brightness is an integer it should be in the range \mbox{[}0,255\mbox{]}. If brightness is floating point it is assumed to be in the range \mbox{[}0,1.\+0\mbox{]}. \\
+\hline
+{\em rate\+Limit\+F\+PS} & The maximum frame rate of the display in frames per second. The pixels\+Show() function blocks to enforce this limit. \\
+\hline
+{\em sm} & (Raspberry Pi Pico only) The P\+IO state machine to generate the Glow\+Bit data stream. Each connected Glow\+Bit display chain requires a unique state machine. Valid values are in the range \mbox{[}0,7\mbox{]}. \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

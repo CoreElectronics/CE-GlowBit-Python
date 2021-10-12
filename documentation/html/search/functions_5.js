@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['updateratelimitcharacterspersecond',['updateRateLimitCharactersPerSecond',['../classglowbit_1_1matrix8x8.html#a5dfbe10ccf2acca4d6d4012e29e7b439',1,'glowbit::matrix8x8']]],
-  ['updateratelimitfps',['updateRateLimitFPS',['../classglowbit_1_1glowbit.html#a7f72cb0878a688aa6181d4632428da09',1,'glowbit::glowbit']]]
+  ['getpixel',['getPixel',['../classglowbit_1_1glowbit.html#a0f15a8907f807ed1af905854fedbbc60',1,'glowbit::glowbit']]],
+  ['getpixelxy',['getPixelXY',['../classglowbit_1_1glowbitMatrix.html#ab67885d63f392afa061c8455de3e31ba',1,'glowbit::glowbitMatrix']]],
+  ['glowbitcolour2rgb',['glowbitColour2RGB',['../classglowbit_1_1colourFunctions.html#a6f887561ea3261440350ac3b1df4a259',1,'glowbit::colourFunctions']]]
 ];

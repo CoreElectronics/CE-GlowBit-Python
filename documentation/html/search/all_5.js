@@ -1,7 +1,10 @@
 var searchData=
 [
-  ['rainbow',['rainbow',['../classglowbit_1_1rainbow.html',1,'glowbit']]],
-  ['raindrop',['raindrop',['../classglowbit_1_1glowbitMatrix_1_1raindrop.html',1,'glowbit::glowbitMatrix']]],
-  ['rgb2gbcolour',['rgb2GBColour',['../classglowbit_1_1colourFunctions.html#a1c24f694a16f3c721a0e7771740ebc56',1,'glowbit::colourFunctions']]],
-  ['rp2',['rp2',['../classglowbit_1_1rp2.html',1,'glowbit']]]
+  ['getpixel',['getPixel',['../classglowbit_1_1glowbit.html#a0f15a8907f807ed1af905854fedbbc60',1,'glowbit::glowbit']]],
+  ['getpixelxy',['getPixelXY',['../classglowbit_1_1glowbitMatrix.html#ab67885d63f392afa061c8455de3e31ba',1,'glowbit::glowbitMatrix']]],
+  ['glowbit',['glowbit',['../classglowbit_1_1glowbit.html',1,'glowbit']]],
+  ['glowbitcolour2rgb',['glowbitColour2RGB',['../classglowbit_1_1colourFunctions.html#a6f887561ea3261440350ac3b1df4a259',1,'glowbit::colourFunctions']]],
+  ['glowbitmatrix',['glowbitMatrix',['../classglowbit_1_1glowbitMatrix.html',1,'glowbit']]],
+  ['graph1d',['graph1D',['../classglowbit_1_1glowbitMatrix_1_1graph1D.html',1,'glowbit.glowbitMatrix.graph1D'],['../classglowbit_1_1stick_1_1graph1D.html',1,'glowbit.stick.graph1D']]],
+  ['graph2d',['graph2D',['../classglowbit_1_1glowbitMatrix_1_1graph2D.html',1,'glowbit::glowbitMatrix']]]
 ];
