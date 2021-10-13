@@ -671,7 +671,7 @@ class glowbitMatrix(glowbit):
         # \param colour A packed 32-bit GlowBit colour value. Used by the "Solid" colourmap, ignored by the "Rainbow" colourmap. Can also be accessed when writing custom colour map functions.
         # \param bgColour A packed 32-bit GlowBit colour value which is drawn to the entire graph area prior to drawing the data.
         # \param colourMap Either the string "Solid" or "Rainbow" or a pointer to a custom colour map function. Custom colour maps must take the parameters colourMap(self, index, minIndex, maxIndex).
-        # \param update If update=True then a call to updateGraph1D() will, in turn, call glowbit.pixelsShow() to update the physical LEDs.
+        # \param update If update=True then a call to updateGraph2D() will, in turn, call glowbit.pixelsShow() to update the physical LEDs.
 
         def __init__(self, originX = 0, originY = 7, width = 8, height = 8, minValue=0, maxValue=255, colour = 0xFFFFFF, bgColour = 0x000000, colourMap = "Solid", update = False, filled = False, bars = False):
             self.minValue = minValue
