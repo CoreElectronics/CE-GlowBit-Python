@@ -22,7 +22,7 @@ Collaboration diagram for glowbit.\+stick\+:\nopagebreak
 \begin{DoxyCompactItemize}
 \item 
 class \hyperlink{classglowbit_1_1stick_1_1graph1D}{graph1D}
-\item 
+\begin{DoxyCompactList}\small\item\em One dimensional graph ofject for drawing a graph bar on a Glow\+Bit Stick display. \end{DoxyCompactList}\item 
 class \hyperlink{classglowbit_1_1stick_1_1pulse}{pulse}
 \begin{DoxyCompactList}\small\item\em A class for animating \char`\"{}pulses\char`\"{} which move down a Glow\+Bit stick. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Member Functions}
@@ -30,27 +30,20 @@ class \hyperlink{classglowbit_1_1stick_1_1pulse}{pulse}
 \item 
 def \hyperlink{classglowbit_1_1stick_ac51b02c334481110558ac2f8c54938b8}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, num\+L\+E\+Ds=8, pin=18, brightness=20, rate\+Limit\+F\+PS=30, sm=0)
 \begin{DoxyCompactList}\small\item\em Initialisation routine for Glow\+Bit stick modules and tiled arrays thereof. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classglowbit_1_1stick_a14fb6c41aebc0b87595dde1ee4dd35a3}\label{classglowbit_1_1stick_a14fb6c41aebc0b87595dde1ee4dd35a3}} 
-def {\bfseries add\+Pulse} (self, speed=100, colour=\mbox{[}0x\+F\+F\+F\+F\+F\+F\mbox{]}, index=0, colour\+Map=\+None)
-\item 
-\mbox{\Hypertarget{classglowbit_1_1stick_a84e72d81b9c96b1acb268b730866a8ea}\label{classglowbit_1_1stick_a84e72d81b9c96b1acb268b730866a8ea}} 
-def {\bfseries update\+Pulses} (self)
-\item 
-\mbox{\Hypertarget{classglowbit_1_1stick_acde1622da63c602b209a608384cb6020}\label{classglowbit_1_1stick_acde1622da63c602b209a608384cb6020}} 
-def {\bfseries update\+Graph1D} (self, graph, value)
-\item 
-\mbox{\Hypertarget{classglowbit_1_1stick_a232b27f2f0e1c27787e6a584a05fc34c}\label{classglowbit_1_1stick_a232b27f2f0e1c27787e6a584a05fc34c}} 
-def {\bfseries fill\+Slice} (self, i=0, j=-\/1, colour=0x\+F\+F\+F\+F\+F\+F)
-\item 
-\mbox{\Hypertarget{classglowbit_1_1stick_a06f96847a80f19e075de33b565dcd25d}\label{classglowbit_1_1stick_a06f96847a80f19e075de33b565dcd25d}} 
-def {\bfseries pulse\+Demo} (self, iters=480)
-\item 
-\mbox{\Hypertarget{classglowbit_1_1stick_a7f45fb8bf324841b710a215b1b2e3a1c}\label{classglowbit_1_1stick_a7f45fb8bf324841b710a215b1b2e3a1c}} 
-def {\bfseries graph\+Demo} (self, iters=3)
-\item 
-\mbox{\Hypertarget{classglowbit_1_1stick_a26eedb25d40d67d1e2ca786a7b8eb8b0}\label{classglowbit_1_1stick_a26eedb25d40d67d1e2ca786a7b8eb8b0}} 
-def {\bfseries slice\+Demo} (self)
-\end{DoxyCompactItemize}
+def \hyperlink{classglowbit_1_1stick_a14fb6c41aebc0b87595dde1ee4dd35a3}{add\+Pulse} (self, speed=100, colour=\mbox{[}0x\+F\+F\+F\+F\+F\+F\mbox{]}, index=0, colour\+Map=\+None)
+\begin{DoxyCompactList}\small\item\em Add a pulse to the list of pulses. \end{DoxyCompactList}\item 
+def \hyperlink{classglowbit_1_1stick_a84e72d81b9c96b1acb268b730866a8ea}{update\+Pulses} (self)
+\begin{DoxyCompactList}\small\item\em Update the position of all pulses in self.\+pulses\mbox{[}\mbox{]} and draw them to the internal buffer. \end{DoxyCompactList}\item 
+def \hyperlink{classglowbit_1_1stick_acde1622da63c602b209a608384cb6020}{update\+Graph1D} (self, graph, value)
+\begin{DoxyCompactList}\small\item\em Updates a \hyperlink{classglowbit_1_1stick_1_1graph1D}{graph1D} object, drawing it to the display. \end{DoxyCompactList}\item 
+def \hyperlink{classglowbit_1_1stick_a232b27f2f0e1c27787e6a584a05fc34c}{fill\+Slice} (self, i=0, j=-\/1, colour=0x\+F\+F\+F\+F\+F\+F)
+\begin{DoxyCompactList}\small\item\em Fill a \char`\"{}slice\char`\"{} of the Glow\+Bit stick\textquotesingle{}s pixels with a solid colour. \end{DoxyCompactList}\item 
+def \hyperlink{classglowbit_1_1stick_a1ea899a8e5ed6f4c24662853cb9a767d}{pulse\+Demo} (self, iters=100)
+\begin{DoxyCompactList}\small\item\em A demonstration of the use of \char`\"{}pulse\char`\"{} objects. \end{DoxyCompactList}\item 
+def \hyperlink{classglowbit_1_1stick_a7f45fb8bf324841b710a215b1b2e3a1c}{graph\+Demo} (self, iters=3)
+\begin{DoxyCompactList}\small\item\em A demonstration of the use of \char`\"{}graph1\+D\char`\"{} objects. \end{DoxyCompactList}\item 
+def \hyperlink{classglowbit_1_1stick_a26eedb25d40d67d1e2ca786a7b8eb8b0}{slice\+Demo} (self)
+\begin{DoxyCompactList}\small\item\em A Demonstration of the use of the \char`\"{}fill\+Slice\char`\"{} method. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -105,7 +98,7 @@ Initialisation routine for Glow\+Bit stick modules and tiled arrays thereof.
 \begin{DoxyParams}{Parameters}
 {\em num\+L\+E\+Ds} & The total number of L\+E\+Ds. Should be set to 8 $\ast$ (the number of tiled modules). \\
 \hline
-{\em pin} & The G\+P\+IO pin connected to the Glow\+Bit stick module(s). Defaults to 18 as that pin is compatible with the Raspberry Pi and Raspberry Pi Pico. \\
+{\em pin} & The G\+P\+IO pin connected to the Glow\+Bit stick module. Defaults to 18 as that pin is compatible with the Raspberry Pi and Raspberry Pi Pico. \\
 \hline
 {\em brightness} & The relative brightness of the L\+E\+Ds. Colours drawn to the internal buffer should be in the range \mbox{[}0,255\mbox{]} and the brightness parameter scales this value before drawing to the physical display. If brightness is an integer it should be in the range \mbox{[}0,255\mbox{]}. If brightness is floating point it is assumed to be in the range \mbox{[}0,1.\+0\mbox{]}. \\
 \hline
@@ -115,6 +108,126 @@ Initialisation routine for Glow\+Bit stick modules and tiled arrays thereof.
 \hline
 \end{DoxyParams}
 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classglowbit_1_1stick_a14fb6c41aebc0b87595dde1ee4dd35a3}\label{classglowbit_1_1stick_a14fb6c41aebc0b87595dde1ee4dd35a3}} 
+\index{glowbit\+::stick@{glowbit\+::stick}!add\+Pulse@{add\+Pulse}}
+\index{add\+Pulse@{add\+Pulse}!glowbit\+::stick@{glowbit\+::stick}}
+\subsubsection{\texorpdfstring{add\+Pulse()}{addPulse()}}
+{\footnotesize\ttfamily def glowbit.\+stick.\+add\+Pulse (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{speed = {\ttfamily 100},  }\item[{}]{colour = {\ttfamily \mbox{[}0xFFFFFF\mbox{]}},  }\item[{}]{index = {\ttfamily 0},  }\item[{}]{colour\+Map = {\ttfamily None} }\end{DoxyParamCaption})}
+
+
+
+Add a pulse to the list of pulses. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em speed} & The speed of the pulse in units of (pixels moved per frame) $\ast$ 100. A value of 100 means the pulse will move 1 pixels per frame. A speed of 1 will move a pulse 1 pixel every 100 frames. Speed can be positive or negative to allow pulses to move in either direction. \\
+\hline
+{\em colour} & A list of 32-\/bit Glow\+Bit colours for the pulse. The pulse will have a width equal to the number of elements in this list. A list entry of -\/1 will have the colour set by a colour map function. \\
+\hline
+{\em index} & The initial index of the pulse. Generally recommended to set to 0 if speed $>$ 0 and num\+L\+E\+Ds if speed $<$ 0. \\
+\hline
+{\em colour\+Map} & Either the string \char`\"{}\+Solid\char`\"{} or \char`\"{}\+Rainbow\char`\"{} or a custom function pointer. Custom functions must take the positional arguments\+: colour\+Map\+Function(self, index, min\+Index, max\+Index). When calling colour map functions \hyperlink{classglowbit_1_1stick_a84e72d81b9c96b1acb268b730866a8ea}{update\+Pulses()} sets min\+Index to 0 and max\+Index to num\+L\+E\+Ds. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classglowbit_1_1stick_a232b27f2f0e1c27787e6a584a05fc34c}\label{classglowbit_1_1stick_a232b27f2f0e1c27787e6a584a05fc34c}} 
+\index{glowbit\+::stick@{glowbit\+::stick}!fill\+Slice@{fill\+Slice}}
+\index{fill\+Slice@{fill\+Slice}!glowbit\+::stick@{glowbit\+::stick}}
+\subsubsection{\texorpdfstring{fill\+Slice()}{fillSlice()}}
+{\footnotesize\ttfamily def glowbit.\+stick.\+fill\+Slice (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{i = {\ttfamily 0},  }\item[{}]{j = {\ttfamily -\/1},  }\item[{}]{colour = {\ttfamily 0xFFFFFF} }\end{DoxyParamCaption})}
+
+
+
+Fill a \char`\"{}slice\char`\"{} of the Glow\+Bit stick\textquotesingle{}s pixels with a solid colour. 
+
+By default it will fill the entire display with a solid colour.
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & The minimum index to fill \\
+\hline
+{\em j} & The maximum index to fill \\
+\hline
+{\em colour} & A 32-\/bit Glow\+Bit colour value \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classglowbit_1_1stick_a7f45fb8bf324841b710a215b1b2e3a1c}\label{classglowbit_1_1stick_a7f45fb8bf324841b710a215b1b2e3a1c}} 
+\index{glowbit\+::stick@{glowbit\+::stick}!graph\+Demo@{graph\+Demo}}
+\index{graph\+Demo@{graph\+Demo}!glowbit\+::stick@{glowbit\+::stick}}
+\subsubsection{\texorpdfstring{graph\+Demo()}{graphDemo()}}
+{\footnotesize\ttfamily def glowbit.\+stick.\+graph\+Demo (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{iters = {\ttfamily 3} }\end{DoxyParamCaption})}
+
+
+
+A demonstration of the use of \char`\"{}graph1\+D\char`\"{} objects. 
+
+This demonstration alternates between drawing two graphs with different colour maps; one with the \char`\"{}\+Rainbow\char`\"{} map, covering the full colour wheel, and another of solid white. 
+\begin{DoxyParams}{Parameters}
+{\em iters} & The number of times both graphs are drawn. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classglowbit_1_1stick_a1ea899a8e5ed6f4c24662853cb9a767d}\label{classglowbit_1_1stick_a1ea899a8e5ed6f4c24662853cb9a767d}} 
+\index{glowbit\+::stick@{glowbit\+::stick}!pulse\+Demo@{pulse\+Demo}}
+\index{pulse\+Demo@{pulse\+Demo}!glowbit\+::stick@{glowbit\+::stick}}
+\subsubsection{\texorpdfstring{pulse\+Demo()}{pulseDemo()}}
+{\footnotesize\ttfamily def glowbit.\+stick.\+pulse\+Demo (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{iters = {\ttfamily 100} }\end{DoxyParamCaption})}
+
+
+
+A demonstration of the use of \char`\"{}pulse\char`\"{} objects. 
+
+The pulse traveling \char`\"{}up\char`\"{} the stick is drawn with default arguments\+: a single white pixel
+
+The pulse returning \char`\"{}down\char`\"{} the stick is drawn with a 3-\/pixel list of colours. The first and last are coloured with the \char`\"{}\+Rainbow\char`\"{} colour map, changing colour with pixel index, while the middle is white.
+
+
+\begin{DoxyParams}{Parameters}
+{\em iters} & The number of frames which are drawn before returning. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classglowbit_1_1stick_a26eedb25d40d67d1e2ca786a7b8eb8b0}\label{classglowbit_1_1stick_a26eedb25d40d67d1e2ca786a7b8eb8b0}} 
+\index{glowbit\+::stick@{glowbit\+::stick}!slice\+Demo@{slice\+Demo}}
+\index{slice\+Demo@{slice\+Demo}!glowbit\+::stick@{glowbit\+::stick}}
+\subsubsection{\texorpdfstring{slice\+Demo()}{sliceDemo()}}
+{\footnotesize\ttfamily def glowbit.\+stick.\+slice\+Demo (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+A Demonstration of the use of the \char`\"{}fill\+Slice\char`\"{} method. 
+
+Animates a red, green, and blue slice \char`\"{}moving\char`\"{} down the Glow\+Bit Stick display.
+
+The number of iterations is fixed due to the bit shift operation being used to change colour. \mbox{\Hypertarget{classglowbit_1_1stick_acde1622da63c602b209a608384cb6020}\label{classglowbit_1_1stick_acde1622da63c602b209a608384cb6020}} 
+\index{glowbit\+::stick@{glowbit\+::stick}!update\+Graph1D@{update\+Graph1D}}
+\index{update\+Graph1D@{update\+Graph1D}!glowbit\+::stick@{glowbit\+::stick}}
+\subsubsection{\texorpdfstring{update\+Graph1\+D()}{updateGraph1D()}}
+{\footnotesize\ttfamily def glowbit.\+stick.\+update\+Graph1D (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{graph,  }\item[{}]{value }\end{DoxyParamCaption})}
+
+
+
+Updates a \hyperlink{classglowbit_1_1stick_1_1graph1D}{graph1D} object, drawing it to the display. 
+
+If the \hyperlink{classglowbit_1_1stick_1_1graph1D}{graph1D} object was created with \char`\"{}update = True\char`\"{} this function will call pixels\+Show() to update the physical display before returning.
+
+
+\begin{DoxyParams}{Parameters}
+{\em graph} & A \hyperlink{classglowbit_1_1stick_1_1graph1D}{graph1D} object as returned by \hyperlink{classglowbit_1_1stick_1_1graph1D}{stick.\+graph1D} \\
+\hline
+{\em value} & The numerical value to plot on the graph \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classglowbit_1_1stick_a84e72d81b9c96b1acb268b730866a8ea}\label{classglowbit_1_1stick_a84e72d81b9c96b1acb268b730866a8ea}} 
+\index{glowbit\+::stick@{glowbit\+::stick}!update\+Pulses@{update\+Pulses}}
+\index{update\+Pulses@{update\+Pulses}!glowbit\+::stick@{glowbit\+::stick}}
+\subsubsection{\texorpdfstring{update\+Pulses()}{updatePulses()}}
+{\footnotesize\ttfamily def glowbit.\+stick.\+update\+Pulses (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Update the position of all pulses in self.\+pulses\mbox{[}\mbox{]} and draw them to the internal buffer. 
+
+A call to pixels\+Show() must be done manually to update the physical L\+E\+Ds. 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 

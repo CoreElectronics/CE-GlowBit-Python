@@ -2,6 +2,11 @@
 \label{classglowbit_1_1stick_1_1graph1D}\index{glowbit.\+stick.\+graph1D@{glowbit.\+stick.\+graph1D}}
 
 
+One dimensional graph ofject for drawing a graph bar on a Glow\+Bit Stick display.  
+
+
+
+
 Inheritance diagram for glowbit.\+stick.\+graph1D\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -21,9 +26,8 @@ Collaboration diagram for glowbit.\+stick.\+graph1D\+:\nopagebreak
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classglowbit_1_1stick_1_1graph1D_a46a0e6a76c186a975f7cc335faa9480f}\label{classglowbit_1_1stick_1_1graph1D_a46a0e6a76c186a975f7cc335faa9480f}} 
-def {\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+} (self, min\+Value=0, max\+Value=255, min\+Index=0, max\+Index=7, colour=0x\+F\+F\+F\+F\+F\+F, colour\+Map=\char`\"{}\+Solid\char`\"{}, update=\+False)
-\end{DoxyCompactItemize}
+def \hyperlink{classglowbit_1_1stick_1_1graph1D_aebaa1206d7af5e1a1797bfdc6113cba8}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, min\+Index=0, max\+Index=7, min\+Value=0, max\+Value=255, colour=0x\+F\+F\+F\+F\+F\+F, colour\+Map=\char`\"{}\+Solid\char`\"{}, update=\+False)
+\begin{DoxyCompactList}\small\item\em Initialisation routine for the \hyperlink{classglowbit_1_1stick_1_1graph1D}{glowbit.\+stick.\+graph1D} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -54,6 +58,41 @@ def {\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+} (self, min\+Value=0, max\+Value=255
 \mbox{\Hypertarget{classglowbit_1_1stick_1_1graph1D_a52b7b7cc9d5385620272068f2255ddbd}\label{classglowbit_1_1stick_1_1graph1D_a52b7b7cc9d5385620272068f2255ddbd}} 
 {\bfseries colour\+Map}
 \end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+One dimensional graph ofject for drawing a graph bar on a Glow\+Bit Stick display. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classglowbit_1_1stick_1_1graph1D_aebaa1206d7af5e1a1797bfdc6113cba8}\label{classglowbit_1_1stick_1_1graph1D_aebaa1206d7af5e1a1797bfdc6113cba8}} 
+\index{glowbit\+::stick\+::graph1D@{glowbit\+::stick\+::graph1D}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!glowbit\+::stick\+::graph1D@{glowbit\+::stick\+::graph1D}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def glowbit.\+stick.\+graph1\+D.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{min\+Index = {\ttfamily 0},  }\item[{}]{max\+Index = {\ttfamily 7},  }\item[{}]{min\+Value = {\ttfamily 0},  }\item[{}]{max\+Value = {\ttfamily 255},  }\item[{}]{colour = {\ttfamily 0xFFFFFF},  }\item[{}]{colour\+Map = {\ttfamily \char`\"{}Solid\char`\"{}},  }\item[{}]{update = {\ttfamily False} }\end{DoxyParamCaption})}
+
+
+
+Initialisation routine for the \hyperlink{classglowbit_1_1stick_1_1graph1D}{glowbit.\+stick.\+graph1D} object. 
+
+This object is drawn to the display with \hyperlink{classglowbit_1_1stick_acde1622da63c602b209a608384cb6020}{glowbit.\+stick.\+update\+Graph1D}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em min\+Index} & The pixel index for the start of the graph \\
+\hline
+{\em max\+Index} & The pixel index for the end of the graph \\
+\hline
+{\em min\+Value} & The numerical value of the start of the graph \\
+\hline
+{\em max\+Value} & The numerical value of the end of the graph \\
+\hline
+{\em colour} & The graph\textquotesingle{}s colour if using the Solid colourmap \\
+\hline
+{\em colour\+Map} & Either the string \char`\"{}\+Solid\char`\"{} or \char`\"{}\+Rainbow\char`\"{} or a function pointer to a custom colour map. Custom colour maps must take the parameters colour\+Map(\+Self, index, min\+Index, max\+Index). \\
+\hline
+{\em update} & If this is set to True then a call to \hyperlink{classglowbit_1_1stick_acde1622da63c602b209a608384cb6020}{update\+Graph1\+D()} will automatically call pixels\+Show() to update the physical display. \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

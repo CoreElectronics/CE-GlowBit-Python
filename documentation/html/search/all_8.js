@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['matrix4x4',['matrix4x4',['../classglowbit_1_1matrix4x4.html',1,'glowbit']]],
-  ['matrix8x8',['matrix8x8',['../classglowbit_1_1matrix8x8.html',1,'glowbit']]],
-  ['micropython',['micropython',['../classglowbit_1_1micropython.html',1,'glowbit']]]
+  ['linedemo',['lineDemo',['../classglowbit_1_1glowbitMatrix.html#a0071fd8471e5f519586f6fdd86f8d7f3',1,'glowbit::glowbitMatrix']]]
 ];

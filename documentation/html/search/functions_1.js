@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['blankdisplay',['blankDisplay',['../classglowbit_1_1glowbit.html#ad3ace3e4d58bc9dadf62c1306aff2464',1,'glowbit::glowbit']]],
-  ['bounce',['bounce',['../classglowbit_1_1glowbitMatrix.html#a969352871a02db3d55bcabe5b5107574',1,'glowbit::glowbitMatrix']]]
+  ['addpulse',['addPulse',['../classglowbit_1_1stick.html#a14fb6c41aebc0b87595dde1ee4dd35a3',1,'glowbit::stick']]],
+  ['addtextscroll',['addTextScroll',['../classglowbit_1_1matrix8x8.html#ade5b8578e6c38d86f356cdb6997cc314',1,'glowbit::matrix8x8']]]
 ];

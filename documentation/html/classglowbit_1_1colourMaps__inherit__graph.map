@@ -1,6 +1,6 @@
 <map id="glowbit.colourMaps" name="glowbit.colourMaps">
 <area shape="rect" id="node2" href="$classglowbit_1_1glowbitMatrix_1_1graph1D.html" title="One dimensional graph object for graph bars on GlowBit Matrix displays. " alt="" coords="188,5,385,32"/>
 <area shape="rect" id="node3" href="$classglowbit_1_1glowbitMatrix_1_1graph2D.html" title="Object for drawing 2 dimensional time series graphs on GlowBit Matrix displays. " alt="" coords="188,56,385,83"/>
-<area shape="rect" id="node4" href="$classglowbit_1_1stick_1_1graph1D.html" title="glowbit.stick.graph1D" alt="" coords="213,107,361,133"/>
+<area shape="rect" id="node4" href="$classglowbit_1_1stick_1_1graph1D.html" title="One dimensional graph ofject for drawing a graph bar on a GlowBit Stick display. " alt="" coords="213,107,361,133"/>
 <area shape="rect" id="node5" href="$classglowbit_1_1stick_1_1pulse.html" title="A class for animating &quot;pulses&quot; which move down a GlowBit stick. " alt="" coords="221,157,352,184"/>
 </map>

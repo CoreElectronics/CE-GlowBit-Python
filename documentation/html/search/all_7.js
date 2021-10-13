@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['linedemo',['lineDemo',['../classglowbit_1_1glowbitMatrix.html#a0071fd8471e5f519586f6fdd86f8d7f3',1,'glowbit::glowbitMatrix']]]
+  ['index',['index',['../classglowbit_1_1stick_1_1pulse.html#a7b5b6ddb2b400a838fbd8ec7819a4639',1,'glowbit::stick::pulse']]]
 ];

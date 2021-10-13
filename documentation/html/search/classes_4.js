@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['rainbow',['rainbow',['../classglowbit_1_1rainbow.html',1,'glowbit']]],
-  ['raindrop',['raindrop',['../classglowbit_1_1glowbitMatrix_1_1raindrop.html',1,'glowbit::glowbitMatrix']]],
-  ['rp2',['rp2',['../classglowbit_1_1rp2.html',1,'glowbit']]]
+  ['pio',['PIO',['../classglowbit_1_1rp2_1_1PIO.html',1,'glowbit::rp2']]],
+  ['pulse',['pulse',['../classglowbit_1_1stick_1_1pulse.html',1,'glowbit::stick']]]
 ];

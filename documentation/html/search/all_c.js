@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['textdemo',['textDemo',['../classglowbit_1_1glowbitMatrix.html#a6232220b12c86c7ec361cde374419ac4',1,'glowbit::glowbitMatrix']]],
-  ['textscroll',['textScroll',['../classglowbit_1_1matrix8x8_1_1textScroll.html',1,'glowbit::matrix8x8']]],
-  ['triangle',['triangle',['../classglowbit_1_1triangle.html',1,'glowbit']]]
+  ['slicedemo',['sliceDemo',['../classglowbit_1_1stick.html#a26eedb25d40d67d1e2ca786a7b8eb8b0',1,'glowbit::stick']]],
+  ['speed',['speed',['../classglowbit_1_1stick_1_1pulse.html#ac600e5460c9f05e36ea6d7b7cef0c763',1,'glowbit::stick::pulse']]],
+  ['stick',['stick',['../classglowbit_1_1stick.html',1,'glowbit']]]
 ];

@@ -55,10 +55,12 @@ def \hyperlink{classglowbit_1_1glowbitMatrix_ad70235a976475054af4ccb534a32b5e7}{
 \begin{DoxyCompactList}\small\item\em Draws a rectangle with upper-\/left corner (x0,y0) and lower right corner (x1, y1). \end{DoxyCompactList}\item 
 def \hyperlink{classglowbit_1_1glowbitMatrix_ad91952585c61527ae5c0ac4a170435bf}{draw\+Rectangle\+Fill} (self, x0, y0, x1, y1, colour)
 \begin{DoxyCompactList}\small\item\em Draws a rectangle with upper-\/left corner (x0,y0) and lower right corner (x1, y1). \end{DoxyCompactList}\item 
+def \hyperlink{classglowbit_1_1glowbitMatrix_aa72808f05c675cea41b1cfd66e1ab3f2}{draw\+Rectangle\+Fill\+Add} (self, x0, y0, x1, y1, colour)
+\begin{DoxyCompactList}\small\item\em Draws a rectangle with upper-\/left corner (x0,y0) and lower right corner (x1, y1). \end{DoxyCompactList}\item 
 def \hyperlink{classglowbit_1_1glowbitMatrix_a4efec5ce17c30403505b1f2775022e90}{draw\+Circle} (self, x0, y0, r, colour)
 \begin{DoxyCompactList}\small\item\em Draws a circle with center (x0,y0) and radius r. \end{DoxyCompactList}\item 
 def \hyperlink{classglowbit_1_1glowbitMatrix_a0d44976cdc12728d9ae80c2d901029c0}{update\+Graph1D} (self, graph, value)
-\begin{DoxyCompactList}\small\item\em Updates a \hyperlink{classglowbit_1_1glowbitMatrix_1_1graph1D}{graph1D} object and draws it to the display. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Updates a \hyperlink{classglowbit_1_1glowbitMatrix_1_1graph1D}{graph1D} object, draws it to the display buffer. \end{DoxyCompactList}\item 
 def \hyperlink{classglowbit_1_1glowbitMatrix_ae9083babec0d5004363782540b60baed}{update\+Graph2D} (self, graph, value)
 \begin{DoxyCompactList}\small\item\em Updates a 2D graph with a new value. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classglowbit_1_1glowbitMatrix_a0071fd8471e5f519586f6fdd86f8d7f3}\label{classglowbit_1_1glowbitMatrix_a0071fd8471e5f519586f6fdd86f8d7f3}} 
@@ -182,6 +184,37 @@ If pixel is drawn off the screen a \char`\"{}clipping\char`\"{} effect will be i
 Draws a rectangle with upper-\/left corner (x0,y0) and lower right corner (x1, y1). 
 
 The rectangle is then filled to form a solid block of the specified colour.
+
+This method overwrites pixel data with the colour value.
+
+If pixel is drawn off the screen a \char`\"{}clipping\char`\"{} effect will be inherited from the behaviour of \hyperlink{classglowbit_1_1glowbitMatrix_af33f1952a94e2f0933386ae2e7c5bca4}{pixel\+Set\+X\+Y\+Clip()}. ie\+: Pixels landing off the screen will not be drawn.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x0} & The x coordinate of the upper left corner \\
+\hline
+{\em y0} & The y coordinate of the upper left corner \\
+\hline
+{\em x1} & The x coordinate of the lower right corner \\
+\hline
+{\em y1} & The y coordinate of the lower right corner \\
+\hline
+{\em colour} & A packed 32-\/bit Glow\+Bit colour value \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classglowbit_1_1glowbitMatrix_aa72808f05c675cea41b1cfd66e1ab3f2}\label{classglowbit_1_1glowbitMatrix_aa72808f05c675cea41b1cfd66e1ab3f2}} 
+\index{glowbit\+::glowbit\+Matrix@{glowbit\+::glowbit\+Matrix}!draw\+Rectangle\+Fill\+Add@{draw\+Rectangle\+Fill\+Add}}
+\index{draw\+Rectangle\+Fill\+Add@{draw\+Rectangle\+Fill\+Add}!glowbit\+::glowbit\+Matrix@{glowbit\+::glowbit\+Matrix}}
+\subsubsection{\texorpdfstring{draw\+Rectangle\+Fill\+Add()}{drawRectangleFillAdd()}}
+{\footnotesize\ttfamily def glowbit.\+glowbit\+Matrix.\+draw\+Rectangle\+Fill\+Add (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{x0,  }\item[{}]{y0,  }\item[{}]{x1,  }\item[{}]{y1,  }\item[{}]{colour }\end{DoxyParamCaption})}
+
+
+
+Draws a rectangle with upper-\/left corner (x0,y0) and lower right corner (x1, y1). 
+
+The rectangle is then filled to form a solid block of the specified colour.
+
+This method adds a colour to every pixel, allowing a rectangle to be drawn over the top of other pixel data.
 
 If pixel is drawn off the screen a \char`\"{}clipping\char`\"{} effect will be inherited from the behaviour of \hyperlink{classglowbit_1_1glowbitMatrix_af33f1952a94e2f0933386ae2e7c5bca4}{pixel\+Set\+X\+Y\+Clip()}. ie\+: Pixels landing off the screen will not be drawn.
 
@@ -420,9 +453,9 @@ Only compatible with the Glow\+Bit Matrix 8x8 and tiled arrangements thereof.
 
 
 
-Updates a \hyperlink{classglowbit_1_1glowbitMatrix_1_1graph1D}{graph1D} object and draws it to the display. 
+Updates a \hyperlink{classglowbit_1_1glowbitMatrix_1_1graph1D}{graph1D} object, draws it to the display buffer. 
 
-If the \hyperlink{classglowbit_1_1glowbitMatrix_1_1graph1D}{graph1D} was created with \char`\"{}update = True\char`\"{} this function will call \hyperlink{classglowbit_1_1glowbit_a051aed2a4969fdcb0466e4e840209279}{pixels\+Show()} to update the physical display before returning.
+If the \hyperlink{classglowbit_1_1glowbitMatrix_1_1graph1D}{graph1D} object was created with \char`\"{}update = True\char`\"{} this function will call \hyperlink{classglowbit_1_1glowbit_a051aed2a4969fdcb0466e4e840209279}{pixels\+Show()} to update the physical display before returning.
 
 
 \begin{DoxyParams}{Parameters}

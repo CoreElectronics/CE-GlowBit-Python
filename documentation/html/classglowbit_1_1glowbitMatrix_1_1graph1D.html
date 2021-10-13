@@ -240,7 +240,7 @@ Public Attributes</h2></td></tr>
     <tr><td class="paramname">maxValue</td><td>The value which will be mapped to the 'end' of the graph. The (x,y) coordinate will be 'length' pixels away from the origin in the direction specified by 'direction'. </td></tr>
     <tr><td class="paramname">colour</td><td>A packed 32-bit GlowBit colour value. Used by the "Solid" colourmap, ignored by the "Rainbow" colourmap. Can also be accessed when writing custom colour map functions. </td></tr>
     <tr><td class="paramname">colourMap</td><td>Either the string "Solid" or "Rainbow" or a pointer to a custom colour map function. Custom colour maps must take the parameters colourMap(self, index, minIndex, maxIndex). </td></tr>
-    <tr><td class="paramname">update</td><td>If update=True then a call to <a class="el" href="classglowbit_1_1glowbitMatrix.html#a0d44976cdc12728d9ae80c2d901029c0" title="Updates a graph1D object and draws it to the display. ">updateGraph1D()</a> will, in turn, call <a class="el" href="classglowbit_1_1glowbit.html#a051aed2a4969fdcb0466e4e840209279" title="Pushes the internal pixel data buffer to the physical GlowBit LEDs. ">glowbit.pixelsShow()</a> to update the physical LEDs. </td></tr>
+    <tr><td class="paramname">update</td><td>If update=True then a call to <a class="el" href="classglowbit_1_1glowbitMatrix.html#a0d44976cdc12728d9ae80c2d901029c0" title="Updates a graph1D object, draws it to the display buffer. ">updateGraph1D()</a> will, in turn, call <a class="el" href="classglowbit_1_1glowbit.html#a051aed2a4969fdcb0466e4e840209279" title="Pushes the internal pixel data buffer to the physical GlowBit LEDs. ">glowbit.pixelsShow()</a> to update the physical LEDs. </td></tr>
   </table>
   </dd>
 </dl>

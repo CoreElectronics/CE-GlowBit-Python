@@ -2,6 +2,11 @@
 \label{classglowbit_1_1matrix4x4}\index{glowbit.\+matrix4x4@{glowbit.\+matrix4x4}}
 
 
+Class for driving Glow\+Bit Matrix 4x4 modules and tiled arrangements thereof.  
+
+
+
+
 Inheritance diagram for glowbit.\+matrix4x4\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -21,12 +26,10 @@ Collaboration diagram for glowbit.\+matrix4x4\+:\nopagebreak
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classglowbit_1_1matrix4x4_a9a9f870a9505b2a4e27519a8e279e81c}\label{classglowbit_1_1matrix4x4_a9a9f870a9505b2a4e27519a8e279e81c}} 
-def {\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+} (self, tiles=1, pin=18, brightness=20, map\+Function=None, rate\+Limit\+F\+PS=30, sm=0)
-\item 
-\mbox{\Hypertarget{classglowbit_1_1matrix4x4_aea814e3be265990137d4027ae181e58d}\label{classglowbit_1_1matrix4x4_aea814e3be265990137d4027ae181e58d}} 
-def {\bfseries remap4x4} (self, x, y)
-\end{DoxyCompactItemize}
+def \hyperlink{classglowbit_1_1matrix4x4_a9a9f870a9505b2a4e27519a8e279e81c}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, tiles=1, pin=18, brightness=20, map\+Function=None, rate\+Limit\+F\+PS=30, sm=0)
+\begin{DoxyCompactList}\small\item\em Initialisation routine for Glow\+Bit stick modules and tiled arrays thereof. \end{DoxyCompactList}\item 
+def \hyperlink{classglowbit_1_1matrix4x4_aea814e3be265990137d4027ae181e58d}{remap4x4} (self, x, y)
+\begin{DoxyCompactList}\small\item\em Maps an (x,y) coordinate on a 4 row, Nx4 column, tiled Glow\+Bit Matrix 4x4 array to an array index for the internal buffer. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -76,6 +79,73 @@ def {\bfseries remap4x4} (self, x, y)
 {\bfseries rate\+Limit}
 \end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Class for driving Glow\+Bit Matrix 4x4 modules and tiled arrangements thereof. 
+
+NB\+: The 4x4 matrix is designed to only tile in one direction, making an Nx4 pixel display.
+
+If manually tiling horizontally and vertically a custom remapping function will need to be written.
+
+The custom mapping function has the form map\+Function(self, x\+: int, y\+: int) -\/$>$ int and returns a \char`\"{}one dimensional\char`\"{} pixel index given an (x,y) coordinate.
+
+No checking is performed before calling the mapping function. An exception will be raised if the positional arguments are incorrect. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classglowbit_1_1matrix4x4_a9a9f870a9505b2a4e27519a8e279e81c}\label{classglowbit_1_1matrix4x4_a9a9f870a9505b2a4e27519a8e279e81c}} 
+\index{glowbit\+::matrix4x4@{glowbit\+::matrix4x4}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!glowbit\+::matrix4x4@{glowbit\+::matrix4x4}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def glowbit.\+matrix4x4.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{tiles = {\ttfamily 1},  }\item[{}]{pin = {\ttfamily 18},  }\item[{}]{brightness = {\ttfamily 20},  }\item[{}]{map\+Function = {\ttfamily None},  }\item[{}]{rate\+Limit\+F\+PS = {\ttfamily 30},  }\item[{}]{sm = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Initialisation routine for Glow\+Bit stick modules and tiled arrays thereof. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tiles} & The number of tiled Glow\+Bit Matrix 4x4 modules. \\
+\hline
+{\em pin} & The G\+P\+IO pin connected to the Glow\+Bit stick module. Defaults to 18 as that pin is compatible with the Raspberry Pi and Raspberry Pi Pico. \\
+\hline
+{\em brightness} & The relative brightness of the L\+E\+Ds. Colours drawn to the internal buffer should be in the range \mbox{[}0,255\mbox{]} and the brightness parameter scales this value before drawing to the physical display. If brightness is an integer it should be in the range \mbox{[}0,255\mbox{]}. If brightness is floating point it is assumed to be in the range \mbox{[}0,1.\+0\mbox{]}. \\
+\hline
+{\em map\+Function} & A function pointer to a custom pixel mapping function. Only required if mapping pixels to non-\/standard tiling arrangements. \\
+\hline
+{\em rate\+Limit\+F\+PS} & The maximum frame rate of the display in frames per second. The pixels\+Show() function blocks to enforce this limit. \\
+\hline
+{\em sm} & (Raspberry Pi Pico only) The P\+IO state machine to generate the Glow\+Bit data stream. Each connected Glow\+Bit display chain requires a unique state machine. Valid values are in the range \mbox{[}0,7\mbox{]}. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classglowbit_1_1matrix4x4_aea814e3be265990137d4027ae181e58d}\label{classglowbit_1_1matrix4x4_aea814e3be265990137d4027ae181e58d}} 
+\index{glowbit\+::matrix4x4@{glowbit\+::matrix4x4}!remap4x4@{remap4x4}}
+\index{remap4x4@{remap4x4}!glowbit\+::matrix4x4@{glowbit\+::matrix4x4}}
+\subsubsection{\texorpdfstring{remap4x4()}{remap4x4()}}
+{\footnotesize\ttfamily def glowbit.\+matrix4x4.\+remap4x4 (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{x,  }\item[{}]{y }\end{DoxyParamCaption})}
+
+
+
+Maps an (x,y) coordinate on a 4 row, Nx4 column, tiled Glow\+Bit Matrix 4x4 array to an array index for the internal buffer. 
+
+It is recommended to use \hyperlink{classglowbit_1_1glowbitMatrix_a5f20884e1b08bc66e54860d0bbf0d22e}{pixel\+Set\+X\+Y()} (and variants) instead of this function.
+
+The return value can be passed to pixel\+Set(i, colour) (and its variants \hyperlink{classglowbit_1_1glowbit_a6f4167e566106d5eb104933b256f2e14}{pixel\+Set\+Now()} etc) in place of the paramter \char`\"{}i\char`\"{}.
+
+The (x,y) coordinates assume (0,0) in the upper left corner of the display with x increasing to the right and y increasing down
+
+This function does not do boundary checking and may return a value which is outside the array, causing an Index\+Error exception to be raised.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The x coordinate of the pixel to index \\
+\hline
+{\em y} & The y coordinate of the pixel to index \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

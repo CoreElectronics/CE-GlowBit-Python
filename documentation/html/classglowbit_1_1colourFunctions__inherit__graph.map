@@ -2,12 +2,12 @@
 <area shape="rect" id="node2" href="$classglowbit_1_1glowbit.html" title="Low&#45;level methods common to all GlowBit classes. " alt="" coords="257,107,365,133"/>
 <area shape="rect" id="node9" href="$classglowbit_1_1glowbitMatrix_1_1graph1D.html" title="One dimensional graph object for graph bars on GlowBit Matrix displays. " alt="" coords="212,157,409,184"/>
 <area shape="rect" id="node10" href="$classglowbit_1_1glowbitMatrix_1_1graph2D.html" title="Object for drawing 2 dimensional time series graphs on GlowBit Matrix displays. " alt="" coords="212,208,409,235"/>
-<area shape="rect" id="node11" href="$classglowbit_1_1stick_1_1graph1D.html" title="glowbit.stick.graph1D" alt="" coords="237,259,385,285"/>
+<area shape="rect" id="node11" href="$classglowbit_1_1stick_1_1graph1D.html" title="One dimensional graph ofject for drawing a graph bar on a GlowBit Stick display. " alt="" coords="237,259,385,285"/>
 <area shape="rect" id="node12" href="$classglowbit_1_1stick_1_1pulse.html" title="A class for animating &quot;pulses&quot; which move down a GlowBit stick. " alt="" coords="245,309,376,336"/>
 <area shape="rect" id="node3" href="$classglowbit_1_1glowbitMatrix.html" title="Methods specific to 2D matrix displays and tiled arrangements thereof. " alt="" coords="457,56,601,83"/>
 <area shape="rect" id="node6" href="$classglowbit_1_1stick.html" title="glowbit.stick" alt="" coords="482,107,577,133"/>
-<area shape="rect" id="node8" href="$classglowbit_1_1triangle.html" title="glowbit.triangle" alt="" coords="475,157,584,184"/>
-<area shape="rect" id="node4" href="$classglowbit_1_1matrix4x4.html" title="glowbit.matrix4x4" alt="" coords="649,5,773,32"/>
-<area shape="rect" id="node5" href="$classglowbit_1_1matrix8x8.html" title="glowbit.matrix8x8" alt="" coords="649,56,773,83"/>
-<area shape="rect" id="node7" href="$classglowbit_1_1rainbow.html" title="glowbit.rainbow" alt="" coords="655,107,767,133"/>
+<area shape="rect" id="node8" href="$classglowbit_1_1triangle.html" title="Class for driving triangular GlowBit modules. " alt="" coords="475,157,584,184"/>
+<area shape="rect" id="node4" href="$classglowbit_1_1matrix4x4.html" title="Class for driving GlowBit Matrix 4x4 modules and tiled arrangements thereof. " alt="" coords="649,5,773,32"/>
+<area shape="rect" id="node5" href="$classglowbit_1_1matrix8x8.html" title="Class for driving GlowBit Matrix 8x8 modules and tiled arrangements thereof. " alt="" coords="649,56,773,83"/>
+<area shape="rect" id="node7" href="$classglowbit_1_1rainbow.html" title="The class specific to the GlowBit Rainbow. " alt="" coords="655,107,767,133"/>
 </map>

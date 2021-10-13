@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['colourfunctions',['colourFunctions',['../classglowbit_1_1colourFunctions.html',1,'glowbit']]],
-  ['colourmaps',['colourMaps',['../classglowbit_1_1colourMaps.html',1,'glowbit']]]
+  ['_5ftextscroll',['_textScroll',['../classglowbit_1_1matrix8x8_1_1__textScroll.html',1,'glowbit::matrix8x8']]]
 ];

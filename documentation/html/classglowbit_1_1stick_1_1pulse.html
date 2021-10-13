@@ -186,7 +186,7 @@ Public Attributes</h2></td></tr>
     <tr><td class="paramname">speed</td><td>The speed of the pulse in units of (pixels moved per frame) * 100. A value of 100 means the pulse will move 1 pixels per frame. A speed of 1 will move a pulse 1 pixel every 100 frames. Speed can be positive or negative to allow pulses to move in either direction. </td></tr>
     <tr><td class="paramname">colour</td><td>A list of 32-bit GlowBit colours for the pulse. The pulse will have a width equal to the number of elements in this list. A list entry of -1 will have the colour set by a colour map function. </td></tr>
     <tr><td class="paramname">index</td><td>The initial index of the pulse. Generally recommended to set to 0 if speed &gt; 0 and numLEDs if speed &lt; 0. </td></tr>
-    <tr><td class="paramname">colourMap</td><td>Either the string "Solid" or "Rainbow" or a custom function pointer. Custom functions must take the positional arguments: colourMapFunction(self, index, minIndex, maxIndex). When calling colour map functions updatePulses() sets minIndex to 0 and maxIndex to numLEDs. </td></tr>
+    <tr><td class="paramname">colourMap</td><td>Either the string "Solid" or "Rainbow" or a custom function pointer. Custom functions must take the positional arguments: colourMapFunction(self, index, minIndex, maxIndex). When calling colour map functions <a class="el" href="classglowbit_1_1stick.html#a84e72d81b9c96b1acb268b730866a8ea" title="Update the position of all pulses in self.pulses[] and draw them to the internal buffer. ">updatePulses()</a> sets minIndex to 0 and maxIndex to numLEDs. </td></tr>
   </table>
   </dd>
 </dl>

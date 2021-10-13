@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['wheel',['wheel',['../classglowbit_1_1colourFunctions.html#afb989958ec7aa4dfb7a04f359da5969a',1,'glowbit::colourFunctions']]]
+  ['textdemo',['textDemo',['../classglowbit_1_1glowbitMatrix.html#a6232220b12c86c7ec361cde374419ac4',1,'glowbit::glowbitMatrix']]]
 ];

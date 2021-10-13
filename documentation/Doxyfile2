@@ -1,3 +1,0 @@
-EXTENSION_MAPPING =
-FILE_PATTERNS = *.py
-INPUT_FILTER = doxyfilter_python.py
