@@ -36,6 +36,7 @@ import time
 import array
 import gc
 
+
 ## @brief
 #
 # Methods for transforming colours to 32-bit packed GlowBit colour values
@@ -878,6 +879,22 @@ class glowbitMatrix(glowbit):
             iters -= 1
             self.pixelsShow()
 
+    ## @brief Runs several demo functions
+
+    def demo():
+        print("matrix.fireworks()")
+        self.fireworks()
+        print("matrix.textDemo()")
+        self.textDemo()
+        print("matrix.circularRainbow()")
+        self.circularRainbow()
+        print("matrix.rain()")
+        self.rain()
+        print("matrix.lineDemo()")
+        self.lineDemo()
+        print("matrix.bounce()")
+        self.bounce()
+
 # @brief Class for driving GlowBit Stick modules
 
 class stick(glowbit):
@@ -1123,6 +1140,15 @@ class stick(glowbit):
         self.pixelsFill(0)
         self.pixelsShow()
 
+    ## @brief Runs several demo patterns
+    def demo(self):
+        print("stick.pulseDemo()")
+        self.pulseDemo()
+        print("stick.graphDemo()")
+        self.graphDemo()
+        print("sick.sliceDemo()")
+        self.slideDemo()
+
 ## @brief The class specific to the GlowBit Rainbow
 #
 # This class inherits all the functionality of the GlowBit Stick and extends it with Rainbow-specific methods.
@@ -1164,7 +1190,7 @@ class rainbow(stick):
     
     ## @brief Displays a rainbow animation in an infinite loop. This method demonstrates the use of drawRainbow().
 
-    def rainbowLoop(self):
+    def demo(self):
         x = 0
         while True:
             self.drawRainbow(x)
@@ -1226,6 +1252,14 @@ class triangle(glowbit):
         addr = self.LEDsPerTri*tri
         for i in range(addr, addr+self.LEDsPerTri):
             self.ar[i] = colour
+
+    ## @brief Displays a simple demo pattern
+
+    def demo():
+       import random 
+        for i in range(2):
+            for j in range(self.numTris):
+                self.fillTri(j, self.wheel(random.randint(0,255)))
 
 ## @brief Class for driving GlowBit Matrix 4x4 modules and tiled arrangements thereof.
 #
@@ -1312,7 +1346,9 @@ class matrix4x4(glowbitMatrix):
         TopLeftIndex = mc * 16 # ASSUMES 4X4 MODULES
         LEDsBefore = 4*y + x - 4*mc # LEDs before in a module
         return TopLeftIndex + LEDsBefore
-     
+   
+
+
 ## @brief Class for driving GlowBit Matrix 8x8 modules and tiled arrangements thereof.
 #
 # The GlowBit Matrix 8x8 is designed to tile in two dimensions to create arbitratily large displays without the need for "air-wiring" of the data signal.
