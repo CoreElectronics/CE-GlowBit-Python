@@ -59,6 +59,8 @@ class colourFunctions():
     def wheel(self,pos: int) -> int:
         # Input a value 0 to 255 to get a color value.
         # The colours are a transition r - g - b - back to r.
+        if pos < 0:
+            pos += 256
         pos = pos % 255
         if pos < 85:
             return ((255 - pos * 3)<<16) |  ((pos * 3)<<8)
@@ -88,6 +90,38 @@ class colourFunctions():
 
     def glowbitColour2RGB(self, colour):
         return ( (colour&0xFF0000) >> 16 , (colour&0xFF00)>> 8, (colour&0xFF) )
+
+    ## @brief Returns the GlowBit colour value for pure red
+    def red(self):
+        return 0xFF0000
+
+    ## @brief Returns the GlowBit colour value for pure green
+    def green(self):
+        return 0x00FF00
+
+    ## @brief Returns the GlowBit colour value for pure blue
+    def blue(self):
+        return 0x0000FF
+
+    ## @brief Returns the GlowBit colour value for yellow
+    def yellow(self):
+        return 0xFFFF00
+
+    ## @brief Returns the GlowBit colour value for purple
+    def purple(self):
+        return 0xFF00FF
+
+    ## @brief Returns the GlowBit colour value for cyan
+    def cyan(self):
+        return 0x00FFFF
+
+    ## @brief Returns the GlowBit colour value for white
+    def white(self):
+        return 0xFFFFFF
+
+    ## @brief Returns the GlowBit colour value for black
+    def black(self):
+        return 0x000000
 
 ## @brief Methods which calculate colour gradients.
 #
@@ -119,7 +153,7 @@ class colourMaps():
 
 ## @brief Low-level methods common to all GlowBit classes
 
-class glowbit(colourFunctions):
+class glowbit(colourFunctions, colourMaps):
     @rp2.asm_pio(sideset_init=rp2.PIO.OUT_LOW, out_shiftdir=rp2.PIO.SHIFT_LEFT, autopull=True, pull_thresh=24)
     def _ws2812():
         T1 = 2
@@ -1146,7 +1180,7 @@ class stick(glowbit):
         print("stick.graphDemo()")
         self.graphDemo()
         print("sick.sliceDemo()")
-        self.slideDemo()
+        self.sliceDemo()
 
 ## @brief The class specific to the GlowBit Rainbow
 #
@@ -1256,9 +1290,9 @@ class triangle(glowbit):
 
     def demo():
        import random 
-        for i in range(2):
-            for j in range(self.numTris):
-                self.fillTri(j, self.wheel(random.randint(0,255)))
+       for i in range(2):
+           for j in range(self.numTris):
+               self.fillTri(j, self.wheel(random.randint(0,255)))
 
 ## @brief Class for driving GlowBit Matrix 4x4 modules and tiled arrangements thereof.
 #
