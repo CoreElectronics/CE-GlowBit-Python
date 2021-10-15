@@ -59,8 +59,6 @@ class colourFunctions():
     def wheel(self,pos: int) -> int:
         # Input a value 0 to 255 to get a color value.
         # The colours are a transition r - g - b - back to r.
-        if pos < 0:
-            pos += 256
         pos = pos % 255
         if pos < 85:
             return ((255 - pos * 3)<<16) |  ((pos * 3)<<8)
@@ -325,6 +323,21 @@ class glowbit(colourFunctions, colourMaps):
 
     def updateRateLimitFPS(self, rateLimitFPS):
         self.rateLimit = rateLimitFPS
+
+    ## @brief Calculates an estimate for the total power draw given the current display data. Use as a general guide only, error range is around 10-20%.
+    #
+    # The estimate is a 4th order polynomical interpolation given measurements of white brightness. The power consumption of pure colours will tend to be under-estimated by up to about 10-20%.
+    #
+    # Data was measured at a supply voltage of 3.3V but supply current was not found to vary significantly with supply voltage.
+    #
+    # \return The current consumption of the framebuffer in amps.
+    def power(self):
+        p = 0
+        for i in range(self.numLEDs):
+            (r,g,b) = self.glowbitColour2RGB(self.ar[i])
+            x = (r+g+b)*self.brightness/255
+            p += (6.74277e-14*x**4)- (1.25707e-10*x**3) + (8.07761e-8*x**2) + (2.30660e-5*x) + 4.61474e-4
+        return p
 
     ## @brief Sets random colour values on every LED on the attached GlowBit display. This function is blocking, it does not return until the number of frames specified in the iters parameter have been drawn.
     #
@@ -653,7 +666,14 @@ class glowbitMatrix(glowbit):
                 self.colourMap = self.colourMapSolid
             elif colourMap == "Rainbow":
                 self.colourMap = self.colourMapRainbow
-    
+   
+    ## @brief Wrapper method to create a graph1D object
+    #
+    # Calling matrix.graph1D() directly is recommended - this is only here so that it appears more clearly in the Doxygen.
+
+    def newGraph1D(self,originX = 0, originY = 7, length = 8, direction = "Up", minValue=0, maxValue=255, colour = 0xFFFFFF, colourMap = "Solid", update = False):
+        return self.graph1D(originX, originY, length, direction, minValue, maxValue, colour, colourMap, update)
+
     ## @brief Updates a graph1D object, draws it to the display buffer.
     #
     # If the graph1D object was created with "update = True" this function will call pixelsShow() to update the physical display before returning.
@@ -662,7 +682,7 @@ class glowbitMatrix(glowbit):
     # \param value The value to draw to the graph. It will be mapped to the graph bet
 
     def updateGraph1D(self, graph, value):
-        N = int(graph.m*(value - graph.minValue))
+        N = round(graph.m*(value - graph.minValue))
 
         m = graph.colourMap
         if graph.orientation == 1:
@@ -841,7 +861,7 @@ class glowbitMatrix(glowbit):
     # \param iters The number of frames on which raindrops can be drawn
     # \param density The density of raindrops in units of "drops per 4x4 square". The number of drops on the screen will be kept at (number of pixels)*(density)/16
 
-    def rain(self, iters = 1000, density=1):
+    def rain(self, iters = 200, density=1):
         import random
         self.blankDisplay()
         drops = []
@@ -893,7 +913,7 @@ class glowbitMatrix(glowbit):
 
     ## @brief Draws a single pixel at a random coordinate and "bounces" it around the display
 
-    def bounce(self, iters = 1000):
+    def bounce(self, iters = 100):
         import random
         Px = random.randint(0, self.numLEDsX-1)
         Py = random.randint(0, self.numLEDsY-1)
@@ -914,19 +934,24 @@ class glowbitMatrix(glowbit):
 
     ## @brief Runs several demo functions
 
-    def demo():
+    def demo(self):
         print("matrix.fireworks()")
         self.fireworks()
-        print("matrix.textDemo()")
-        self.textDemo()
+        if isinstance(self, matrix8x8):
+            print("matrix.textDemo()")
+            self.textDemo()
         print("matrix.circularRainbow()")
         self.circularRainbow()
         print("matrix.rain()")
-        self.rain()
+        if isinstance(self, matrix8x8):
+            self.rain()
+        else:
+            self.rain(density=3)
         print("matrix.lineDemo()")
         self.lineDemo()
         print("matrix.bounce()")
         self.bounce()
+        self.blankDisplay()
 
 # @brief Class for driving GlowBit Stick modules
 
@@ -935,7 +960,7 @@ class stick(glowbit):
     ## @brief Initialisation routine for GlowBit stick modules and tiled arrays thereof.
     # 
     # \param numLEDs The total number of LEDs. Should be set to 8 * (the number of tiled modules).
-    # \param pin The GPIO pin connected to the GlowBit stick module. Defaults to 18 as that pin is compatible with the Raspberry Pi and Raspberry Pi Pico.
+    # \param pin The GPIO pin connected to the GlowBit stick module. Defaults to 18 as that pin is compatible with the Raspberry Pi and Raspberry Pi Pico. Any pin can be used on the Raspberry Pi Pico, only pins 18 and 12 are valid on the Raspberry Pi.
     # \param brightness The relative brightness of the LEDs. Colours drawn to the internal buffer should be in the range [0,255] and the brightness parameter scales this value before drawing to the physical display. If brightness is an integer it should be in the range [0,255]. If brightness is floating point it is assumed to be in the range [0,1.0].
     # \param rateLimitFPS The maximum frame rate of the display in frames per second. The pixelsShow() function blocks to enforce this limit.
     # \param sm (Raspberry Pi Pico only) The PIO state machine to generate the GlowBit data stream. Each connected GlowBit display chain requires a unique state machine. Valid values are in the range [0,7].
@@ -1069,8 +1094,11 @@ class stick(glowbit):
             self.maxValue = maxValue
             self.minIndex = minIndex
             self.maxIndex = maxIndex
-            self.m = (maxIndex-minIndex)/(maxValue-minValue)
-            self.offset = minIndex-self.m*minValue
+            # Gradientand offset have +1 and -1 respectively to map "minValue" to an index of -1.
+            # With rounding this provides 0.5 "pixel widths" of value range at the bottom end before minIndex turns on
+            # and 0.5 "pixels widths" at the top end before maxIndex turns off.
+            self.m = (maxIndex-minIndex+1)/(maxValue-minValue)
+            self.offset = minIndex-1-self.m*minValue
             self.update = update
             self.colour = colour
 
@@ -1080,7 +1108,22 @@ class stick(glowbit):
                 self.colourMap = self.colourMapSolid
             elif colourMap == "Rainbow":
                 self.colourMap = self.colourMapRainbow
-   
+ 
+    ## @brief Wrapper function to create graph1D objects. Returns a new stick.graph1D() object.
+    #
+    # See also stick.graph1D()
+    # 
+    # \param minIndex The pixel index for the start of the graph
+    # \param maxIndex The pixel index for the end of the graph
+    # \param minValue The numerical value of the start of the graph
+    # \param maxValue The numerical value of the end of the graph
+    # \param colour The graph's colour if using the Solid colourmap
+    # \param colourMap Either the string "Solid" or "Rainbow" or a function pointer to a custom colour map. Custom colour maps must take the parameters colourMap(Self, index, minIndex, maxIndex).
+    # \param update If this is set to True then a call to updateGraph1D() will automatically call pixelsShow() to update the physical display.
+
+    def newGraph1D(self, minIndex = 0, maxIndex = 7, minValue = 0, maxValue = 255, colour = 0xFFFFFF, colourMap = "Solid", update = False):
+        return self.graph1D(minIndex, maxIndex, minValue, maxValue, colour, colourMap, update)
+
     ## @brief Updates a graph1D object, drawing it to the display.
     # 
     # If the graph1D object was created with "update = True" this function will call pixelsShow() to update the physical display before returning.
@@ -1089,7 +1132,7 @@ class stick(glowbit):
     # \param value The numerical value to plot on the graph
 
     def updateGraph1D(self, graph, value):
-        i = int(graph.m*value + graph.offset)
+        i = round(graph.m*value + graph.offset)
         m = graph.colourMap
         for idx in range(graph.minIndex, i+1):
             self.pixelSet(idx, m(idx, graph.minIndex, graph.maxIndex))
@@ -1173,8 +1216,19 @@ class stick(glowbit):
         self.pixelsFill(0)
         self.pixelsShow()
 
+    ## @brief Uses the colourMapRainbow() colour map to display a colourful animation
+    def rainbowDemo(self, iters = 5):
+        while iters > 0:
+            for offset in range(33):
+                for i in range(8):
+                    self.pixelSet(i, self.colourMapRainbow(i,offset, offset+32))
+                self.pixelsShow()
+            iters -= 1
+
     ## @brief Runs several demo patterns
     def demo(self):
+        print("stick.rainbowDemo()")
+        self.rainbowDemo()
         print("stick.pulseDemo()")
         self.pulseDemo()
         print("stick.graphDemo()")
@@ -1191,7 +1245,7 @@ class rainbow(stick):
     ## @brief Initialisation routine for GlowBit rainbow modules.
     # 
     # \param numLEDs The total number of LEDs. Should be set to 13 * (the number of tiled modules).
-    # \param pin The GPIO pin connected to the GlowBit Rainbow module. Defaults to 18 as that pin is compatible with the Raspberry Pi and Raspberry Pi Pico.
+    # \param pin The GPIO pin connected to the GlowBit Rainbow module. Defaults to 18 as that pin is compatible with the Raspberry Pi and Raspberry Pi Pico. Any pin can be used on the Raspberry Pi Pico, only pins 18 and 12 are valid on the Raspberry Pi.
     # \param brightness The relative brightness of the LEDs. Colours drawn to the internal buffer should be in the range [0,255] and the brightness parameter scales this value before drawing to the physical display. If brightness is an integer it should be in the range [0,255]. If brightness is floating point it is assumed to be in the range [0,1.0].
     # \param rateLimitFPS The maximum frame rate of the display in frames per second. The pixelsShow() function blocks to enforce this limit.
 
@@ -1237,7 +1291,7 @@ class triangle(glowbit):
     # 
     # \param numTris The number of triangle modules in the tiled array.
     # \param LEDsPerTri The number of LEDs on each triangular module.
-    # \param pin The GPIO pin connected to the GlowBit stick module. Defaults to 18 as that pin is compatible with the Raspberry Pi and Raspberry Pi Pico.
+    # \param pin The GPIO pin connected to the GlowBit stick module. Defaults to 18 as that pin is compatible with the Raspberry Pi and Raspberry Pi Pico. Any pin can be used on the Raspberry Pi Pico, only pins 18 and 12 are valid on the Raspberry Pi.
     # \param brightness The relative brightness of the LEDs. Colours drawn to the internal buffer should be in the range [0,255] and the brightness parameter scales this value before drawing to the physical display. If brightness is an integer it should be in the range [0,255]. If brightness is floating point it is assumed to be in the range [0,1.0].
     # \param rateLimitFPS The maximum frame rate of the display in frames per second. The pixelsShow() function blocks to enforce this limit.
     # \param sm (Raspberry Pi Pico only) The PIO state machine to generate the GlowBit data stream. Each connected GlowBit display chain requires a unique state machine. Valid values are in the range [0,7].
@@ -1288,7 +1342,7 @@ class triangle(glowbit):
 
     ## @brief Displays a simple demo pattern
 
-    def demo():
+    def demo(self):
        import random 
        for i in range(2):
            for j in range(self.numTris):
@@ -1296,7 +1350,7 @@ class triangle(glowbit):
 
 ## @brief Class for driving GlowBit Matrix 4x4 modules and tiled arrangements thereof.
 #
-# NB: The 4x4 matrix is designed to only tile in one direction, making an Nx4 pixel display.
+# NB: The 4x4 matrix is designed to only tile horizontally, making an Nx4 pixel display.
 #
 # If manually tiling horizontally and vertically a custom remapping function will need to be written.
 #
@@ -1309,14 +1363,14 @@ class matrix4x4(glowbitMatrix):
     ## @brief Initialisation routine for GlowBit stick modules and tiled arrays thereof.
     # 
     # \param tiles The number of tiled GlowBit Matrix 4x4 modules.
-    # \param pin The GPIO pin connected to the GlowBit stick module. Defaults to 18 as that pin is compatible with the Raspberry Pi and Raspberry Pi Pico.
+    # \param pin The GPIO pin connected to the GlowBit stick module. Defaults to 18 as that pin is compatible with the Raspberry Pi and Raspberry Pi Pico. Any pin can be used on the Raspberry Pi Pico, only pins 18 and 12 are valid on the Raspberry Pi.
     # \param brightness The relative brightness of the LEDs. Colours drawn to the internal buffer should be in the range [0,255] and the brightness parameter scales this value before drawing to the physical display. If brightness is an integer it should be in the range [0,255]. If brightness is floating point it is assumed to be in the range [0,1.0].
     # \param mapFunction A function pointer to a custom pixel mapping function. Only required if mapping pixels to non-standard tiling arrangements.
     # \param rateLimitFPS The maximum frame rate of the display in frames per second. The pixelsShow() function blocks to enforce this limit.
     # \param sm (Raspberry Pi Pico only) The PIO state machine to generate the GlowBit data stream. Each connected GlowBit display chain requires a unique state machine. Valid values are in the range [0,7].
 
 
-    def __init__(self, tiles = 1, pin = 18, brightness = 20, mapFunction = None, rateLimitFPS = 30, sm = 0):
+    def __init__(self, tiles = 1, pin = 18, brightness = 20, mapFunction = None, rateLimitFPS = 20, sm = 0):
         if _SYSNAME == 'rp2':
             self.sm = rp2.StateMachine(sm, self._ws2812, freq=8_000_000, sideset_base=Pin(pin))
             self.sm.active(1)
@@ -1327,6 +1381,8 @@ class matrix4x4(glowbitMatrix):
         self.numLEDs = tiles*16
         self.numLEDsX = tiles*4
         self.numLEDsY = 4
+        self.numCols = self.numLEDsX
+        self.numRows = self.numLEDsY
 
         if _SYSNAME == 'Linux':
             self.strip = ws.PixelStrip(self.numLEDs, pin)
@@ -1402,7 +1458,7 @@ class matrix8x8(glowbitMatrix):
     # 
     # \param tileRows The number of tiled GlowBit Matrix 8x8 module rows.
     # \param tileCols The number of tiled GlowBit Matrix 8x8 module columns.
-    # \param pin The GPIO pin connected to the GlowBit stick module. Defaults to 18 as that pin is compatible with the Raspberry Pi and Raspberry Pi Pico.
+    # \param pin The GPIO pin connected to the GlowBit stick module. Defaults to 18 as that pin is compatible with the Raspberry Pi and Raspberry Pi Pico. Any pin can be used on the Raspberry Pi Pico, only pins 18 and 12 are valid on the Raspberry Pi.
     # \param brightness The relative brightness of the LEDs. Colours drawn to the internal buffer should be in the range [0,255] and the brightness parameter scales this value before drawing to the physical display. If brightness is an integer it should be in the range [0,255]. If brightness is floating point it is assumed to be in the range [0,1.0].
     # \param mapFunction A function pointer to a custom pixel mapping function. Only required if mapping pixels to non-standard tiling arrangements.
     # \param rateLimitFPS The maximum frame rate of the display in frames per second. The pixelsShow() function blocks to enforce this limit. This argument defaults to -1 to allow rateLimitCharactersPerSecond to preference this parameter if it is not set. If neither rateLimitFPS or rateLimitCharactersPerSecond are set the limit is set to 30 FPS.

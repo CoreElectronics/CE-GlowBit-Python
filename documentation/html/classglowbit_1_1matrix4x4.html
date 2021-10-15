@@ -78,9 +78,10 @@ Inheritance diagram for glowbit.matrix4x4:</div>
 <div class="dyncontent">
 <div class="center"><img src="classglowbit_1_1matrix4x4__inherit__graph.png" border="0" usemap="#glowbit_8matrix4x4_inherit__map" alt="Inheritance graph"/></div>
 <map name="glowbit_8matrix4x4_inherit__map" id="glowbit_8matrix4x4_inherit__map">
-<area shape="rect" id="node2" href="classglowbit_1_1glowbitMatrix.html" title="Methods specific to 2D matrix displays and tiled arrangements thereof. " alt="" coords="13,155,157,181"/>
-<area shape="rect" id="node3" href="classglowbit_1_1glowbit.html" title="Low&#45;level methods common to all GlowBit classes. " alt="" coords="31,80,139,107"/>
+<area shape="rect" id="node2" href="classglowbit_1_1glowbitMatrix.html" title="Methods specific to 2D matrix displays and tiled arrangements thereof. " alt="" coords="98,155,242,181"/>
+<area shape="rect" id="node3" href="classglowbit_1_1glowbit.html" title="Low&#45;level methods common to all GlowBit classes. " alt="" coords="116,80,224,107"/>
 <area shape="rect" id="node4" href="classglowbit_1_1colourFunctions.html" title="Methods for transforming colours to 32&#45;bit packed GlowBit colour values. " alt="" coords="5,5,164,32"/>
+<area shape="rect" id="node5" href="classglowbit_1_1colourMaps.html" title="Methods which calculate colour gradients. " alt="" coords="188,5,323,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
@@ -88,17 +89,18 @@ Collaboration diagram for glowbit.matrix4x4:</div>
 <div class="dyncontent">
 <div class="center"><img src="classglowbit_1_1matrix4x4__coll__graph.png" border="0" usemap="#glowbit_8matrix4x4_coll__map" alt="Collaboration graph"/></div>
 <map name="glowbit_8matrix4x4_coll__map" id="glowbit_8matrix4x4_coll__map">
-<area shape="rect" id="node2" href="classglowbit_1_1glowbitMatrix.html" title="Methods specific to 2D matrix displays and tiled arrangements thereof. " alt="" coords="13,155,157,181"/>
-<area shape="rect" id="node3" href="classglowbit_1_1glowbit.html" title="Low&#45;level methods common to all GlowBit classes. " alt="" coords="31,80,139,107"/>
+<area shape="rect" id="node2" href="classglowbit_1_1glowbitMatrix.html" title="Methods specific to 2D matrix displays and tiled arrangements thereof. " alt="" coords="98,155,242,181"/>
+<area shape="rect" id="node3" href="classglowbit_1_1glowbit.html" title="Low&#45;level methods common to all GlowBit classes. " alt="" coords="116,80,224,107"/>
 <area shape="rect" id="node4" href="classglowbit_1_1colourFunctions.html" title="Methods for transforming colours to 32&#45;bit packed GlowBit colour values. " alt="" coords="5,5,164,32"/>
+<area shape="rect" id="node5" href="classglowbit_1_1colourMaps.html" title="Methods which calculate colour gradients. " alt="" coords="188,5,323,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a9a9f870a9505b2a4e27519a8e279e81c"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classglowbit_1_1matrix4x4.html#a9a9f870a9505b2a4e27519a8e279e81c">__init__</a> (self, tiles=1, pin=18, brightness=20, mapFunction=None, rateLimitFPS=30, sm=0)</td></tr>
-<tr class="memdesc:a9a9f870a9505b2a4e27519a8e279e81c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialisation routine for GlowBit stick modules and tiled arrays thereof.  <a href="#a9a9f870a9505b2a4e27519a8e279e81c">More...</a><br /></td></tr>
-<tr class="separator:a9a9f870a9505b2a4e27519a8e279e81c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2df92961032072572d1e4e8b98ede14"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classglowbit_1_1matrix4x4.html#ac2df92961032072572d1e4e8b98ede14">__init__</a> (self, tiles=1, pin=18, brightness=20, mapFunction=None, rateLimitFPS=20, sm=0)</td></tr>
+<tr class="memdesc:ac2df92961032072572d1e4e8b98ede14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialisation routine for GlowBit stick modules and tiled arrays thereof.  <a href="#ac2df92961032072572d1e4e8b98ede14">More...</a><br /></td></tr>
+<tr class="separator:ac2df92961032072572d1e4e8b98ede14"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aea814e3be265990137d4027ae181e58d"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classglowbit_1_1matrix4x4.html#aea814e3be265990137d4027ae181e58d">remap4x4</a> (self, x, y)</td></tr>
 <tr class="memdesc:aea814e3be265990137d4027ae181e58d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maps an (x,y) coordinate on a 4 row, Nx4 column, tiled GlowBit Matrix 4x4 array to an array index for the internal buffer.  <a href="#aea814e3be265990137d4027ae181e58d">More...</a><br /></td></tr>
 <tr class="separator:aea814e3be265990137d4027ae181e58d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -139,6 +141,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a4efec5ce17c30403505b1f2775022e90 inherit pub_methods_classglowbit_1_1glowbitMatrix"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classglowbit_1_1glowbitMatrix.html#a4efec5ce17c30403505b1f2775022e90">drawCircle</a> (self, x0, y0, r, colour)</td></tr>
 <tr class="memdesc:a4efec5ce17c30403505b1f2775022e90 inherit pub_methods_classglowbit_1_1glowbitMatrix"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws a circle with center (x0,y0) and radius r.  <a href="classglowbit_1_1glowbitMatrix.html#a4efec5ce17c30403505b1f2775022e90">More...</a><br /></td></tr>
 <tr class="separator:a4efec5ce17c30403505b1f2775022e90 inherit pub_methods_classglowbit_1_1glowbitMatrix"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa354570d11280b56d276c45d98021ef inherit pub_methods_classglowbit_1_1glowbitMatrix"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classglowbit_1_1glowbitMatrix.html#afa354570d11280b56d276c45d98021ef">newGraph1D</a> (self, originX=0, originY=7, length=8, direction=&quot;Up&quot;, minValue=0, maxValue=255, colour=0xFFFFFF, colourMap=&quot;Solid&quot;, update=False)</td></tr>
+<tr class="memdesc:afa354570d11280b56d276c45d98021ef inherit pub_methods_classglowbit_1_1glowbitMatrix"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wrapper method to create a <a class="el" href="classglowbit_1_1glowbitMatrix_1_1graph1D.html" title="One dimensional graph object for graph bars on GlowBit Matrix displays. ">graph1D</a> object.  <a href="classglowbit_1_1glowbitMatrix.html#afa354570d11280b56d276c45d98021ef">More...</a><br /></td></tr>
+<tr class="separator:afa354570d11280b56d276c45d98021ef inherit pub_methods_classglowbit_1_1glowbitMatrix"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0d44976cdc12728d9ae80c2d901029c0 inherit pub_methods_classglowbit_1_1glowbitMatrix"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classglowbit_1_1glowbitMatrix.html#a0d44976cdc12728d9ae80c2d901029c0">updateGraph1D</a> (self, graph, value)</td></tr>
 <tr class="memdesc:a0d44976cdc12728d9ae80c2d901029c0 inherit pub_methods_classglowbit_1_1glowbitMatrix"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates a <a class="el" href="classglowbit_1_1glowbitMatrix_1_1graph1D.html" title="One dimensional graph object for graph bars on GlowBit Matrix displays. ">graph1D</a> object, draws it to the display buffer.  <a href="classglowbit_1_1glowbitMatrix.html#a0d44976cdc12728d9ae80c2d901029c0">More...</a><br /></td></tr>
 <tr class="separator:a0d44976cdc12728d9ae80c2d901029c0 inherit pub_methods_classglowbit_1_1glowbitMatrix"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -155,20 +160,20 @@ def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
 <tr class="memitem:adf29bdb4294bcf27ae560130b0fcae35 inherit pub_methods_classglowbit_1_1glowbitMatrix"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classglowbit_1_1glowbitMatrix.html#adf29bdb4294bcf27ae560130b0fcae35">circularRainbow</a> (self)</td></tr>
 <tr class="memdesc:adf29bdb4294bcf27ae560130b0fcae35 inherit pub_methods_classglowbit_1_1glowbitMatrix"><td class="mdescLeft">&#160;</td><td class="mdescRight">Demonstration of a rainbow effect is pseudo-polar coordinates.  <a href="classglowbit_1_1glowbitMatrix.html#adf29bdb4294bcf27ae560130b0fcae35">More...</a><br /></td></tr>
 <tr class="separator:adf29bdb4294bcf27ae560130b0fcae35 inherit pub_methods_classglowbit_1_1glowbitMatrix"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a690a172f923caeb55e3adf012ec0600c inherit pub_methods_classglowbit_1_1glowbitMatrix"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classglowbit_1_1glowbitMatrix.html#a690a172f923caeb55e3adf012ec0600c">rain</a> (self, iters=1000, density=1)</td></tr>
-<tr class="memdesc:a690a172f923caeb55e3adf012ec0600c inherit pub_methods_classglowbit_1_1glowbitMatrix"><td class="mdescLeft">&#160;</td><td class="mdescRight">A "digital rain" demonstration.  <a href="classglowbit_1_1glowbitMatrix.html#a690a172f923caeb55e3adf012ec0600c">More...</a><br /></td></tr>
-<tr class="separator:a690a172f923caeb55e3adf012ec0600c inherit pub_methods_classglowbit_1_1glowbitMatrix"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a088608e2586a76f09eb7312f2155f0b8 inherit pub_methods_classglowbit_1_1glowbitMatrix"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classglowbit_1_1glowbitMatrix.html#a088608e2586a76f09eb7312f2155f0b8">rain</a> (self, iters=200, density=1)</td></tr>
+<tr class="memdesc:a088608e2586a76f09eb7312f2155f0b8 inherit pub_methods_classglowbit_1_1glowbitMatrix"><td class="mdescLeft">&#160;</td><td class="mdescRight">A "digital rain" demonstration.  <a href="classglowbit_1_1glowbitMatrix.html#a088608e2586a76f09eb7312f2155f0b8">More...</a><br /></td></tr>
+<tr class="separator:a088608e2586a76f09eb7312f2155f0b8 inherit pub_methods_classglowbit_1_1glowbitMatrix"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6232220b12c86c7ec361cde374419ac4 inherit pub_methods_classglowbit_1_1glowbitMatrix"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classglowbit_1_1glowbitMatrix.html#a6232220b12c86c7ec361cde374419ac4">textDemo</a> (self, text=&quot;Scrolling Text Demo&quot;)</td></tr>
 <tr class="memdesc:a6232220b12c86c7ec361cde374419ac4 inherit pub_methods_classglowbit_1_1glowbitMatrix"><td class="mdescLeft">&#160;</td><td class="mdescRight">Demonstrates creation of non-blocking scrolling text.  <a href="classglowbit_1_1glowbitMatrix.html#a6232220b12c86c7ec361cde374419ac4">More...</a><br /></td></tr>
 <tr class="separator:a6232220b12c86c7ec361cde374419ac4 inherit pub_methods_classglowbit_1_1glowbitMatrix"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a969352871a02db3d55bcabe5b5107574 inherit pub_methods_classglowbit_1_1glowbitMatrix"><td class="memItemLeft" align="right" valign="top"><a id="a969352871a02db3d55bcabe5b5107574"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classglowbit_1_1glowbitMatrix.html#a969352871a02db3d55bcabe5b5107574">bounce</a> (self, iters=1000)</td></tr>
-<tr class="memdesc:a969352871a02db3d55bcabe5b5107574 inherit pub_methods_classglowbit_1_1glowbitMatrix"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws a single pixel at a random coordinate and "bounces" it around the display. <br /></td></tr>
-<tr class="separator:a969352871a02db3d55bcabe5b5107574 inherit pub_methods_classglowbit_1_1glowbitMatrix"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a85ca62b9282bda87b15d275df61ead16 inherit pub_methods_classglowbit_1_1glowbitMatrix"><td class="memItemLeft" align="right" valign="top"><a id="a85ca62b9282bda87b15d275df61ead16"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classglowbit_1_1glowbitMatrix.html#a85ca62b9282bda87b15d275df61ead16">demo</a> ()</td></tr>
-<tr class="memdesc:a85ca62b9282bda87b15d275df61ead16 inherit pub_methods_classglowbit_1_1glowbitMatrix"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs several demo functions. <br /></td></tr>
-<tr class="separator:a85ca62b9282bda87b15d275df61ead16 inherit pub_methods_classglowbit_1_1glowbitMatrix"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2563367a0457da5d91001f3a810bf0fd inherit pub_methods_classglowbit_1_1glowbitMatrix"><td class="memItemLeft" align="right" valign="top"><a id="a2563367a0457da5d91001f3a810bf0fd"></a>
+def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classglowbit_1_1glowbitMatrix.html#a2563367a0457da5d91001f3a810bf0fd">bounce</a> (self, iters=100)</td></tr>
+<tr class="memdesc:a2563367a0457da5d91001f3a810bf0fd inherit pub_methods_classglowbit_1_1glowbitMatrix"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws a single pixel at a random coordinate and "bounces" it around the display. <br /></td></tr>
+<tr class="separator:a2563367a0457da5d91001f3a810bf0fd inherit pub_methods_classglowbit_1_1glowbitMatrix"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b32b49b418d50de484ef8487a77d082 inherit pub_methods_classglowbit_1_1glowbitMatrix"><td class="memItemLeft" align="right" valign="top"><a id="a2b32b49b418d50de484ef8487a77d082"></a>
+def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classglowbit_1_1glowbitMatrix.html#a2b32b49b418d50de484ef8487a77d082">demo</a> (self)</td></tr>
+<tr class="memdesc:a2b32b49b418d50de484ef8487a77d082 inherit pub_methods_classglowbit_1_1glowbitMatrix"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs several demo functions. <br /></td></tr>
+<tr class="separator:a2b32b49b418d50de484ef8487a77d082 inherit pub_methods_classglowbit_1_1glowbitMatrix"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classglowbit_1_1glowbit"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classglowbit_1_1glowbit')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classglowbit_1_1glowbit.html">glowbit.glowbit</a></td></tr>
 <tr class="memitem:a051aed2a4969fdcb0466e4e840209279 inherit pub_methods_classglowbit_1_1glowbit"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classglowbit_1_1glowbit.html#a051aed2a4969fdcb0466e4e840209279">pixelsShow</a> (self)</td></tr>
 <tr class="memdesc:a051aed2a4969fdcb0466e4e840209279 inherit pub_methods_classglowbit_1_1glowbit"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pushes the internal pixel data buffer to the physical GlowBit LEDs.  <a href="classglowbit_1_1glowbit.html#a051aed2a4969fdcb0466e4e840209279">More...</a><br /></td></tr>
@@ -200,6 +205,9 @@ def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
 <tr class="memitem:a7f72cb0878a688aa6181d4632428da09 inherit pub_methods_classglowbit_1_1glowbit"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classglowbit_1_1glowbit.html#a7f72cb0878a688aa6181d4632428da09">updateRateLimitFPS</a> (self, rateLimitFPS)</td></tr>
 <tr class="memdesc:a7f72cb0878a688aa6181d4632428da09 inherit pub_methods_classglowbit_1_1glowbit"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a new value for the GlowBit display's frames per second (FPS) limiter.  <a href="classglowbit_1_1glowbit.html#a7f72cb0878a688aa6181d4632428da09">More...</a><br /></td></tr>
 <tr class="separator:a7f72cb0878a688aa6181d4632428da09 inherit pub_methods_classglowbit_1_1glowbit"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f41651679b85f423017f309bd477666 inherit pub_methods_classglowbit_1_1glowbit"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classglowbit_1_1glowbit.html#a0f41651679b85f423017f309bd477666">power</a> (self)</td></tr>
+<tr class="memdesc:a0f41651679b85f423017f309bd477666 inherit pub_methods_classglowbit_1_1glowbit"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates an estimate for the total power draw given the current display data.  <a href="classglowbit_1_1glowbit.html#a0f41651679b85f423017f309bd477666">More...</a><br /></td></tr>
+<tr class="separator:a0f41651679b85f423017f309bd477666 inherit pub_methods_classglowbit_1_1glowbit"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae95bb7e0ee556e02d918f376cffcb9ce inherit pub_methods_classglowbit_1_1glowbit"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classglowbit_1_1glowbit.html#ae95bb7e0ee556e02d918f376cffcb9ce">chaos</a> (self, iters=100)</td></tr>
 <tr class="memdesc:ae95bb7e0ee556e02d918f376cffcb9ce inherit pub_methods_classglowbit_1_1glowbit"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets random colour values on every LED on the attached GlowBit display.  <a href="classglowbit_1_1glowbit.html#ae95bb7e0ee556e02d918f376cffcb9ce">More...</a><br /></td></tr>
 <tr class="separator:ae95bb7e0ee556e02d918f376cffcb9ce inherit pub_methods_classglowbit_1_1glowbit"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -213,6 +221,45 @@ def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
 <tr class="memitem:a6f887561ea3261440350ac3b1df4a259 inherit pub_methods_classglowbit_1_1colourFunctions"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classglowbit_1_1colourFunctions.html#a6f887561ea3261440350ac3b1df4a259">glowbitColour2RGB</a> (self, colour)</td></tr>
 <tr class="memdesc:a6f887561ea3261440350ac3b1df4a259 inherit pub_methods_classglowbit_1_1colourFunctions"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a 32-bit GlowBit colour value to an (R,G,B) tuple.  <a href="classglowbit_1_1colourFunctions.html#a6f887561ea3261440350ac3b1df4a259">More...</a><br /></td></tr>
 <tr class="separator:a6f887561ea3261440350ac3b1df4a259 inherit pub_methods_classglowbit_1_1colourFunctions"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a409c07eda953f09150f4ba67111f14e4 inherit pub_methods_classglowbit_1_1colourFunctions"><td class="memItemLeft" align="right" valign="top"><a id="a409c07eda953f09150f4ba67111f14e4"></a>
+def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classglowbit_1_1colourFunctions.html#a409c07eda953f09150f4ba67111f14e4">red</a> (self)</td></tr>
+<tr class="memdesc:a409c07eda953f09150f4ba67111f14e4 inherit pub_methods_classglowbit_1_1colourFunctions"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the GlowBit colour value for pure red. <br /></td></tr>
+<tr class="separator:a409c07eda953f09150f4ba67111f14e4 inherit pub_methods_classglowbit_1_1colourFunctions"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a822b37d8fa35cccd5ea9f2e0aa012435 inherit pub_methods_classglowbit_1_1colourFunctions"><td class="memItemLeft" align="right" valign="top"><a id="a822b37d8fa35cccd5ea9f2e0aa012435"></a>
+def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classglowbit_1_1colourFunctions.html#a822b37d8fa35cccd5ea9f2e0aa012435">green</a> (self)</td></tr>
+<tr class="memdesc:a822b37d8fa35cccd5ea9f2e0aa012435 inherit pub_methods_classglowbit_1_1colourFunctions"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the GlowBit colour value for pure green. <br /></td></tr>
+<tr class="separator:a822b37d8fa35cccd5ea9f2e0aa012435 inherit pub_methods_classglowbit_1_1colourFunctions"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe8c58ed88b15cb68fbd22e96c6ad51b inherit pub_methods_classglowbit_1_1colourFunctions"><td class="memItemLeft" align="right" valign="top"><a id="afe8c58ed88b15cb68fbd22e96c6ad51b"></a>
+def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classglowbit_1_1colourFunctions.html#afe8c58ed88b15cb68fbd22e96c6ad51b">blue</a> (self)</td></tr>
+<tr class="memdesc:afe8c58ed88b15cb68fbd22e96c6ad51b inherit pub_methods_classglowbit_1_1colourFunctions"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the GlowBit colour value for pure blue. <br /></td></tr>
+<tr class="separator:afe8c58ed88b15cb68fbd22e96c6ad51b inherit pub_methods_classglowbit_1_1colourFunctions"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41f1916e8b9f6d14262ae7e37cfa47c3 inherit pub_methods_classglowbit_1_1colourFunctions"><td class="memItemLeft" align="right" valign="top"><a id="a41f1916e8b9f6d14262ae7e37cfa47c3"></a>
+def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classglowbit_1_1colourFunctions.html#a41f1916e8b9f6d14262ae7e37cfa47c3">yellow</a> (self)</td></tr>
+<tr class="memdesc:a41f1916e8b9f6d14262ae7e37cfa47c3 inherit pub_methods_classglowbit_1_1colourFunctions"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the GlowBit colour value for yellow. <br /></td></tr>
+<tr class="separator:a41f1916e8b9f6d14262ae7e37cfa47c3 inherit pub_methods_classglowbit_1_1colourFunctions"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c476a787a727fc9bdc835ad75926e5d inherit pub_methods_classglowbit_1_1colourFunctions"><td class="memItemLeft" align="right" valign="top"><a id="a1c476a787a727fc9bdc835ad75926e5d"></a>
+def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classglowbit_1_1colourFunctions.html#a1c476a787a727fc9bdc835ad75926e5d">purple</a> (self)</td></tr>
+<tr class="memdesc:a1c476a787a727fc9bdc835ad75926e5d inherit pub_methods_classglowbit_1_1colourFunctions"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the GlowBit colour value for purple. <br /></td></tr>
+<tr class="separator:a1c476a787a727fc9bdc835ad75926e5d inherit pub_methods_classglowbit_1_1colourFunctions"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acbee8ca4dabce37aa663fbfbff2a3ae2 inherit pub_methods_classglowbit_1_1colourFunctions"><td class="memItemLeft" align="right" valign="top"><a id="acbee8ca4dabce37aa663fbfbff2a3ae2"></a>
+def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classglowbit_1_1colourFunctions.html#acbee8ca4dabce37aa663fbfbff2a3ae2">cyan</a> (self)</td></tr>
+<tr class="memdesc:acbee8ca4dabce37aa663fbfbff2a3ae2 inherit pub_methods_classglowbit_1_1colourFunctions"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the GlowBit colour value for cyan. <br /></td></tr>
+<tr class="separator:acbee8ca4dabce37aa663fbfbff2a3ae2 inherit pub_methods_classglowbit_1_1colourFunctions"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c4d0695b48f4e17347a9924041ade59 inherit pub_methods_classglowbit_1_1colourFunctions"><td class="memItemLeft" align="right" valign="top"><a id="a0c4d0695b48f4e17347a9924041ade59"></a>
+def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classglowbit_1_1colourFunctions.html#a0c4d0695b48f4e17347a9924041ade59">white</a> (self)</td></tr>
+<tr class="memdesc:a0c4d0695b48f4e17347a9924041ade59 inherit pub_methods_classglowbit_1_1colourFunctions"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the GlowBit colour value for white. <br /></td></tr>
+<tr class="separator:a0c4d0695b48f4e17347a9924041ade59 inherit pub_methods_classglowbit_1_1colourFunctions"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3abddf433293e05d99d8c82309a08d41 inherit pub_methods_classglowbit_1_1colourFunctions"><td class="memItemLeft" align="right" valign="top"><a id="a3abddf433293e05d99d8c82309a08d41"></a>
+def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classglowbit_1_1colourFunctions.html#a3abddf433293e05d99d8c82309a08d41">black</a> (self)</td></tr>
+<tr class="memdesc:a3abddf433293e05d99d8c82309a08d41 inherit pub_methods_classglowbit_1_1colourFunctions"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the GlowBit colour value for black. <br /></td></tr>
+<tr class="separator:a3abddf433293e05d99d8c82309a08d41 inherit pub_methods_classglowbit_1_1colourFunctions"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classglowbit_1_1colourMaps"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classglowbit_1_1colourMaps')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classglowbit_1_1colourMaps.html">glowbit.colourMaps</a></td></tr>
+<tr class="memitem:ab54dfebabe1485e9cf2a9d47e6df24a1 inherit pub_methods_classglowbit_1_1colourMaps"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classglowbit_1_1colourMaps.html#ab54dfebabe1485e9cf2a9d47e6df24a1">colourMapSolid</a> (self, index, minIndex, maxIndex)</td></tr>
+<tr class="memdesc:ab54dfebabe1485e9cf2a9d47e6df24a1 inherit pub_methods_classglowbit_1_1colourMaps"><td class="mdescLeft">&#160;</td><td class="mdescRight">Trivial colourmap method which always returns the colour in the parent object.  <a href="classglowbit_1_1colourMaps.html#ab54dfebabe1485e9cf2a9d47e6df24a1">More...</a><br /></td></tr>
+<tr class="separator:ab54dfebabe1485e9cf2a9d47e6df24a1 inherit pub_methods_classglowbit_1_1colourMaps"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41e8852322605003cf7f9f75ff508a8e inherit pub_methods_classglowbit_1_1colourMaps"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classglowbit_1_1colourMaps.html#a41e8852322605003cf7f9f75ff508a8e">colourMapRainbow</a> (self, index, minIndex, maxIndex)</td></tr>
+<tr class="memdesc:a41e8852322605003cf7f9f75ff508a8e inherit pub_methods_classglowbit_1_1colourMaps"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maps the pure hue colour wheel between minIndex and maxIndex.  <a href="classglowbit_1_1colourMaps.html#a41e8852322605003cf7f9f75ff508a8e">More...</a><br /></td></tr>
+<tr class="separator:a41e8852322605003cf7f9f75ff508a8e inherit pub_methods_classglowbit_1_1colourMaps"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -237,6 +284,12 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a6fb20d31028c50c2eac76ba028f265f7"><td class="memItemLeft" align="right" valign="top"><a id="a6fb20d31028c50c2eac76ba028f265f7"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>numLEDsY</b></td></tr>
 <tr class="separator:a6fb20d31028c50c2eac76ba028f265f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a927bb023be4e5a4d21faa25c47bcb324"><td class="memItemLeft" align="right" valign="top"><a id="a927bb023be4e5a4d21faa25c47bcb324"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>numCols</b></td></tr>
+<tr class="separator:a927bb023be4e5a4d21faa25c47bcb324"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d5a967e2de33dfcbf2a7775313c26c4"><td class="memItemLeft" align="right" valign="top"><a id="a0d5a967e2de33dfcbf2a7775313c26c4"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>numRows</b></td></tr>
+<tr class="separator:a0d5a967e2de33dfcbf2a7775313c26c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a27b1e9f3a7c4b5614663d76cb6f7b9cc"><td class="memItemLeft" align="right" valign="top"><a id="a27b1e9f3a7c4b5614663d76cb6f7b9cc"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>strip</b></td></tr>
 <tr class="separator:a27b1e9f3a7c4b5614663d76cb6f7b9cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -296,13 +349,13 @@ Additional Inherited Members</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class for driving GlowBit Matrix 4x4 modules and tiled arrangements thereof. </p>
-<p>NB: The 4x4 matrix is designed to only tile in one direction, making an Nx4 pixel display.</p>
+<p>NB: The 4x4 matrix is designed to only tile horizontally, making an Nx4 pixel display.</p>
 <p>If manually tiling horizontally and vertically a custom remapping function will need to be written.</p>
 <p>The custom mapping function has the form mapFunction(self, x: int, y: int) -&gt; int and returns a "one dimensional" pixel index given an (x,y) coordinate.</p>
 <p>No checking is performed before calling the mapping function. An exception will be raised if the positional arguments are incorrect. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a9a9f870a9505b2a4e27519a8e279e81c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9a9f870a9505b2a4e27519a8e279e81c">&#9670;&nbsp;</a></span>__init__()</h2>
+<a id="ac2df92961032072572d1e4e8b98ede14"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2df92961032072572d1e4e8b98ede14">&#9670;&nbsp;</a></span>__init__()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -341,7 +394,7 @@ Additional Inherited Members</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>rateLimitFPS</em> = <code>30</code>, </td>
+          <td class="paramname"><em>rateLimitFPS</em> = <code>20</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -361,7 +414,7 @@ Additional Inherited Members</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">tiles</td><td>The number of tiled GlowBit Matrix 4x4 modules. </td></tr>
-    <tr><td class="paramname">pin</td><td>The GPIO pin connected to the GlowBit stick module. Defaults to 18 as that pin is compatible with the Raspberry Pi and Raspberry Pi Pico. </td></tr>
+    <tr><td class="paramname">pin</td><td>The GPIO pin connected to the GlowBit stick module. Defaults to 18 as that pin is compatible with the Raspberry Pi and Raspberry Pi Pico. Any pin can be used on the Raspberry Pi Pico, only pins 18 and 12 are valid on the Raspberry Pi. </td></tr>
     <tr><td class="paramname">brightness</td><td>The relative brightness of the LEDs. Colours drawn to the internal buffer should be in the range [0,255] and the brightness parameter scales this value before drawing to the physical display. If brightness is an integer it should be in the range [0,255]. If brightness is floating point it is assumed to be in the range [0,1.0]. </td></tr>
     <tr><td class="paramname">mapFunction</td><td>A function pointer to a custom pixel mapping function. Only required if mapping pixels to non-standard tiling arrangements. </td></tr>
     <tr><td class="paramname">rateLimitFPS</td><td>The maximum frame rate of the display in frames per second. The pixelsShow() function blocks to enforce this limit. </td></tr>

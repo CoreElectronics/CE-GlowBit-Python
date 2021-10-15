@@ -11,7 +11,7 @@ Inheritance diagram for glowbit.\+triangle\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=199pt]{classglowbit_1_1triangle__inherit__graph}
+\includegraphics[width=318pt]{classglowbit_1_1triangle__inherit__graph}
 \end{center}
 \end{figure}
 
@@ -20,7 +20,7 @@ Collaboration diagram for glowbit.\+triangle\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=199pt]{classglowbit_1_1triangle__coll__graph}
+\includegraphics[width=318pt]{classglowbit_1_1triangle__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
@@ -30,8 +30,8 @@ def \hyperlink{classglowbit_1_1triangle_aa9ff905dd6cde53bf8a39b3f8cb9482f}{\+\_\
 \begin{DoxyCompactList}\small\item\em Initialisation routine for triangular Glow\+Bit modules and tiled arrays thereof. \end{DoxyCompactList}\item 
 def \hyperlink{classglowbit_1_1triangle_a26f35bf61d507d755ce039f4a0210c08}{fill\+Tri} (self, tri, colour)
 \begin{DoxyCompactList}\small\item\em Fills all L\+E\+Ds on a given triangle with the same colour. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classglowbit_1_1triangle_a783a1cdfb7b281f7ead417004a89c804}\label{classglowbit_1_1triangle_a783a1cdfb7b281f7ead417004a89c804}} 
-def \hyperlink{classglowbit_1_1triangle_a783a1cdfb7b281f7ead417004a89c804}{demo} ()
+\mbox{\Hypertarget{classglowbit_1_1triangle_a92bbeb798c85640681325d3d9654fefc}\label{classglowbit_1_1triangle_a92bbeb798c85640681325d3d9654fefc}} 
+def \hyperlink{classglowbit_1_1triangle_a92bbeb798c85640681325d3d9654fefc}{demo} (self)
 \begin{DoxyCompactList}\small\item\em Displays a simple demo pattern. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
@@ -95,7 +95,7 @@ Initialisation routine for triangular Glow\+Bit modules and tiled arrays thereof
 \hline
 {\em L\+E\+Ds\+Per\+Tri} & The number of L\+E\+Ds on each triangular module. \\
 \hline
-{\em pin} & The G\+P\+IO pin connected to the Glow\+Bit stick module. Defaults to 18 as that pin is compatible with the Raspberry Pi and Raspberry Pi Pico. \\
+{\em pin} & The G\+P\+IO pin connected to the Glow\+Bit stick module. Defaults to 18 as that pin is compatible with the Raspberry Pi and Raspberry Pi Pico. Any pin can be used on the Raspberry Pi Pico, only pins 18 and 12 are valid on the Raspberry Pi. \\
 \hline
 {\em brightness} & The relative brightness of the L\+E\+Ds. Colours drawn to the internal buffer should be in the range \mbox{[}0,255\mbox{]} and the brightness parameter scales this value before drawing to the physical display. If brightness is an integer it should be in the range \mbox{[}0,255\mbox{]}. If brightness is floating point it is assumed to be in the range \mbox{[}0,1.\+0\mbox{]}. \\
 \hline

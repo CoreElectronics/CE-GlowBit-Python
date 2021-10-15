@@ -11,7 +11,7 @@ Inheritance diagram for glowbit.\+rainbow\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=199pt]{classglowbit_1_1rainbow__inherit__graph}
+\includegraphics[width=318pt]{classglowbit_1_1rainbow__inherit__graph}
 \end{center}
 \end{figure}
 
@@ -20,7 +20,7 @@ Collaboration diagram for glowbit.\+rainbow\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=199pt]{classglowbit_1_1rainbow__coll__graph}
+\includegraphics[width=318pt]{classglowbit_1_1rainbow__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
@@ -57,7 +57,7 @@ Initialisation routine for Glow\+Bit rainbow modules.
 \begin{DoxyParams}{Parameters}
 {\em num\+L\+E\+Ds} & The total number of L\+E\+Ds. Should be set to 13 $\ast$ (the number of tiled modules). \\
 \hline
-{\em pin} & The G\+P\+IO pin connected to the Glow\+Bit Rainbow module. Defaults to 18 as that pin is compatible with the Raspberry Pi and Raspberry Pi Pico. \\
+{\em pin} & The G\+P\+IO pin connected to the Glow\+Bit Rainbow module. Defaults to 18 as that pin is compatible with the Raspberry Pi and Raspberry Pi Pico. Any pin can be used on the Raspberry Pi Pico, only pins 18 and 12 are valid on the Raspberry Pi. \\
 \hline
 {\em brightness} & The relative brightness of the L\+E\+Ds. Colours drawn to the internal buffer should be in the range \mbox{[}0,255\mbox{]} and the brightness parameter scales this value before drawing to the physical display. If brightness is an integer it should be in the range \mbox{[}0,255\mbox{]}. If brightness is floating point it is assumed to be in the range \mbox{[}0,1.\+0\mbox{]}. \\
 \hline

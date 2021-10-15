@@ -1,18 +1,4 @@
 var searchData=
 [
-  ['pixeladd',['pixelAdd',['../classglowbit_1_1glowbit.html#a8bb7ba36b4b7746f215ebad1acc0f5e2',1,'glowbit::glowbit']]],
-  ['pixeladdxy',['pixelAddXY',['../classglowbit_1_1glowbitMatrix.html#ae05d008c207c5f5219e737d29185501e',1,'glowbit::glowbitMatrix']]],
-  ['pixeladdxyclip',['pixelAddXYClip',['../classglowbit_1_1glowbitMatrix.html#a4f2deb5f58f45e285e84c9cac1644618',1,'glowbit::glowbitMatrix']]],
-  ['pixelsaturatingadd',['pixelSaturatingAdd',['../classglowbit_1_1glowbit.html#a0db675789faef3399ffb2c1213c12048',1,'glowbit::glowbit']]],
-  ['pixelset',['pixelSet',['../classglowbit_1_1glowbit.html#a6184de87721652f9f55f9301f6a3a9ce',1,'glowbit::glowbit']]],
-  ['pixelsetangle',['pixelSetAngle',['../classglowbit_1_1rainbow.html#a0940825ae934617f95b96e472923f07a',1,'glowbit::rainbow']]],
-  ['pixelsetnow',['pixelSetNow',['../classglowbit_1_1glowbit.html#a6f4167e566106d5eb104933b256f2e14',1,'glowbit::glowbit']]],
-  ['pixelsetxy',['pixelSetXY',['../classglowbit_1_1glowbitMatrix.html#a5f20884e1b08bc66e54860d0bbf0d22e',1,'glowbit::glowbitMatrix']]],
-  ['pixelsetxyclip',['pixelSetXYClip',['../classglowbit_1_1glowbitMatrix.html#af33f1952a94e2f0933386ae2e7c5bca4',1,'glowbit::glowbitMatrix']]],
-  ['pixelsetxynow',['pixelSetXYNow',['../classglowbit_1_1glowbitMatrix.html#ab100bb891bab3d6479b066049ce9a367',1,'glowbit::glowbitMatrix']]],
-  ['pixelsfill',['pixelsFill',['../classglowbit_1_1glowbit.html#aca86823fecc4949692ac18f8c21e34ac',1,'glowbit::glowbit']]],
-  ['pixelsfillnow',['pixelsFillNow',['../classglowbit_1_1glowbit.html#a2aae728fcc6e8cdfe5c745ac0a7d308d',1,'glowbit::glowbit']]],
-  ['pixelsshow',['pixelsShow',['../classglowbit_1_1glowbit.html#a051aed2a4969fdcb0466e4e840209279',1,'glowbit::glowbit']]],
-  ['printtextwrap',['printTextWrap',['../classglowbit_1_1matrix8x8.html#a1db0574d73977d46ba90068b9970777f',1,'glowbit::matrix8x8']]],
-  ['pulsedemo',['pulseDemo',['../classglowbit_1_1stick.html#a1ea899a8e5ed6f4c24662853cb9a767d',1,'glowbit::stick']]]
+  ['newgraph1d',['newGraph1D',['../classglowbit_1_1glowbitMatrix.html#afa354570d11280b56d276c45d98021ef',1,'glowbit.glowbitMatrix.newGraph1D()'],['../classglowbit_1_1stick.html#a7965a4a624257f0f05918b610a39224f',1,'glowbit.stick.newGraph1D()']]]
 ];

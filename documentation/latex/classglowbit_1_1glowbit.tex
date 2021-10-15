@@ -20,7 +20,7 @@ Collaboration diagram for glowbit.\+glowbit\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=199pt]{classglowbit_1_1glowbit__coll__graph}
+\includegraphics[width=318pt]{classglowbit_1_1glowbit__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
@@ -46,6 +46,8 @@ def \hyperlink{classglowbit_1_1glowbit_a0f15a8907f807ed1af905854fedbbc60}{get\+P
 \begin{DoxyCompactList}\small\item\em Returns the 32-\/bit Glow\+Bit colour value of the i\textquotesingle{}th L\+ED. \end{DoxyCompactList}\item 
 def \hyperlink{classglowbit_1_1glowbit_a7f72cb0878a688aa6181d4632428da09}{update\+Rate\+Limit\+F\+PS} (self, rate\+Limit\+F\+PS)
 \begin{DoxyCompactList}\small\item\em Sets a new value for the Glow\+Bit display\textquotesingle{}s frames per second (F\+PS) limiter. \end{DoxyCompactList}\item 
+def \hyperlink{classglowbit_1_1glowbit_a0f41651679b85f423017f309bd477666}{power} (self)
+\begin{DoxyCompactList}\small\item\em Calculates an estimate for the total power draw given the current display data. \end{DoxyCompactList}\item 
 def \hyperlink{classglowbit_1_1glowbit_ae95bb7e0ee556e02d918f376cffcb9ce}{chaos} (self, iters=100)
 \begin{DoxyCompactList}\small\item\em Sets random colour values on every L\+ED on the attached Glow\+Bit display. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
@@ -254,7 +256,26 @@ Pushes the internal pixel data buffer to the physical Glow\+Bit L\+E\+Ds.
 
 This function must be called before the connected Glow\+Bit L\+E\+Ds will change colour.
 
-Note that several Glow\+Bit library methods call this method unconditionally (eg\+: glowbit.\+blank\+Display ) or optionally (eg\+: by passing the update = True parameter to stick.\+graph1\+D() ) \mbox{\Hypertarget{classglowbit_1_1glowbit_a7f72cb0878a688aa6181d4632428da09}\label{classglowbit_1_1glowbit_a7f72cb0878a688aa6181d4632428da09}} 
+Note that several Glow\+Bit library methods call this method unconditionally (eg\+: glowbit.\+blank\+Display ) or optionally (eg\+: by passing the update = True parameter to stick.\+graph1\+D() ) \mbox{\Hypertarget{classglowbit_1_1glowbit_a0f41651679b85f423017f309bd477666}\label{classglowbit_1_1glowbit_a0f41651679b85f423017f309bd477666}} 
+\index{glowbit\+::glowbit@{glowbit\+::glowbit}!power@{power}}
+\index{power@{power}!glowbit\+::glowbit@{glowbit\+::glowbit}}
+\subsubsection{\texorpdfstring{power()}{power()}}
+{\footnotesize\ttfamily def glowbit.\+glowbit.\+power (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Calculates an estimate for the total power draw given the current display data. 
+
+Use as a general guide only, error range is around 10-\/20\%.
+
+The estimate is a 4th order polynomical interpolation given measurements of white brightness. The power consumption of pure colours will tend to be under-\/estimated by up to about 10-\/20\%.
+
+Data was measured at a supply voltage of 3.\+3V but supply current was not found to vary significantly with supply voltage.
+
+\begin{DoxyReturn}{Returns}
+The current consumption of the framebuffer in amps. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classglowbit_1_1glowbit_a7f72cb0878a688aa6181d4632428da09}\label{classglowbit_1_1glowbit_a7f72cb0878a688aa6181d4632428da09}} 
 \index{glowbit\+::glowbit@{glowbit\+::glowbit}!update\+Rate\+Limit\+F\+PS@{update\+Rate\+Limit\+F\+PS}}
 \index{update\+Rate\+Limit\+F\+PS@{update\+Rate\+Limit\+F\+PS}!glowbit\+::glowbit@{glowbit\+::glowbit}}
 \subsubsection{\texorpdfstring{update\+Rate\+Limit\+F\+P\+S()}{updateRateLimitFPS()}}

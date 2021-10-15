@@ -11,7 +11,7 @@ Inheritance diagram for glowbit.\+matrix4x4\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=199pt]{classglowbit_1_1matrix4x4__inherit__graph}
+\includegraphics[width=318pt]{classglowbit_1_1matrix4x4__inherit__graph}
 \end{center}
 \end{figure}
 
@@ -20,13 +20,13 @@ Collaboration diagram for glowbit.\+matrix4x4\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=199pt]{classglowbit_1_1matrix4x4__coll__graph}
+\includegraphics[width=318pt]{classglowbit_1_1matrix4x4__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-def \hyperlink{classglowbit_1_1matrix4x4_a9a9f870a9505b2a4e27519a8e279e81c}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, tiles=1, pin=18, brightness=20, map\+Function=None, rate\+Limit\+F\+PS=30, sm=0)
+def \hyperlink{classglowbit_1_1matrix4x4_ac2df92961032072572d1e4e8b98ede14}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, tiles=1, pin=18, brightness=20, map\+Function=None, rate\+Limit\+F\+PS=20, sm=0)
 \begin{DoxyCompactList}\small\item\em Initialisation routine for Glow\+Bit stick modules and tiled arrays thereof. \end{DoxyCompactList}\item 
 def \hyperlink{classglowbit_1_1matrix4x4_aea814e3be265990137d4027ae181e58d}{remap4x4} (self, x, y)
 \begin{DoxyCompactList}\small\item\em Maps an (x,y) coordinate on a 4 row, Nx4 column, tiled Glow\+Bit Matrix 4x4 array to an array index for the internal buffer. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -53,6 +53,12 @@ def \hyperlink{classglowbit_1_1matrix4x4_aea814e3be265990137d4027ae181e58d}{rema
 \item 
 \mbox{\Hypertarget{classglowbit_1_1matrix4x4_a6fb20d31028c50c2eac76ba028f265f7}\label{classglowbit_1_1matrix4x4_a6fb20d31028c50c2eac76ba028f265f7}} 
 {\bfseries num\+L\+E\+DsY}
+\item 
+\mbox{\Hypertarget{classglowbit_1_1matrix4x4_a927bb023be4e5a4d21faa25c47bcb324}\label{classglowbit_1_1matrix4x4_a927bb023be4e5a4d21faa25c47bcb324}} 
+{\bfseries num\+Cols}
+\item 
+\mbox{\Hypertarget{classglowbit_1_1matrix4x4_a0d5a967e2de33dfcbf2a7775313c26c4}\label{classglowbit_1_1matrix4x4_a0d5a967e2de33dfcbf2a7775313c26c4}} 
+{\bfseries num\+Rows}
 \item 
 \mbox{\Hypertarget{classglowbit_1_1matrix4x4_a27b1e9f3a7c4b5614663d76cb6f7b9cc}\label{classglowbit_1_1matrix4x4_a27b1e9f3a7c4b5614663d76cb6f7b9cc}} 
 {\bfseries strip}
@@ -84,7 +90,7 @@ def \hyperlink{classglowbit_1_1matrix4x4_aea814e3be265990137d4027ae181e58d}{rema
 \subsection{Detailed Description}
 Class for driving Glow\+Bit Matrix 4x4 modules and tiled arrangements thereof. 
 
-NB\+: The 4x4 matrix is designed to only tile in one direction, making an Nx4 pixel display.
+NB\+: The 4x4 matrix is designed to only tile horizontally, making an Nx4 pixel display.
 
 If manually tiling horizontally and vertically a custom remapping function will need to be written.
 
@@ -93,11 +99,11 @@ The custom mapping function has the form map\+Function(self, x\+: int, y\+: int)
 No checking is performed before calling the mapping function. An exception will be raised if the positional arguments are incorrect. 
 
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classglowbit_1_1matrix4x4_a9a9f870a9505b2a4e27519a8e279e81c}\label{classglowbit_1_1matrix4x4_a9a9f870a9505b2a4e27519a8e279e81c}} 
+\mbox{\Hypertarget{classglowbit_1_1matrix4x4_ac2df92961032072572d1e4e8b98ede14}\label{classglowbit_1_1matrix4x4_ac2df92961032072572d1e4e8b98ede14}} 
 \index{glowbit\+::matrix4x4@{glowbit\+::matrix4x4}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
 \index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!glowbit\+::matrix4x4@{glowbit\+::matrix4x4}}
 \subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
-{\footnotesize\ttfamily def glowbit.\+matrix4x4.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{tiles = {\ttfamily 1},  }\item[{}]{pin = {\ttfamily 18},  }\item[{}]{brightness = {\ttfamily 20},  }\item[{}]{map\+Function = {\ttfamily None},  }\item[{}]{rate\+Limit\+F\+PS = {\ttfamily 30},  }\item[{}]{sm = {\ttfamily 0} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily def glowbit.\+matrix4x4.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{tiles = {\ttfamily 1},  }\item[{}]{pin = {\ttfamily 18},  }\item[{}]{brightness = {\ttfamily 20},  }\item[{}]{map\+Function = {\ttfamily None},  }\item[{}]{rate\+Limit\+F\+PS = {\ttfamily 20},  }\item[{}]{sm = {\ttfamily 0} }\end{DoxyParamCaption})}
 
 
 
@@ -107,7 +113,7 @@ Initialisation routine for Glow\+Bit stick modules and tiled arrays thereof.
 \begin{DoxyParams}{Parameters}
 {\em tiles} & The number of tiled Glow\+Bit Matrix 4x4 modules. \\
 \hline
-{\em pin} & The G\+P\+IO pin connected to the Glow\+Bit stick module. Defaults to 18 as that pin is compatible with the Raspberry Pi and Raspberry Pi Pico. \\
+{\em pin} & The G\+P\+IO pin connected to the Glow\+Bit stick module. Defaults to 18 as that pin is compatible with the Raspberry Pi and Raspberry Pi Pico. Any pin can be used on the Raspberry Pi Pico, only pins 18 and 12 are valid on the Raspberry Pi. \\
 \hline
 {\em brightness} & The relative brightness of the L\+E\+Ds. Colours drawn to the internal buffer should be in the range \mbox{[}0,255\mbox{]} and the brightness parameter scales this value before drawing to the physical display. If brightness is an integer it should be in the range \mbox{[}0,255\mbox{]}. If brightness is floating point it is assumed to be in the range \mbox{[}0,1.\+0\mbox{]}. \\
 \hline

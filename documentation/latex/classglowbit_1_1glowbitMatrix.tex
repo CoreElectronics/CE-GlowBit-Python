@@ -11,7 +11,7 @@ Inheritance diagram for glowbit.\+glowbit\+Matrix\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=284pt]{classglowbit_1_1glowbitMatrix__inherit__graph}
+\includegraphics[width=318pt]{classglowbit_1_1glowbitMatrix__inherit__graph}
 \end{center}
 \end{figure}
 
@@ -20,7 +20,7 @@ Collaboration diagram for glowbit.\+glowbit\+Matrix\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=199pt]{classglowbit_1_1glowbitMatrix__coll__graph}
+\includegraphics[width=318pt]{classglowbit_1_1glowbitMatrix__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Classes}
@@ -31,7 +31,7 @@ class \hyperlink{classglowbit_1_1glowbitMatrix_1_1graph1D}{graph1D}
 class \hyperlink{classglowbit_1_1glowbitMatrix_1_1graph2D}{graph2D}
 \begin{DoxyCompactList}\small\item\em Object for drawing 2 dimensional time series graphs on Glow\+Bit Matrix displays. \end{DoxyCompactList}\item 
 class \hyperlink{classglowbit_1_1glowbitMatrix_1_1raindrop}{raindrop}
-\begin{DoxyCompactList}\small\item\em A class used by the \hyperlink{classglowbit_1_1glowbitMatrix_a690a172f923caeb55e3adf012ec0600c}{rain()} demonstration. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em A class used by the \hyperlink{classglowbit_1_1glowbitMatrix_a088608e2586a76f09eb7312f2155f0b8}{rain()} demonstration. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -59,6 +59,8 @@ def \hyperlink{classglowbit_1_1glowbitMatrix_aa72808f05c675cea41b1cfd66e1ab3f2}{
 \begin{DoxyCompactList}\small\item\em Draws a rectangle with upper-\/left corner (x0,y0) and lower right corner (x1, y1). \end{DoxyCompactList}\item 
 def \hyperlink{classglowbit_1_1glowbitMatrix_a4efec5ce17c30403505b1f2775022e90}{draw\+Circle} (self, x0, y0, r, colour)
 \begin{DoxyCompactList}\small\item\em Draws a circle with center (x0,y0) and radius r. \end{DoxyCompactList}\item 
+def \hyperlink{classglowbit_1_1glowbitMatrix_afa354570d11280b56d276c45d98021ef}{new\+Graph1D} (self, originX=0, originY=7, length=8, direction=\char`\"{}Up\char`\"{}, min\+Value=0, max\+Value=255, colour=0x\+F\+F\+F\+F\+F\+F, colour\+Map=\char`\"{}\+Solid\char`\"{}, update=\+False)
+\begin{DoxyCompactList}\small\item\em Wrapper method to create a \hyperlink{classglowbit_1_1glowbitMatrix_1_1graph1D}{graph1D} object. \end{DoxyCompactList}\item 
 def \hyperlink{classglowbit_1_1glowbitMatrix_a0d44976cdc12728d9ae80c2d901029c0}{update\+Graph1D} (self, graph, value)
 \begin{DoxyCompactList}\small\item\em Updates a \hyperlink{classglowbit_1_1glowbitMatrix_1_1graph1D}{graph1D} object, draws it to the display buffer. \end{DoxyCompactList}\item 
 def \hyperlink{classglowbit_1_1glowbitMatrix_ae9083babec0d5004363782540b60baed}{update\+Graph2D} (self, graph, value)
@@ -70,15 +72,15 @@ def \hyperlink{classglowbit_1_1glowbitMatrix_a69370ec1479b4887fca517fbefd92e4c}{
 \begin{DoxyCompactList}\small\item\em Demonstrate drawing randomly placed, randomly coloured, expanding circles. \end{DoxyCompactList}\item 
 def \hyperlink{classglowbit_1_1glowbitMatrix_adf29bdb4294bcf27ae560130b0fcae35}{circular\+Rainbow} (self)
 \begin{DoxyCompactList}\small\item\em Demonstration of a rainbow effect is pseudo-\/polar coordinates. \end{DoxyCompactList}\item 
-def \hyperlink{classglowbit_1_1glowbitMatrix_a690a172f923caeb55e3adf012ec0600c}{rain} (self, iters=1000, density=1)
+def \hyperlink{classglowbit_1_1glowbitMatrix_a088608e2586a76f09eb7312f2155f0b8}{rain} (self, iters=200, density=1)
 \begin{DoxyCompactList}\small\item\em A \char`\"{}digital rain\char`\"{} demonstration. \end{DoxyCompactList}\item 
 def \hyperlink{classglowbit_1_1glowbitMatrix_a6232220b12c86c7ec361cde374419ac4}{text\+Demo} (self, text=\char`\"{}Scrolling Text Demo\char`\"{})
 \begin{DoxyCompactList}\small\item\em Demonstrates creation of non-\/blocking scrolling text. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classglowbit_1_1glowbitMatrix_a969352871a02db3d55bcabe5b5107574}\label{classglowbit_1_1glowbitMatrix_a969352871a02db3d55bcabe5b5107574}} 
-def \hyperlink{classglowbit_1_1glowbitMatrix_a969352871a02db3d55bcabe5b5107574}{bounce} (self, iters=1000)
+\mbox{\Hypertarget{classglowbit_1_1glowbitMatrix_a2563367a0457da5d91001f3a810bf0fd}\label{classglowbit_1_1glowbitMatrix_a2563367a0457da5d91001f3a810bf0fd}} 
+def \hyperlink{classglowbit_1_1glowbitMatrix_a2563367a0457da5d91001f3a810bf0fd}{bounce} (self, iters=100)
 \begin{DoxyCompactList}\small\item\em Draws a single pixel at a random coordinate and \char`\"{}bounces\char`\"{} it around the display. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classglowbit_1_1glowbitMatrix_a85ca62b9282bda87b15d275df61ead16}\label{classglowbit_1_1glowbitMatrix_a85ca62b9282bda87b15d275df61ead16}} 
-def \hyperlink{classglowbit_1_1glowbitMatrix_a85ca62b9282bda87b15d275df61ead16}{demo} ()
+\mbox{\Hypertarget{classglowbit_1_1glowbitMatrix_a2b32b49b418d50de484ef8487a77d082}\label{classglowbit_1_1glowbitMatrix_a2b32b49b418d50de484ef8487a77d082}} 
+def \hyperlink{classglowbit_1_1glowbitMatrix_a2b32b49b418d50de484ef8487a77d082}{demo} (self)
 \begin{DoxyCompactList}\small\item\em Runs several demo functions. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
@@ -295,7 +297,17 @@ If the (x,y) coordinate falls outside of the display\textquotesingle{}s boundary
 \begin{DoxyReturn}{Returns}
 The 32-\/bit Glow\+Bit colour value of the i\textquotesingle{}th L\+ED 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classglowbit_1_1glowbitMatrix_ae05d008c207c5f5219e737d29185501e}\label{classglowbit_1_1glowbitMatrix_ae05d008c207c5f5219e737d29185501e}} 
+\mbox{\Hypertarget{classglowbit_1_1glowbitMatrix_afa354570d11280b56d276c45d98021ef}\label{classglowbit_1_1glowbitMatrix_afa354570d11280b56d276c45d98021ef}} 
+\index{glowbit\+::glowbit\+Matrix@{glowbit\+::glowbit\+Matrix}!new\+Graph1D@{new\+Graph1D}}
+\index{new\+Graph1D@{new\+Graph1D}!glowbit\+::glowbit\+Matrix@{glowbit\+::glowbit\+Matrix}}
+\subsubsection{\texorpdfstring{new\+Graph1\+D()}{newGraph1D()}}
+{\footnotesize\ttfamily def glowbit.\+glowbit\+Matrix.\+new\+Graph1D (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{originX = {\ttfamily 0},  }\item[{}]{originY = {\ttfamily 7},  }\item[{}]{length = {\ttfamily 8},  }\item[{}]{direction = {\ttfamily \char`\"{}Up\char`\"{}},  }\item[{}]{min\+Value = {\ttfamily 0},  }\item[{}]{max\+Value = {\ttfamily 255},  }\item[{}]{colour = {\ttfamily 0xFFFFFF},  }\item[{}]{colour\+Map = {\ttfamily \char`\"{}Solid\char`\"{}},  }\item[{}]{update = {\ttfamily False} }\end{DoxyParamCaption})}
+
+
+
+Wrapper method to create a \hyperlink{classglowbit_1_1glowbitMatrix_1_1graph1D}{graph1D} object. 
+
+Calling matrix.\+graph1\+D() directly is recommended -\/ this is only here so that it appears more clearly in the Doxygen. \mbox{\Hypertarget{classglowbit_1_1glowbitMatrix_ae05d008c207c5f5219e737d29185501e}\label{classglowbit_1_1glowbitMatrix_ae05d008c207c5f5219e737d29185501e}} 
 \index{glowbit\+::glowbit\+Matrix@{glowbit\+::glowbit\+Matrix}!pixel\+Add\+XY@{pixel\+Add\+XY}}
 \index{pixel\+Add\+XY@{pixel\+Add\+XY}!glowbit\+::glowbit\+Matrix@{glowbit\+::glowbit\+Matrix}}
 \subsubsection{\texorpdfstring{pixel\+Add\+X\+Y()}{pixelAddXY()}}
@@ -414,11 +426,11 @@ If the x-\/y coordinate falls outside the display\textquotesingle{}s boundary th
 {\em colour} & A packed 32-\/bit Glow\+Bit colour value \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{classglowbit_1_1glowbitMatrix_a690a172f923caeb55e3adf012ec0600c}\label{classglowbit_1_1glowbitMatrix_a690a172f923caeb55e3adf012ec0600c}} 
+\mbox{\Hypertarget{classglowbit_1_1glowbitMatrix_a088608e2586a76f09eb7312f2155f0b8}\label{classglowbit_1_1glowbitMatrix_a088608e2586a76f09eb7312f2155f0b8}} 
 \index{glowbit\+::glowbit\+Matrix@{glowbit\+::glowbit\+Matrix}!rain@{rain}}
 \index{rain@{rain}!glowbit\+::glowbit\+Matrix@{glowbit\+::glowbit\+Matrix}}
 \subsubsection{\texorpdfstring{rain()}{rain()}}
-{\footnotesize\ttfamily def glowbit.\+glowbit\+Matrix.\+rain (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{iters = {\ttfamily 1000},  }\item[{}]{density = {\ttfamily 1} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily def glowbit.\+glowbit\+Matrix.\+rain (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{iters = {\ttfamily 200},  }\item[{}]{density = {\ttfamily 1} }\end{DoxyParamCaption})}
 
 
 
