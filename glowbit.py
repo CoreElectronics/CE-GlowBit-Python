@@ -363,7 +363,9 @@ class glowbitMatrix(glowbit):
     #
     # The coordinate assumes an origin in the upper left of the display with x increasing to the right and y increasing downwards.
     #
-    # If the x-y coordinate falls outside the display's boundary this function will "wrap-around". For example, A dot placed just off the right edge will appear along the left edge.
+    # If the x-y coordinate falls outside the display's boundary this function will "wrap-around". For example, A dot placed just off the right edge will appear along the left edge in the same row.
+    #
+    # Advanced: If seeking maximum speed consider modifying the ar[] array directly
     #
     # \param x The x coordinate of the GlowBit LED. x must be an integer.
     # \param y The y coordinate of the GlowBit LED. y must be an integer.
@@ -380,6 +382,8 @@ class glowbitMatrix(glowbit):
     # The coordinate assumes an origin in the upper left of the display with x increasing to the right and y increasing downwards.
     #
     # If the x-y coordinate falls outside the display's boundary this function will "wrap-around". For example, A dot placed just off the right edge will appear along the left edge.
+    # 
+    # Advanced: If seeking maximum speed consider modifying the ar[] array directly
     #
     # \param x The x coordinate of the GlowBit LED. x must be an integer.
     # \param y The y coordinate of the GlowBit LED. y must be an integer.
@@ -737,8 +741,8 @@ class glowbitMatrix(glowbit):
             self.colour = colour
             self.bgColour = bgColour
             self.update = update
-            self.m = (1-height)/(maxValue-minValue)
-            self.offset = originY-self.m*minValue
+            self.m = (-height)/(maxValue-minValue)
+            self.offset = originY+0.5-self.m*minValue
             self.bars = bars
             
             self.data = []
@@ -764,6 +768,7 @@ class glowbitMatrix(glowbit):
         self.drawRectangleFill(graph.originX, graph.originY-graph.height+1, graph.originX+graph.width-1, graph.originY, graph.bgColour)
         for value in graph.data:
             y = round(graph.m*value + graph.offset)# + graph.originY
+            print(y, graph.m*value + graph.offset, graph.m, graph.offset )
             if graph.bars == True:
                 for idx in range(y, graph.originY+1):
                     if x >= graph.originX and x < graph.originX+graph.width and idx <= graph.originY and idx > graph.originY-graph.height:
@@ -773,7 +778,6 @@ class glowbitMatrix(glowbit):
                     self.pixelSet(self.remap(x,y), m(y - graph.originY, graph.originY, graph.originY+graph.height-1))
             x -= 1
         if graph.update == True:
-            print("Calling pixelsShow()")
             self.pixelsShow()
 
     ## @brief Demonstrate drawing an animated line
@@ -913,24 +917,25 @@ class glowbitMatrix(glowbit):
 
     ## @brief Draws a single pixel at a random coordinate and "bounces" it around the display
 
-    def bounce(self, iters = 100):
+    def bounce(self, iters = 500):
         import random
         Px = random.randint(0, self.numLEDsX-1)
         Py = random.randint(0, self.numLEDsY-1)
-        dirY = 1
-        dirX = 1
+        Vx = 2*random.random()-1
+        Vy = 2*random.random()-1
 
         while iters > 0:
-            self.pixelSetXY(Px, Py, 0)
-            Px += dirX
-            Py += dirY
-            self.pixelSetXY(Px, Py, self.wheel(iters%255))
-            if Px == 0 or Px == self.numLEDsX-1:
-                dirX *= -1
-            if Py == 0 or Py == self.numLEDsY-1:
-                dirY *= -1
+            self.pixelSetXY(int(Px), int(Py), 0)
+            Px += Vx
+            Py += Vy
+            self.pixelSetXY(int(Px), int(Py), self.wheel(iters%255))
+            if Px < 1 or Px > self.numLEDsX-1:
+                Vx *= -1
+            if Py < 1 or Py > self.numLEDsY-1:
+                Vy *= -1
             iters -= 1
             self.pixelsShow()
+        self.blankDisplay()
 
     ## @brief Runs several demo functions
 
@@ -1348,9 +1353,9 @@ class triangle(glowbit):
            for j in range(self.numTris):
                self.fillTri(j, self.wheel(random.randint(0,255)))
 
-## @brief Class for driving GlowBit Matrix 4x4 modules and tiled arrangements thereof.
+## @brief Class for driving GlowBit Matrix 4x4 modules and horizontally tiled arrangements thereof.
 #
-# NB: The 4x4 matrix is designed to only tile horizontally, making an Nx4 pixel display.
+# NB: The 4x4 matrix is designed to only tile horizontally, making an Nx4 pixel display. 
 #
 # If manually tiling horizontally and vertically a custom remapping function will need to be written.
 #
@@ -1381,7 +1386,9 @@ class matrix4x4(glowbitMatrix):
         self.numLEDs = tiles*16
         self.numLEDsX = tiles*4
         self.numLEDsY = 4
+        # Convenience variable; equal to numLEDsX
         self.numCols = self.numLEDsX
+        # Convenience variable; equal to numLEDsY
         self.numRows = self.numLEDsY
 
         if _SYSNAME == 'Linux':
@@ -1472,6 +1479,10 @@ class matrix8x8(glowbitMatrix):
         self.numLEDs = tileRows*tileCols*64
         self.numLEDsX = tileCols*8
         self.numLEDsY = tileRows*8
+        # Convenience variable; equal to numLEDsX
+        self.numCols = self.numLEDsX
+        # Convenience variable; equal to numLEDsY
+        self.numRows = self.numLEDsY
         
         if _SYSNAME == 'rp2':
             self.sm = rp2.StateMachine(sm, self._ws2812, freq=8_000_000, sideset_base=Pin(pin))
@@ -1492,7 +1503,8 @@ class matrix8x8(glowbitMatrix):
             self.brightness = int(brightness*255)
         else:
             self.brightness = int(brightness)
-            
+        
+        # Set to True while a scrolling text object is available to be drawn.
         self.scrollingText = False
         
         self.lastFrame_ms = self.ticks_ms()
