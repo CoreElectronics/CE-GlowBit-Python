@@ -1238,7 +1238,7 @@ class stick(glowbit):
         self.pulseDemo()
         print("stick.graphDemo()")
         self.graphDemo()
-        print("sick.sliceDemo()")
+        print("stick.sliceDemo()")
         self.sliceDemo()
 
 ## @brief The class specific to the GlowBit Rainbow
