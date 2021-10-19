@@ -17,7 +17,7 @@ myMatrix.pixelsShow()
 r = 80
 g = 100
 b = 200
-colour = myMatrix.rgb2GBColour(r, g, b)
+colour = myMatrix.rgbColour(r, g, b)
 myMatrix.pixelSetXY(3,4, colour)
 myMatrix.pixelsShow()
 

@@ -30,7 +30,7 @@ input()
 red = 100
 green = 100
 blue = 250
-colour = myMatrix.rgb2GBColour(red, green, blue)
+colour = myMatrix.rgbColour(red, green, blue)
 myMatrix.pixelSetXY(1,2,colour)
 myMatrix.pixelsShow()
 

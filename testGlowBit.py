@@ -66,12 +66,12 @@ def colourMap2(obj, index: int) -> int:
 x = 0
 while x < 10000:
     if x % 24 == 0:
-        #stick.addPulse(colour=[stick.rgb2GBColour(255,0,0),stick.rgb2GBColour(0,0,0),stick.rgb2GBColour(0,0,255)], speed=-100, index = stick.numLEDs)
+        #stick.addPulse(colour=[stick.rgbColour(255,0,0),stick.rgbColour(0,0,0),stick.rgbColour(0,0,255)], speed=-100, index = stick.numLEDs)
         if x % 48 == 0:
             stick.addPulse()
         else:
             stick.addPulse(speed=-100, index=23)
-        #stick.addPulse(colour=[stick.rgb2GBColour(255,0,0)], speed=10)
+        #stick.addPulse(colour=[stick.rgbColour(255,0,0)], speed=10)
     x += 1
     stick.pixelsFill(0)
     stick.updatePulses()

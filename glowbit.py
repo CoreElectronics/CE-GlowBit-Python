@@ -78,7 +78,7 @@ class colourFunctions():
     # \return Packed 32-bit GlowBit colour value
 
     @micropython.viper
-    def rgb2GBColour(self, r: int, g: int, b: int) -> int:
+    def rgbColour(self, r: int, g: int, b: int) -> int:
         return ( (r<<16) | (g<<8) | b )
    
     ## @brief Converts a 32-bit GlowBit colour value to an (R,G,B) tuple.
@@ -787,11 +787,11 @@ class glowbitMatrix(glowbit):
         while iters > 0:
             for x in range(self.numLEDsX):
                 self.pixelsFill(0)
-                self.drawLine(x, 0, self.numLEDsX-x-1, self.numLEDsY-1, self.rgb2GBColour(255,255,255))
+                self.drawLine(x, 0, self.numLEDsX-x-1, self.numLEDsY-1, self.rgbColour(255,255,255))
                 self.pixelsShow()
             for x in range(self.numLEDsX-2, 0, -1):
                 self.pixelsFill(0)
-                self.drawLine(x, 0, self.numLEDsX-x-1, self.numLEDsY-1, self.rgb2GBColour(255,255,255))
+                self.drawLine(x, 0, self.numLEDsX-x-1, self.numLEDsY-1, self.rgbColour(255,255,255))
                 self.pixelsShow()
             iters -= 1
         self.blankDisplay()
@@ -870,11 +870,11 @@ class glowbitMatrix(glowbit):
         self.blankDisplay()
         drops = []
         toDel = []
-        c1 = self.rgb2GBColour(200,255,200)
-        c2 = self.rgb2GBColour(0,127,0)
-        c3 = self.rgb2GBColour(0,64,0)
-        c4 = self.rgb2GBColour(0,32,0)
-        c5 = self.rgb2GBColour(0,16,0)
+        c1 = self.rgbColour(200,255,200)
+        c2 = self.rgbColour(0,127,0)
+        c3 = self.rgbColour(0,64,0)
+        c4 = self.rgbColour(0,32,0)
+        c5 = self.rgbColour(0,16,0)
         iter = 0
         p = random.randint(0,self.numLEDsX)
         drops.append(self.raindrop(p, random.randint(2,round(self.numLEDsX))))
@@ -1173,7 +1173,7 @@ class stick(glowbit):
                 if iters % (2*(self.numLEDs+4)) == 0:
                     self.addPulse()
                 else:
-                    self.addPulse(speed=-100, index=self.numLEDs, colourMap="Rainbow", colour=[-1, self.rgb2GBColour(255,255,255), -1])
+                    self.addPulse(speed=-100, index=self.numLEDs, colourMap="Rainbow", colour=[-1, self.rgbColour(255,255,255), -1])
             self.pixelsFill(0)
             self.updatePulses()
             self.pixelsShow()

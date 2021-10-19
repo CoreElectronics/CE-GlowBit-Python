@@ -17,7 +17,7 @@ myStick.pixelsShow()
 red = 30
 green = 100
 blue = 250
-colour = myStick.rgb2GBColour(red, green, blue)
+colour = myStick.rgbColour(red, green, blue)
 pixelNumber = 1
 myStick.pixelSet(pixelNumber,colour)
 myStick.pixelsShow()
