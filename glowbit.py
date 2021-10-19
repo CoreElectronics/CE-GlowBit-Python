@@ -1375,7 +1375,7 @@ class matrix4x4(glowbitMatrix):
     # \param sm (Raspberry Pi Pico only) The PIO state machine to generate the GlowBit data stream. Each connected GlowBit display chain requires a unique state machine. Valid values are in the range [0,7].
 
 
-    def __init__(self, tiles = 1, pin = 18, brightness = 20, mapFunction = None, rateLimitFPS = 20, sm = 0):
+    def __init__(self, tiles = 1, pin = 18, brightness = 20, mapFunction = None, rateLimitFPS = 333 sm = 0):
         if _SYSNAME == 'rp2':
             self.sm = rp2.StateMachine(sm, self._ws2812, freq=8_000_000, sideset_base=Pin(pin))
             self.sm.active(1)
