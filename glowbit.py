@@ -742,7 +742,7 @@ class glowbitMatrix(glowbit):
             self.bgColour = bgColour
             self.update = update
             self.m = (-height)/(maxValue-minValue)
-            self.offset = originY+0.5-self.m*minValue
+            self.offset = originY+self.m*minValue
             self.bars = bars
             
             self.data = []
@@ -767,8 +767,7 @@ class glowbitMatrix(glowbit):
         m = graph.colourMap
         self.drawRectangleFill(graph.originX, graph.originY-graph.height+1, graph.originX+graph.width-1, graph.originY, graph.bgColour)
         for value in graph.data:
-            y = round(graph.m*value + graph.offset)# + graph.originY
-            print(y, graph.m*value + graph.offset, graph.m, graph.offset )
+            y = round(-graph.height/(graph.maxValue-graph.minValue )*(value - graph.minValue) + graph.originY + 1)
             if graph.bars == True:
                 for idx in range(y, graph.originY+1):
                     if x >= graph.originX and x < graph.originX+graph.width and idx <= graph.originY and idx > graph.originY-graph.height:
