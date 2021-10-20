@@ -1582,10 +1582,7 @@ class matrix8x8(glowbitMatrix):
         # Set to True if scrolling text exists to be drawn.
         self.scrollingText = True
         if blocking == True:
-            # Force self-updating when doing a blocking print
-            if self.updateText == False:
-                print("Ignoring update=False for blocking call to printTextScroll()")
-                self.updateText = True
+            self.updateText = True
             while self.scrollingText > 0:
                 self.updateTextScroll()
          
