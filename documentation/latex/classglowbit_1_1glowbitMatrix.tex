@@ -76,8 +76,8 @@ def \hyperlink{classglowbit_1_1glowbitMatrix_a088608e2586a76f09eb7312f2155f0b8}{
 \begin{DoxyCompactList}\small\item\em A \char`\"{}digital rain\char`\"{} demonstration. \end{DoxyCompactList}\item 
 def \hyperlink{classglowbit_1_1glowbitMatrix_a6232220b12c86c7ec361cde374419ac4}{text\+Demo} (self, text=\char`\"{}Scrolling Text Demo\char`\"{})
 \begin{DoxyCompactList}\small\item\em Demonstrates creation of non-\/blocking scrolling text. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classglowbit_1_1glowbitMatrix_a2563367a0457da5d91001f3a810bf0fd}\label{classglowbit_1_1glowbitMatrix_a2563367a0457da5d91001f3a810bf0fd}} 
-def \hyperlink{classglowbit_1_1glowbitMatrix_a2563367a0457da5d91001f3a810bf0fd}{bounce} (self, iters=100)
+\mbox{\Hypertarget{classglowbit_1_1glowbitMatrix_af24d7b883af9ce47fb66450da2a58155}\label{classglowbit_1_1glowbitMatrix_af24d7b883af9ce47fb66450da2a58155}} 
+def \hyperlink{classglowbit_1_1glowbitMatrix_af24d7b883af9ce47fb66450da2a58155}{bounce} (self, iters=500)
 \begin{DoxyCompactList}\small\item\em Draws a single pixel at a random coordinate and \char`\"{}bounces\char`\"{} it around the display. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classglowbit_1_1glowbitMatrix_a2b32b49b418d50de484ef8487a77d082}\label{classglowbit_1_1glowbitMatrix_a2b32b49b418d50de484ef8487a77d082}} 
 def \hyperlink{classglowbit_1_1glowbitMatrix_a2b32b49b418d50de484ef8487a77d082}{demo} (self)
@@ -369,7 +369,9 @@ Sets the colour value of the Glow\+Bit L\+ED at a given x-\/y coordinate.
 
 The coordinate assumes an origin in the upper left of the display with x increasing to the right and y increasing downwards.
 
-If the x-\/y coordinate falls outside the display\textquotesingle{}s boundary this function will \char`\"{}wrap-\/around\char`\"{}. For example, A dot placed just off the right edge will appear along the left edge.
+If the x-\/y coordinate falls outside the display\textquotesingle{}s boundary this function will \char`\"{}wrap-\/around\char`\"{}. For example, A dot placed just off the right edge will appear along the left edge in the same row.
+
+Advanced\+: If seeking maximum speed consider modifying the ar\mbox{[}\mbox{]} array directly
 
 
 \begin{DoxyParams}{Parameters}
@@ -416,6 +418,8 @@ Sets the colour value of the Glow\+Bit L\+ED at a given x-\/y coordinate and imm
 The coordinate assumes an origin in the upper left of the display with x increasing to the right and y increasing downwards.
 
 If the x-\/y coordinate falls outside the display\textquotesingle{}s boundary this function will \char`\"{}wrap-\/around\char`\"{}. For example, A dot placed just off the right edge will appear along the left edge.
+
+Advanced\+: If seeking maximum speed consider modifying the ar\mbox{[}\mbox{]} array directly
 
 
 \begin{DoxyParams}{Parameters}
