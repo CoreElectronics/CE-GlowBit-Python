@@ -1,0 +1,9 @@
+# I couldn't get doxyfilter_python.py to work from Doxfile configuration so here we are...
+
+docs: glowbit.py
+	python3 doxyfilter_python.py ../glowbit.py > glowbit.py
+	doxygen Doxyfile
+
+latex: ./latex/refman.tex glowbit.py
+	cd latex
+	make

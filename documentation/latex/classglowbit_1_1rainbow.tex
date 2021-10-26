@@ -1,0 +1,118 @@
+\hypertarget{classglowbit_1_1rainbow}{}\section{glowbit.\+rainbow Class Reference}
+\label{classglowbit_1_1rainbow}\index{glowbit.\+rainbow@{glowbit.\+rainbow}}
+
+
+The class specific to the Glow\+Bit Rainbow.  
+
+
+
+
+Inheritance diagram for glowbit.\+rainbow\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{classglowbit_1_1rainbow__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for glowbit.\+rainbow\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{classglowbit_1_1rainbow__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classglowbit_1_1rainbow_ab1af2d27c10f3ffba7b3ce955cb6229f}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, num\+L\+E\+Ds=13, pin=18, brightness=40, rate\+Limit\+F\+PS=60, sm=0)
+\begin{DoxyCompactList}\small\item\em Initialisation routine for Glow\+Bit rainbow modules. \end{DoxyCompactList}\item 
+def \hyperlink{classglowbit_1_1rainbow_a0940825ae934617f95b96e472923f07a}{pixel\+Set\+Angle} (self, angle, colour)
+\begin{DoxyCompactList}\small\item\em Sets the colour of a pixel on the Glow\+Bit Rainbow, addressed by its angle label. \end{DoxyCompactList}\item 
+def \hyperlink{classglowbit_1_1rainbow_af03e480ce6a5d27780268b242a3fdfa7}{draw\+Rainbow} (self, offset=0)
+\begin{DoxyCompactList}\small\item\em Colours each pixel to display a rainbow spectrum. \end{DoxyCompactList}\item 
+def \hyperlink{classglowbit_1_1rainbow_ae693f9ccb27c683ee6d69728e8f9266f}{demo} (self)
+\begin{DoxyCompactList}\small\item\em Displays a rainbow animation in an infinite loop. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+The class specific to the Glow\+Bit Rainbow. 
+
+This class inherits all the functionality of the Glow\+Bit Stick and extends it with Rainbow-\/specific methods. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classglowbit_1_1rainbow_ab1af2d27c10f3ffba7b3ce955cb6229f}\label{classglowbit_1_1rainbow_ab1af2d27c10f3ffba7b3ce955cb6229f}} 
+\index{glowbit\+::rainbow@{glowbit\+::rainbow}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!glowbit\+::rainbow@{glowbit\+::rainbow}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def glowbit.\+rainbow.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{num\+L\+E\+Ds = {\ttfamily 13},  }\item[{}]{pin = {\ttfamily 18},  }\item[{}]{brightness = {\ttfamily 40},  }\item[{}]{rate\+Limit\+F\+PS = {\ttfamily 60},  }\item[{}]{sm = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Initialisation routine for Glow\+Bit rainbow modules. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num\+L\+E\+Ds} & The total number of L\+E\+Ds. Should be set to 13 $\ast$ (the number of tiled modules). \\
+\hline
+{\em pin} & The G\+P\+IO pin connected to the Glow\+Bit Rainbow module. Defaults to 18 as that pin is compatible with the Raspberry Pi and Raspberry Pi Pico. Any pin can be used on the Raspberry Pi Pico, only pins 18 and 12 are valid on the Raspberry Pi. \\
+\hline
+{\em brightness} & The relative brightness of the L\+E\+Ds. Colours drawn to the internal buffer should be in the range \mbox{[}0,255\mbox{]} and the brightness parameter scales this value before drawing to the physical display. If brightness is an integer it should be in the range \mbox{[}0,255\mbox{]}. If brightness is floating point it is assumed to be in the range \mbox{[}0,1.\+0\mbox{]}. \\
+\hline
+{\em rate\+Limit\+F\+PS} & The maximum frame rate of the display in frames per second. The pixels\+Show() function blocks to enforce this limit. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classglowbit_1_1rainbow_ae693f9ccb27c683ee6d69728e8f9266f}\label{classglowbit_1_1rainbow_ae693f9ccb27c683ee6d69728e8f9266f}} 
+\index{glowbit\+::rainbow@{glowbit\+::rainbow}!demo@{demo}}
+\index{demo@{demo}!glowbit\+::rainbow@{glowbit\+::rainbow}}
+\subsubsection{\texorpdfstring{demo()}{demo()}}
+{\footnotesize\ttfamily def glowbit.\+rainbow.\+demo (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Displays a rainbow animation in an infinite loop. 
+
+This method demonstrates the use of \hyperlink{classglowbit_1_1rainbow_af03e480ce6a5d27780268b242a3fdfa7}{draw\+Rainbow()}. \mbox{\Hypertarget{classglowbit_1_1rainbow_af03e480ce6a5d27780268b242a3fdfa7}\label{classglowbit_1_1rainbow_af03e480ce6a5d27780268b242a3fdfa7}} 
+\index{glowbit\+::rainbow@{glowbit\+::rainbow}!draw\+Rainbow@{draw\+Rainbow}}
+\index{draw\+Rainbow@{draw\+Rainbow}!glowbit\+::rainbow@{glowbit\+::rainbow}}
+\subsubsection{\texorpdfstring{draw\+Rainbow()}{drawRainbow()}}
+{\footnotesize\ttfamily def glowbit.\+rainbow.\+draw\+Rainbow (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{offset = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Colours each pixel to display a rainbow spectrum. 
+
+This method calls pixels\+Show().
+
+
+\begin{DoxyParams}{Parameters}
+{\em offset} & A \char`\"{}phase\char`\"{} offset mapping \mbox{[}0,360\mbox{]} degrees to \mbox{[}0,255\mbox{]}. A value of 0 displays red at angle 0 and purple at angle 180. A modulo-\/255 operation is performed, allowing this value to be any integer. The rain\+Loop() method varies this value to display an animation. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classglowbit_1_1rainbow_a0940825ae934617f95b96e472923f07a}\label{classglowbit_1_1rainbow_a0940825ae934617f95b96e472923f07a}} 
+\index{glowbit\+::rainbow@{glowbit\+::rainbow}!pixel\+Set\+Angle@{pixel\+Set\+Angle}}
+\index{pixel\+Set\+Angle@{pixel\+Set\+Angle}!glowbit\+::rainbow@{glowbit\+::rainbow}}
+\subsubsection{\texorpdfstring{pixel\+Set\+Angle()}{pixelSetAngle()}}
+{\footnotesize\ttfamily def glowbit.\+rainbow.\+pixel\+Set\+Angle (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{angle,  }\item[{}]{colour }\end{DoxyParamCaption})}
+
+
+
+Sets the colour of a pixel on the Glow\+Bit Rainbow, addressed by its angle label. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em angle} & An integer number in degrees equal to an angle label on the Glow\+Bit Rainbow P\+CB. \\
+\hline
+{\em colour} & A 32-\/bit Glow\+Bit colour value \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+glowbit.\+py\end{DoxyCompactItemize}

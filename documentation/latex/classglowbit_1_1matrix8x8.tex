@@ -1,0 +1,293 @@
+\hypertarget{classglowbit_1_1matrix8x8}{}\section{glowbit.\+matrix8x8 Class Reference}
+\label{classglowbit_1_1matrix8x8}\index{glowbit.\+matrix8x8@{glowbit.\+matrix8x8}}
+
+
+Class for driving Glow\+Bit Matrix 8x8 modules and tiled arrangements thereof.  
+
+
+
+
+Inheritance diagram for glowbit.\+matrix8x8\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{classglowbit_1_1matrix8x8__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for glowbit.\+matrix8x8\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{classglowbit_1_1matrix8x8__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classglowbit_1_1matrix8x8_1_1__textScroll}{\+\_\+text\+Scroll}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classglowbit_1_1matrix8x8_a7b30f3aec73c8a938a063ea640899af6}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, tile\+Rows=1, tile\+Cols=1, pin=18, brightness=20, map\+Function=None, rate\+Limit\+F\+PS=-\/1, rate\+Limit\+Characters\+Per\+Second=-\/1, sm=0)
+\begin{DoxyCompactList}\small\item\em Initialisation routine for Glow\+Bit stick modules and tiled arrays thereof. \end{DoxyCompactList}\item 
+def \hyperlink{classglowbit_1_1matrix8x8_a1db0574d73977d46ba90068b9970777f}{print\+Text\+Wrap} (self, string, x=0, y=0, colour=0x\+F\+F\+F\+F\+F\+F)
+\begin{DoxyCompactList}\small\item\em Prints a string of text to a tiled Glow\+Bit Matrix 8x8 display, automatically wrapping to new lines as required. \end{DoxyCompactList}\item 
+def \hyperlink{classglowbit_1_1matrix8x8_ade5b8578e6c38d86f356cdb6997cc314}{add\+Text\+Scroll} (self, string, y=0, x=0, colour=0x\+F\+F\+F\+F\+F\+F, bg\+Colour=0x000000, update=\+False, blocking=\+False)
+\begin{DoxyCompactList}\small\item\em Adds a line of scrolling text to the display. \end{DoxyCompactList}\item 
+def \hyperlink{classglowbit_1_1matrix8x8_a4a529f9b42ea95cc0f5dafcb0085d096}{update\+Text\+Scroll} (self)
+\begin{DoxyCompactList}\small\item\em Update a scrolling text animation. \end{DoxyCompactList}\item 
+def \hyperlink{classglowbit_1_1matrix8x8_a67146ad236571bf9e87fe7a847c8a1d1}{remap8x8} (self, x, y)
+\begin{DoxyCompactList}\small\item\em Maps an (x,y) coordinate on a tiled Glow\+Bit Matrix 8x8 array to an internal buffer array index. \end{DoxyCompactList}\item 
+def \hyperlink{classglowbit_1_1matrix8x8_a4ba16a1fa6231654833d619f8789275a}{draw\+Char} (self, char, Px, Py, colour)
+\begin{DoxyCompactList}\small\item\em Draw a single character to the display. \end{DoxyCompactList}\item 
+def \hyperlink{classglowbit_1_1matrix8x8_a5dfbe10ccf2acca4d6d4012e29e7b439}{update\+Rate\+Limit\+Characters\+Per\+Second} (self, rate\+Limit\+Characters\+Per\+Second)
+\begin{DoxyCompactList}\small\item\em Changes the 8x8 matrix display\textquotesingle{}s update rate in units of \char`\"{}characters of scrolling text per second\char`\"{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classglowbit_1_1matrix8x8_a739f238cd08f8d1baee326e1b39f8c6c}\label{classglowbit_1_1matrix8x8_a739f238cd08f8d1baee326e1b39f8c6c}} 
+{\bfseries tile\+Rows}
+\item 
+\mbox{\Hypertarget{classglowbit_1_1matrix8x8_ad3c6a50f6b460b132773cea052fff106}\label{classglowbit_1_1matrix8x8_ad3c6a50f6b460b132773cea052fff106}} 
+{\bfseries tile\+Cols}
+\item 
+\mbox{\Hypertarget{classglowbit_1_1matrix8x8_a9b656c42c8fda29877836bc4fbced6fa}\label{classglowbit_1_1matrix8x8_a9b656c42c8fda29877836bc4fbced6fa}} 
+{\bfseries num\+L\+E\+Ds}
+\item 
+\mbox{\Hypertarget{classglowbit_1_1matrix8x8_a957c49a14c90493b5cb5cfe7c4dbd203}\label{classglowbit_1_1matrix8x8_a957c49a14c90493b5cb5cfe7c4dbd203}} 
+{\bfseries num\+L\+E\+DsX}
+\item 
+\mbox{\Hypertarget{classglowbit_1_1matrix8x8_ab9abe55b6cce8cbce7e29d307a555d0a}\label{classglowbit_1_1matrix8x8_ab9abe55b6cce8cbce7e29d307a555d0a}} 
+{\bfseries num\+L\+E\+DsY}
+\item 
+\mbox{\Hypertarget{classglowbit_1_1matrix8x8_a3c675a7307c262844e4da7ea3318a962}\label{classglowbit_1_1matrix8x8_a3c675a7307c262844e4da7ea3318a962}} 
+{\bfseries num\+Cols}
+\item 
+\mbox{\Hypertarget{classglowbit_1_1matrix8x8_abfa26377cb1814285b668cc360172d85}\label{classglowbit_1_1matrix8x8_abfa26377cb1814285b668cc360172d85}} 
+{\bfseries num\+Rows}
+\item 
+\mbox{\Hypertarget{classglowbit_1_1matrix8x8_a9148a02f6c6d48d1745ec9b801d58083}\label{classglowbit_1_1matrix8x8_a9148a02f6c6d48d1745ec9b801d58083}} 
+{\bfseries sm}
+\item 
+\mbox{\Hypertarget{classglowbit_1_1matrix8x8_aa0c38c2d52806ba5c9d2ffbc7734b364}\label{classglowbit_1_1matrix8x8_aa0c38c2d52806ba5c9d2ffbc7734b364}} 
+{\bfseries pixels\+Show}
+\item 
+\mbox{\Hypertarget{classglowbit_1_1matrix8x8_a83010a4dfcef0755c55950a1703e7e13}\label{classglowbit_1_1matrix8x8_a83010a4dfcef0755c55950a1703e7e13}} 
+{\bfseries ticks\+\_\+ms}
+\item 
+\mbox{\Hypertarget{classglowbit_1_1matrix8x8_ac29e07887369c313893b4ca71f3f86c3}\label{classglowbit_1_1matrix8x8_ac29e07887369c313893b4ca71f3f86c3}} 
+{\bfseries strip}
+\item 
+\mbox{\Hypertarget{classglowbit_1_1matrix8x8_af41df10fb7fe285edcf2a7a4677854cc}\label{classglowbit_1_1matrix8x8_af41df10fb7fe285edcf2a7a4677854cc}} 
+{\bfseries ar}
+\item 
+\mbox{\Hypertarget{classglowbit_1_1matrix8x8_a018d52a73e4f3902ca3272ae1e6f552c}\label{classglowbit_1_1matrix8x8_a018d52a73e4f3902ca3272ae1e6f552c}} 
+{\bfseries dimmer\+\_\+ar}
+\item 
+\mbox{\Hypertarget{classglowbit_1_1matrix8x8_a4d227ae72c97ff008677711fc3274104}\label{classglowbit_1_1matrix8x8_a4d227ae72c97ff008677711fc3274104}} 
+{\bfseries brightness}
+\item 
+\mbox{\Hypertarget{classglowbit_1_1matrix8x8_abaee6a53b3a15537cb75133abc6edb22}\label{classglowbit_1_1matrix8x8_abaee6a53b3a15537cb75133abc6edb22}} 
+{\bfseries scrolling\+Text}
+\item 
+\mbox{\Hypertarget{classglowbit_1_1matrix8x8_a9f9e4c792c4420744234f8c400f1dc54}\label{classglowbit_1_1matrix8x8_a9f9e4c792c4420744234f8c400f1dc54}} 
+{\bfseries last\+Frame\+\_\+ms}
+\item 
+\mbox{\Hypertarget{classglowbit_1_1matrix8x8_a04e1bdcc67b521246610c68f5dafaa3e}\label{classglowbit_1_1matrix8x8_a04e1bdcc67b521246610c68f5dafaa3e}} 
+{\bfseries rate\+Limit}
+\item 
+\mbox{\Hypertarget{classglowbit_1_1matrix8x8_af0afcefd1ec2dc8614e5f8f7478fd36c}\label{classglowbit_1_1matrix8x8_af0afcefd1ec2dc8614e5f8f7478fd36c}} 
+{\bfseries scrolling\+Text\+List}
+\item 
+\mbox{\Hypertarget{classglowbit_1_1matrix8x8_a458b71109effe56dcbb6cde442cf5657}\label{classglowbit_1_1matrix8x8_a458b71109effe56dcbb6cde442cf5657}} 
+{\bfseries remap}
+\item 
+\mbox{\Hypertarget{classglowbit_1_1matrix8x8_aad3eb346cc87f36b36eb8bc6aeb67e5f}\label{classglowbit_1_1matrix8x8_aad3eb346cc87f36b36eb8bc6aeb67e5f}} 
+{\bfseries update\+Text}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Class for driving Glow\+Bit Matrix 8x8 modules and tiled arrangements thereof. 
+
+The Glow\+Bit Matrix 8x8 is designed to tile in two dimensions to create arbitratily large displays without the need for \char`\"{}air-\/wiring\char`\"{} of the data signal.
+
+The \hyperlink{classglowbit_1_1matrix8x8_a67146ad236571bf9e87fe7a847c8a1d1}{remap8x8()} method maps an (x,y) coordinate to a pixel index if the data signal \char`\"{}snakes\char`\"{} back and forth. When viewed from the R\+E\+AR of a tiled array data-\/in is soldered to the top right module, moves right to left, then left to right on the 2nd row, etc. See \href{https://glowbit.io/02}{\tt https\+://glowbit.\+io/02} for assembly details. \begin{DoxyVerb}  ---<  Data routing: view from REAR (ie: when soldering Din / Dout pads).
+ |
+  >---
+     |
+  ---<\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classglowbit_1_1matrix8x8_a7b30f3aec73c8a938a063ea640899af6}\label{classglowbit_1_1matrix8x8_a7b30f3aec73c8a938a063ea640899af6}} 
+\index{glowbit\+::matrix8x8@{glowbit\+::matrix8x8}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!glowbit\+::matrix8x8@{glowbit\+::matrix8x8}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def glowbit.\+matrix8x8.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{tile\+Rows = {\ttfamily 1},  }\item[{}]{tile\+Cols = {\ttfamily 1},  }\item[{}]{pin = {\ttfamily 18},  }\item[{}]{brightness = {\ttfamily 20},  }\item[{}]{map\+Function = {\ttfamily None},  }\item[{}]{rate\+Limit\+F\+PS = {\ttfamily -\/1},  }\item[{}]{rate\+Limit\+Characters\+Per\+Second = {\ttfamily -\/1},  }\item[{}]{sm = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Initialisation routine for Glow\+Bit stick modules and tiled arrays thereof. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tile\+Rows} & The number of tiled Glow\+Bit Matrix 8x8 module rows. \\
+\hline
+{\em tile\+Cols} & The number of tiled Glow\+Bit Matrix 8x8 module columns. \\
+\hline
+{\em pin} & The G\+P\+IO pin connected to the Glow\+Bit stick module. Defaults to 18 as that pin is compatible with the Raspberry Pi and Raspberry Pi Pico. Any pin can be used on the Raspberry Pi Pico, only pins 18 and 12 are valid on the Raspberry Pi. \\
+\hline
+{\em brightness} & The relative brightness of the L\+E\+Ds. Colours drawn to the internal buffer should be in the range \mbox{[}0,255\mbox{]} and the brightness parameter scales this value before drawing to the physical display. If brightness is an integer it should be in the range \mbox{[}0,255\mbox{]}. If brightness is floating point it is assumed to be in the range \mbox{[}0,1.\+0\mbox{]}. \\
+\hline
+{\em map\+Function} & A function pointer to a custom pixel mapping function. Only required if mapping pixels to non-\/standard tiling arrangements. \\
+\hline
+{\em rate\+Limit\+F\+PS} & The maximum frame rate of the display in frames per second. The pixels\+Show() function blocks to enforce this limit. This argument defaults to -\/1 to allow rate\+Limit\+Characters\+Per\+Second to preference this parameter if it is not set. If neither rate\+Limit\+F\+PS or rate\+Limit\+Characters\+Per\+Second are set the limit is set to 30 F\+PS. \\
+\hline
+{\em rate\+Limit\+Characters\+Per\+Second} & If given a positive value the display update rate is set to display this many characters of scrolling text per second. A value of 1 is fast, but readable. This value can be fractional (eg\+: 0.\+5). \\
+\hline
+{\em sm} & (Raspberry Pi Pico only) The P\+IO state machine to generate the Glow\+Bit data stream. Each connected Glow\+Bit display chain requires a unique state machine. Valid values are in the range \mbox{[}0,7\mbox{]}. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classglowbit_1_1matrix8x8_ade5b8578e6c38d86f356cdb6997cc314}\label{classglowbit_1_1matrix8x8_ade5b8578e6c38d86f356cdb6997cc314}} 
+\index{glowbit\+::matrix8x8@{glowbit\+::matrix8x8}!add\+Text\+Scroll@{add\+Text\+Scroll}}
+\index{add\+Text\+Scroll@{add\+Text\+Scroll}!glowbit\+::matrix8x8@{glowbit\+::matrix8x8}}
+\subsubsection{\texorpdfstring{add\+Text\+Scroll()}{addTextScroll()}}
+{\footnotesize\ttfamily def glowbit.\+matrix8x8.\+add\+Text\+Scroll (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{string,  }\item[{}]{y = {\ttfamily 0},  }\item[{}]{x = {\ttfamily 0},  }\item[{}]{colour = {\ttfamily 0xFFFFFF},  }\item[{}]{bg\+Colour = {\ttfamily 0x000000},  }\item[{}]{update = {\ttfamily False},  }\item[{}]{blocking = {\ttfamily False} }\end{DoxyParamCaption})}
+
+
+
+Adds a line of scrolling text to the display. 
+
+This method can be blocking or non-\/blocking.
+
+If blocking the scrolling text will be drawn to the physical display and the method won\textquotesingle{}t return until the animation is complete.
+
+If non-\/blockig this method will return quickly, allowing subsequent calls to \hyperlink{classglowbit_1_1matrix8x8_a4a529f9b42ea95cc0f5dafcb0085d096}{update\+Text\+Scroll()} to control the rate of scrolling text animation. The text will scroll to the left one pixel with each call to \hyperlink{classglowbit_1_1matrix8x8_a4a529f9b42ea95cc0f5dafcb0085d096}{update\+Text\+Scroll()}.
+
+The update prameter is provided for convinience; if it is set to True a call to \hyperlink{classglowbit_1_1matrix8x8_a4a529f9b42ea95cc0f5dafcb0085d096}{update\+Text\+Scroll()} will automatically call pixels\+Show(). Setting update to False allows the text scroll to be synchronised with other drawing updates.
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & The string of text to scroll across the display \\
+\hline
+{\em y} & The y coordinate of the top edge of the text \\
+\hline
+{\em x} & The initial location of the text relative to the right edge of the display. Setting positive will scroll the text from further off the edge, producing a delay before it is visible. Setting negative will cause the text to appear on the display instantly before scrolling to the left. In units of pixels. \\
+\hline
+{\em colour} & The colour of the scrolling text characters. A 32-\/bit Glow\+Bit colour value \\
+\hline
+{\em bg\+Colour} & The colour of the background (ie\+: all pixels in the 8-\/row high area the text is drawn to which aren\textquotesingle{}t part of a character). A 32-\/bit Glow\+Bit colour value. \\
+\hline
+{\em update} & Passing update = True causes \hyperlink{classglowbit_1_1matrix8x8_a4a529f9b42ea95cc0f5dafcb0085d096}{update\+Text\+Scroll()} to call pixels\+Show(). Otherwise pixels\+Show() must be called manually, allowing synchronisation of scrolling text with other animated features. \\
+\hline
+{\em blocking} & Passing blocking = True will draw the scrolling text to the screen immediately and this method will not return until the text has scrolled off the display. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classglowbit_1_1matrix8x8_a4ba16a1fa6231654833d619f8789275a}\label{classglowbit_1_1matrix8x8_a4ba16a1fa6231654833d619f8789275a}} 
+\index{glowbit\+::matrix8x8@{glowbit\+::matrix8x8}!draw\+Char@{draw\+Char}}
+\index{draw\+Char@{draw\+Char}!glowbit\+::matrix8x8@{glowbit\+::matrix8x8}}
+\subsubsection{\texorpdfstring{draw\+Char()}{drawChar()}}
+{\footnotesize\ttfamily def glowbit.\+matrix8x8.\+draw\+Char (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{char,  }\item[{}]{Px,  }\item[{}]{Py,  }\item[{}]{colour }\end{DoxyParamCaption})}
+
+
+
+Draw a single character to the display. 
+
+For increased performance on Micropython boards this method uses the Micropython Viper code emitter so all arguments are necessary.
+
+See also\+: \hyperlink{classglowbit_1_1matrix8x8_ade5b8578e6c38d86f356cdb6997cc314}{add\+Text\+Scroll()} / \hyperlink{classglowbit_1_1matrix8x8_a4a529f9b42ea95cc0f5dafcb0085d096}{update\+Text\+Scroll()} for built-\/in scrolling text and \hyperlink{classglowbit_1_1matrix8x8_a1db0574d73977d46ba90068b9970777f}{print\+Text\+Wrap()} for printing static text with automatic line feeds.
+
+
+\begin{DoxyParams}{Parameters}
+{\em char} & A single character string. This character will be drawn to the internal buffer. \\
+\hline
+{\em Px} & The x coordinate of the upper left corner of the character. Characters occupy an 8x8 pixel area. \\
+\hline
+{\em Py} & The y coordinate of the upper left corner of the character. Characters occupy an 8x8 pixel area. \\
+\hline
+{\em colour} & A 32-\/bit Glow\+Bit colour value \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classglowbit_1_1matrix8x8_a1db0574d73977d46ba90068b9970777f}\label{classglowbit_1_1matrix8x8_a1db0574d73977d46ba90068b9970777f}} 
+\index{glowbit\+::matrix8x8@{glowbit\+::matrix8x8}!print\+Text\+Wrap@{print\+Text\+Wrap}}
+\index{print\+Text\+Wrap@{print\+Text\+Wrap}!glowbit\+::matrix8x8@{glowbit\+::matrix8x8}}
+\subsubsection{\texorpdfstring{print\+Text\+Wrap()}{printTextWrap()}}
+{\footnotesize\ttfamily def glowbit.\+matrix8x8.\+print\+Text\+Wrap (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{string,  }\item[{}]{x = {\ttfamily 0},  }\item[{}]{y = {\ttfamily 0},  }\item[{}]{colour = {\ttfamily 0xFFFFFF} }\end{DoxyParamCaption})}
+
+
+
+Prints a string of text to a tiled Glow\+Bit Matrix 8x8 display, automatically wrapping to new lines as required. 
+
+Each character occupies an 8x8 pixel area.
+
+Characters which do not fit on the display are truncated.
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & The string to print to the display. \\
+\hline
+{\em x} & The x coordinate of the upper left corner of the first character \\
+\hline
+{\em y} & The y coordinate of the upper left corner of the first character \\
+\hline
+{\em colour} & A 32-\/bit Glow\+Bit colour value. All pixels in every character will be drawn in this colour. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classglowbit_1_1matrix8x8_a67146ad236571bf9e87fe7a847c8a1d1}\label{classglowbit_1_1matrix8x8_a67146ad236571bf9e87fe7a847c8a1d1}} 
+\index{glowbit\+::matrix8x8@{glowbit\+::matrix8x8}!remap8x8@{remap8x8}}
+\index{remap8x8@{remap8x8}!glowbit\+::matrix8x8@{glowbit\+::matrix8x8}}
+\subsubsection{\texorpdfstring{remap8x8()}{remap8x8()}}
+{\footnotesize\ttfamily def glowbit.\+matrix8x8.\+remap8x8 (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{x,  }\item[{}]{y }\end{DoxyParamCaption})}
+
+
+
+Maps an (x,y) coordinate on a tiled Glow\+Bit Matrix 8x8 array to an internal buffer array index. 
+
+It is recommended to use \hyperlink{classglowbit_1_1glowbitMatrix_a5f20884e1b08bc66e54860d0bbf0d22e}{pixel\+Set\+X\+Y()} (and variants) instead of this function.
+
+The return value can be passed to pixel\+Set(i, colour) (and its variants \hyperlink{classglowbit_1_1glowbit_a6f4167e566106d5eb104933b256f2e14}{pixel\+Set\+Now()} etc) in place of the paramter \char`\"{}i\char`\"{}.
+
+The (x,y) coordinates assume (0,0) in the upper left corner of the display with x increasing to the right and y increasing down
+
+This function does not do boundary checking and may return a value which is outside the array, causing an Index\+Error exception to be raised.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The x coordinate of the pixel to index \\
+\hline
+{\em y} & The y coordinate of the pixel to index \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classglowbit_1_1matrix8x8_a5dfbe10ccf2acca4d6d4012e29e7b439}\label{classglowbit_1_1matrix8x8_a5dfbe10ccf2acca4d6d4012e29e7b439}} 
+\index{glowbit\+::matrix8x8@{glowbit\+::matrix8x8}!update\+Rate\+Limit\+Characters\+Per\+Second@{update\+Rate\+Limit\+Characters\+Per\+Second}}
+\index{update\+Rate\+Limit\+Characters\+Per\+Second@{update\+Rate\+Limit\+Characters\+Per\+Second}!glowbit\+::matrix8x8@{glowbit\+::matrix8x8}}
+\subsubsection{\texorpdfstring{update\+Rate\+Limit\+Characters\+Per\+Second()}{updateRateLimitCharactersPerSecond()}}
+{\footnotesize\ttfamily def glowbit.\+matrix8x8.\+update\+Rate\+Limit\+Characters\+Per\+Second (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{rate\+Limit\+Characters\+Per\+Second }\end{DoxyParamCaption})}
+
+
+
+Changes the 8x8 matrix display\textquotesingle{}s update rate in units of \char`\"{}characters of scrolling text per second\char`\"{}. 
+
+For example, a value of 2 would scroll 2 charcters per second; leaving each character at least partly visible for 0.\+5 seconds. \mbox{\Hypertarget{classglowbit_1_1matrix8x8_a4a529f9b42ea95cc0f5dafcb0085d096}\label{classglowbit_1_1matrix8x8_a4a529f9b42ea95cc0f5dafcb0085d096}} 
+\index{glowbit\+::matrix8x8@{glowbit\+::matrix8x8}!update\+Text\+Scroll@{update\+Text\+Scroll}}
+\index{update\+Text\+Scroll@{update\+Text\+Scroll}!glowbit\+::matrix8x8@{glowbit\+::matrix8x8}}
+\subsubsection{\texorpdfstring{update\+Text\+Scroll()}{updateTextScroll()}}
+{\footnotesize\ttfamily def glowbit.\+matrix8x8.\+update\+Text\+Scroll (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Update a scrolling text animation. 
+
+\hyperlink{classglowbit_1_1matrix8x8_ade5b8578e6c38d86f356cdb6997cc314}{add\+Text\+Scroll()} must be called at least once for scrolling text to be drawn to the display. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+glowbit.\+py\end{DoxyCompactItemize}

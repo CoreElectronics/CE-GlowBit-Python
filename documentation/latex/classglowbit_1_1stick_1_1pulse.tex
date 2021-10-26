@@ -1,0 +1,102 @@
+\hypertarget{classglowbit_1_1stick_1_1pulse}{}\section{glowbit.\+stick.\+pulse Class Reference}
+\label{classglowbit_1_1stick_1_1pulse}\index{glowbit.\+stick.\+pulse@{glowbit.\+stick.\+pulse}}
+
+
+A class for animating \char`\"{}pulses\char`\"{} which move down a Glow\+Bit stick.  
+
+
+
+
+Inheritance diagram for glowbit.\+stick.\+pulse\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{classglowbit_1_1stick_1_1pulse__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for glowbit.\+stick.\+pulse\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{classglowbit_1_1stick_1_1pulse__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classglowbit_1_1stick_1_1pulse_a53a1dbcea6d84002f76f9c10c7ae0481}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classglowbit_1_1stick_1_1pulse_ac600e5460c9f05e36ea6d7b7cef0c763}{speed}=100, \hyperlink{classglowbit_1_1stick_1_1pulse_a1b0b4b29bc1a9bbd90d9f919589a560a}{colour}=\mbox{[}0x\+F\+F\+F\+F\+F\+F\mbox{]}, index=0, colour\+Map=\+None)
+\begin{DoxyCompactList}\small\item\em Initialisation routine for the Glow\+Bit Stick pulse object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classglowbit_1_1stick_1_1pulse_ac600e5460c9f05e36ea6d7b7cef0c763}\label{classglowbit_1_1stick_1_1pulse_ac600e5460c9f05e36ea6d7b7cef0c763}} 
+\hyperlink{classglowbit_1_1stick_1_1pulse_ac600e5460c9f05e36ea6d7b7cef0c763}{speed}
+\begin{DoxyCompactList}\small\item\em Speed of the pulse. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classglowbit_1_1stick_1_1pulse_a7b5b6ddb2b400a838fbd8ec7819a4639}\label{classglowbit_1_1stick_1_1pulse_a7b5b6ddb2b400a838fbd8ec7819a4639}} 
+\hyperlink{classglowbit_1_1stick_1_1pulse_a7b5b6ddb2b400a838fbd8ec7819a4639}{index}
+\begin{DoxyCompactList}\small\item\em Initial index of the pulse. \end{DoxyCompactList}\item 
+\hyperlink{classglowbit_1_1stick_1_1pulse_a1b0b4b29bc1a9bbd90d9f919589a560a}{colour}
+\begin{DoxyCompactList}\small\item\em A list of 32-\/bit Glow\+Bit colour values. \end{DoxyCompactList}\item 
+\hyperlink{classglowbit_1_1stick_1_1pulse_a11a715a74934bb938e8e826da29aac67}{colour\+Map}
+\begin{DoxyCompactList}\small\item\em Either the string \char`\"{}\+Solid\char`\"{} or \char`\"{}\+Rainbow\char`\"{} or a function pointer to a custom colourmap. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A class for animating \char`\"{}pulses\char`\"{} which move down a Glow\+Bit stick. 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classglowbit_1_1stick_1_1pulse_a53a1dbcea6d84002f76f9c10c7ae0481}\label{classglowbit_1_1stick_1_1pulse_a53a1dbcea6d84002f76f9c10c7ae0481}} 
+\index{glowbit\+::stick\+::pulse@{glowbit\+::stick\+::pulse}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!glowbit\+::stick\+::pulse@{glowbit\+::stick\+::pulse}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def glowbit.\+stick.\+pulse.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{speed = {\ttfamily 100},  }\item[{}]{colour = {\ttfamily \mbox{[}0xFFFFFF\mbox{]}},  }\item[{}]{index = {\ttfamily 0},  }\item[{}]{colour\+Map = {\ttfamily None} }\end{DoxyParamCaption})}
+
+
+
+Initialisation routine for the Glow\+Bit Stick pulse object. 
+
+This function uses the \hyperlink{classglowbit_1_1glowbit_a0db675789faef3399ffb2c1213c12048}{pixel\+Saturating\+Add()} method so multiple pulses can be drawn without colour values corrupting due to addition overflow.
+
+
+\begin{DoxyParams}{Parameters}
+{\em speed} & The speed of the pulse in units of (pixels moved per frame) $\ast$ 100. A value of 100 means the pulse will move 1 pixels per frame. A speed of 1 will move a pulse 1 pixel every 100 frames. Speed can be positive or negative to allow pulses to move in either direction. \\
+\hline
+{\em colour} & A list of 32-\/bit Glow\+Bit colours for the pulse. The pulse will have a width equal to the number of elements in this list. A list entry of -\/1 will have the colour set by a colour map function. \\
+\hline
+{\em index} & The initial index of the pulse. Generally recommended to set to 0 if speed $>$ 0 and num\+L\+E\+Ds if speed $<$ 0. \\
+\hline
+{\em colour\+Map} & Either the string \char`\"{}\+Solid\char`\"{} or \char`\"{}\+Rainbow\char`\"{} or a custom function pointer. Custom functions must take the positional arguments\+: colour\+Map\+Function(self, index, min\+Index, max\+Index). When calling colour map functions \hyperlink{classglowbit_1_1stick_a84e72d81b9c96b1acb268b730866a8ea}{update\+Pulses()} sets min\+Index to 0 and max\+Index to num\+L\+E\+Ds. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classglowbit_1_1stick_1_1pulse_a1b0b4b29bc1a9bbd90d9f919589a560a}\label{classglowbit_1_1stick_1_1pulse_a1b0b4b29bc1a9bbd90d9f919589a560a}} 
+\index{glowbit\+::stick\+::pulse@{glowbit\+::stick\+::pulse}!colour@{colour}}
+\index{colour@{colour}!glowbit\+::stick\+::pulse@{glowbit\+::stick\+::pulse}}
+\subsubsection{\texorpdfstring{colour}{colour}}
+{\footnotesize\ttfamily glowbit.\+stick.\+pulse.\+colour}
+
+
+
+A list of 32-\/bit Glow\+Bit colour values. 
+
+Each one is drawn to a pixel; a -\/1 indicates the use of the colour\+Map function \mbox{\Hypertarget{classglowbit_1_1stick_1_1pulse_a11a715a74934bb938e8e826da29aac67}\label{classglowbit_1_1stick_1_1pulse_a11a715a74934bb938e8e826da29aac67}} 
+\index{glowbit\+::stick\+::pulse@{glowbit\+::stick\+::pulse}!colour\+Map@{colour\+Map}}
+\index{colour\+Map@{colour\+Map}!glowbit\+::stick\+::pulse@{glowbit\+::stick\+::pulse}}
+\subsubsection{\texorpdfstring{colour\+Map}{colourMap}}
+{\footnotesize\ttfamily glowbit.\+stick.\+pulse.\+colour\+Map}
+
+
+
+Either the string \char`\"{}\+Solid\char`\"{} or \char`\"{}\+Rainbow\char`\"{} or a function pointer to a custom colourmap. 
+
+Only sets pixel colour for pixels with a colour of -\/1. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+glowbit.\+py\end{DoxyCompactItemize}

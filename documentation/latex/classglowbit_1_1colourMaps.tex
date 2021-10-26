@@ -1,0 +1,79 @@
+\hypertarget{classglowbit_1_1colourMaps}{}\section{glowbit.\+colour\+Maps Class Reference}
+\label{classglowbit_1_1colourMaps}\index{glowbit.\+colour\+Maps@{glowbit.\+colour\+Maps}}
+
+
+Methods which calculate colour gradients.  
+
+
+
+
+Inheritance diagram for glowbit.\+colour\+Maps\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classglowbit_1_1colourMaps__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classglowbit_1_1colourMaps_ab54dfebabe1485e9cf2a9d47e6df24a1}{colour\+Map\+Solid} (self, index, min\+Index, max\+Index)
+\begin{DoxyCompactList}\small\item\em Trivial colourmap method which always returns the colour in the parent object. \end{DoxyCompactList}\item 
+def \hyperlink{classglowbit_1_1colourMaps_a41e8852322605003cf7f9f75ff508a8e}{colour\+Map\+Rainbow} (self, index, min\+Index, max\+Index)
+\begin{DoxyCompactList}\small\item\em Maps the pure hue colour wheel between min\+Index and max\+Index. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Methods which calculate colour gradients. 
+
+Custom colour map methods can be written and passed to several Glow\+Bit library methods (eg\+: \hyperlink{classglowbit_1_1stick_1_1graph1D}{glowbit.\+stick.\+graph1D}) but must accept the same positional arguments as the methods in this class\+:
+
+def colour\+Map\+Function(self, index, min\+Index, max\+Index)\+: 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classglowbit_1_1colourMaps_a41e8852322605003cf7f9f75ff508a8e}\label{classglowbit_1_1colourMaps_a41e8852322605003cf7f9f75ff508a8e}} 
+\index{glowbit\+::colour\+Maps@{glowbit\+::colour\+Maps}!colour\+Map\+Rainbow@{colour\+Map\+Rainbow}}
+\index{colour\+Map\+Rainbow@{colour\+Map\+Rainbow}!glowbit\+::colour\+Maps@{glowbit\+::colour\+Maps}}
+\subsubsection{\texorpdfstring{colour\+Map\+Rainbow()}{colourMapRainbow()}}
+{\footnotesize\ttfamily def glowbit.\+colour\+Maps.\+colour\+Map\+Rainbow (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{index,  }\item[{}]{min\+Index,  }\item[{}]{max\+Index }\end{DoxyParamCaption})}
+
+
+
+Maps the pure hue colour wheel between min\+Index and max\+Index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The value to be mapped \\
+\hline
+{\em min\+Index} & The value of index mapped to a colour wheel angle of 0 degrees \\
+\hline
+{\em max\+Index} & The value of index mapped to a colour wheel angle of 360 degrees \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The 32-\/bit packed Glow\+Bit colour value 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classglowbit_1_1colourMaps_ab54dfebabe1485e9cf2a9d47e6df24a1}\label{classglowbit_1_1colourMaps_ab54dfebabe1485e9cf2a9d47e6df24a1}} 
+\index{glowbit\+::colour\+Maps@{glowbit\+::colour\+Maps}!colour\+Map\+Solid@{colour\+Map\+Solid}}
+\index{colour\+Map\+Solid@{colour\+Map\+Solid}!glowbit\+::colour\+Maps@{glowbit\+::colour\+Maps}}
+\subsubsection{\texorpdfstring{colour\+Map\+Solid()}{colourMapSolid()}}
+{\footnotesize\ttfamily def glowbit.\+colour\+Maps.\+colour\+Map\+Solid (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{index,  }\item[{}]{min\+Index,  }\item[{}]{max\+Index }\end{DoxyParamCaption})}
+
+
+
+Trivial colourmap method which always returns the colour in the parent object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Dummy argument for compatibility with colourmap method A\+PI \\
+\hline
+{\em min\+Index} & Dummy argument for compatibility with colourmap method A\+PI \\
+\hline
+{\em max\+Index} & Dummy argument for compatibility with colourmap method A\+PI \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+glowbit.\+py\end{DoxyCompactItemize}
