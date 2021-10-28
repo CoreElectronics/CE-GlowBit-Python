@@ -1652,7 +1652,7 @@ class matrix8x8(glowbitMatrix):
         if Px < -7 or Px > int(self.numLEDsX):
             return
         ar = ptr32(self.ar)
-        remap = self.remap8x8
+        remap = self.remap
         x = Px
         y = Py
         charIdx = (int(ord(char))-32)*8
