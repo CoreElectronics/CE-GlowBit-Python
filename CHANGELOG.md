@@ -6,3 +6,6 @@
 
 Initial public release
 
+# glowbit-0.7
+
+Added updateBrightness() method to change brightness value on the fly
