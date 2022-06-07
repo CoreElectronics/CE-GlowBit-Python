@@ -323,6 +323,15 @@ class glowbit(colourFunctions, colourMaps):
 
     def updateRateLimitFPS(self, rateLimitFPS):
         self.rateLimit = rateLimitFPS
+        
+    ## @brief Set a new brightness value
+    #
+    # \param brightness The relative brightness of the LEDs. Colours drawn to the internal buffer should be in the range [0,255] and the brightness parameter scales this value before drawing to the physical display. If brightness is an integer it should be in the range [0,255]. If brightness is floating point it is assumed to be in the range [0,1.0].
+    def updateBrightness(self, brightness):
+        if brightness <= 1.0 and isinstance(brightness, float):
+            self.brightness = int(brightness*255)
+        else:
+            self.brightness = int(brightness)
 
     ## @brief Calculates an estimate for the total power draw given the current display data. Use as a general guide only, error range is around 10-20%.
     #
