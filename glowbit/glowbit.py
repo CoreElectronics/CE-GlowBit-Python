@@ -465,7 +465,7 @@ class glowbitMatrix(glowbit):
     # \return The 32-bit GlowBit colour value of the i'th LED
 
     def getPixelXY(self, x, y):
-        return self.ar[remap(x,y)]
+        return self.ar[self.remap(x,y)]
 
     ## @brief Draws a straight line between (x0,y0) and (x1,y1) in the specified 32-bit GlowBit colour.
     #
