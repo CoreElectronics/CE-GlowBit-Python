@@ -2,7 +2,7 @@ from distutils.core import setup
 
 setup (
     name = 'glowbit',
-    version = '0.6',
+    version = '0.8',
     license='MIT',
     description = 'Raspberry Pi (Python 3.x) and Raspberry Pi Pico (MicroPython) driver for GlowBit devices',
     long_description = 'Raspberry Pi (Python 3.x) and Raspberry Pi Pico (MicroPython) driver for GlowBit devices',
