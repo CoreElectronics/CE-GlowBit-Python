@@ -7,8 +7,12 @@ if _SYSNAME == 'rp2':
     import rp2
 
 if _SYSNAME == 'Linux':
-    import rpi_ws281x as ws
-
+    try:
+        import rpi_ws281x as ws
+    except:
+        print ("rpi_ws281x not installed")
+        ws = None
+        
     # Dummy ptr32() for within micropython.viper
     def ptr32(arg):
         return arg
@@ -1498,7 +1502,7 @@ class matrix8x8(glowbitMatrix):
             self.pixelsShow = self._pixelsShowPico
             self.ticks_ms = time.ticks_ms
 
-        if _SYSNAME == 'Linux':
+        if _SYSNAME == 'Linux' and ws is not None:
             self.strip = ws.PixelStrip(self.numLEDs, pin)
             self.strip.begin()
             self.pixelsShow = self._pixelsShowRPi
