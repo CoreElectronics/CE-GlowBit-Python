@@ -1,3 +1,5 @@
+import sys
+sys.path.insert(0, '..')
 import glowbit
 import os
 from colorama import Fore, Back, Style
